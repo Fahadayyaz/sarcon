@@ -3,9 +3,8 @@ import { StyleSheet, Text, View, ImageBackground } from "react-native";
 
 const Splash = ({ navigation }) => {
   useEffect(() => {
-    // 3 seconds ke baad Login screen par navigate karega
     const timer = setTimeout(() => {
-      navigation.navigate("Login");
+      navigation.navigate("Role");
     }, 3000);
 
     return () => clearTimeout(timer); // Cleanup timer
