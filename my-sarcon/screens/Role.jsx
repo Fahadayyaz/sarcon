@@ -1,12 +1,31 @@
-import { StyleSheet, Text, View, SafeAreaView, StatusBar } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  SafeAreaView,
+  StatusBar,
+  Image,
+} from "react-native";
 import React from "react";
 
 const Login = () => {
   return (
     <SafeAreaView style={styles.mainContainer}>
-      <StatusBar barStyle="dark-content" backgroundColor="#ffffff" />
+      <StatusBar barStyle="auto" backgroundColor="#ffffff" />
       <View style={styles.contentContainer}>
-        <Text style={styles.text}>Role</Text>
+        <Image
+          source={require("./../assets/sarconIcon.png")}
+          style={{
+            width: 184,
+            height: 62,
+            alignSelf: "center",
+            marginBottom: 20,
+          }}
+        />
+        <Text style={{ fontWeight: "bold", fontSize: 28 }}>Are You!</Text>
+        <Text style={{ color: "gray", fontSize: 14 }}>
+          Please Select your role for this app.
+        </Text>
       </View>
     </SafeAreaView>
   );
@@ -18,13 +37,9 @@ const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
     backgroundColor: "#ffffff",
-  },
-  contentContainer: {
-    justifyContent: "center",
     alignItems: "center",
   },
-  text: {
-    fontSize: 24,
-    fontWeight: "bold",
+  contentContainer: {
+    width: "90%",
   },
 });
