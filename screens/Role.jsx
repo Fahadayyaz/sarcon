@@ -12,8 +12,16 @@ import { StatusBar } from "expo-status-bar";
 import { SafeAreaView } from "react-native-safe-area-context";
 import AntDesign from "@expo/vector-icons/AntDesign";
 
-const Login = () => {
+const Login = ({ navigation }) => {
   const [checked, setChecked] = useState("user"); // State to manage selected option
+
+  const handleNavigation = () => {
+    if (checked === "user") {
+      navigation.navigate("UserSignIn");
+    } else if (checked === "provider") {
+      navigation.navigate("ProviderSignIn");
+    }
+  };
 
   return (
     <SafeAreaView style={styles.mainContainer}>
@@ -94,6 +102,7 @@ const Login = () => {
               alignItems: "center",
               alignSelf: "flex-end",
             }}
+            onPress={handleNavigation} // Call navigation function onPress
           >
             <AntDesign name="arrowright" size={24} color="white" />
           </Pressable>
