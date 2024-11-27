@@ -6,7 +6,6 @@ import Splash from "./screens/Splash";
 import Role from "./screens/Role";
 import UserSignIn from "./screens/user/UserSignIn";
 import ProviderSignIn from "./screens/provider/ProviderSignIn";
-
 import { useFonts } from "expo-font";
 
 const Stack = createNativeStackNavigator();
@@ -21,7 +20,7 @@ export default function App() {
   });
 
   if (!loaded) {
-    return null;
+    return null; // Or show a loading screen
   }
 
   return (
