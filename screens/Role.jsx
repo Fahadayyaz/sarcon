@@ -19,7 +19,7 @@ const Login = () => {
             width: 184,
             height: 62,
             alignSelf: "center",
-            marginBottom: 20,
+            marginBottom: 40,
           }}
         />
         <Text style={{ fontWeight: "bold", fontSize: 28 }}>Are You!</Text>
