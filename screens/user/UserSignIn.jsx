@@ -1,13 +1,14 @@
 import { StyleSheet, Text, View, Dimensions } from "react-native";
 import React from "react";
+import { StatusBar } from "expo-status-bar";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const UserSignIn = () => {
-  const { width, height } = Dimensions.get("window");
-
   return (
-    <View style={[styles.container, { width, height }]}>
+    <SafeAreaView style={styles.container}>
+      <StatusBar style={"auto"} />
       <Text style={styles.text}>UserSignIn</Text>
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -15,13 +16,10 @@ export default UserSignIn;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: "blue",
-    justifyContent: "center",
-    alignItems: "center",
+    width: "100%",
+    height: "100%",
   },
   text: {
-    color: "white",
     fontSize: 30,
   },
 });
