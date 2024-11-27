@@ -5,9 +5,9 @@ const Splash = ({ navigation }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       navigation.navigate("Role");
-    }, 3000);
+    }, 9000);
 
-    return () => clearTimeout(timer); // Cleanup timer
+    return () => clearTimeout(timer);
   }, [navigation]);
 
   return (
@@ -15,9 +15,7 @@ const Splash = ({ navigation }) => {
       source={require("./../assets/splashScreen.png")}
       style={styles.container}
       resizeMode="cover"
-    >
-      <Text style={styles.text}>Welcome</Text>
-    </ImageBackground>
+    ></ImageBackground>
   );
 };
 
@@ -28,10 +26,5 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-  },
-  text: {
-    fontSize: 30,
-    fontWeight: "bold",
-    color: "#fff",
   },
 });
