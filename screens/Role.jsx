@@ -1,8 +1,16 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  ScrollView,
+  Pressable,
+} from "react-native";
 import { RadioButton } from "react-native-paper";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaView } from "react-native-safe-area-context";
+import AntDesign from "@expo/vector-icons/AntDesign";
 
 const Login = () => {
   const [checked, setChecked] = useState("user"); // State to manage selected option
@@ -75,6 +83,20 @@ const Login = () => {
               }}
             />
           </View>
+          <Pressable
+            style={{
+              width: 135,
+              height: 48,
+              backgroundColor: "#0474ED",
+              borderRadius: 54,
+              marginTop: 15,
+              justifyContent: "center",
+              alignItems: "center",
+              alignSelf: "flex-end",
+            }}
+          >
+            <AntDesign name="arrowright" size={24} color="white" />
+          </Pressable>
         </ScrollView>
       </View>
     </SafeAreaView>
