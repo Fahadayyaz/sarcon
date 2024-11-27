@@ -3,6 +3,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Splash from "./screens/Splash";
 import Role from "./screens/Role";
+import SignIn from "./screens/user/SignIn";
+import providerSignIn from "./screens/provider/providerSignIn";
 import { useFonts } from "expo-font";
 
 const Stack = createNativeStackNavigator();
@@ -28,6 +30,7 @@ export default function App() {
       >
         <Stack.Screen name="Splash" component={Splash} />
         <Stack.Screen name="Role" component={Role} />
+        <Stack.Screen name="SignIn" component={SignIn} />
       </Stack.Navigator>
     </NavigationContainer>
   );
