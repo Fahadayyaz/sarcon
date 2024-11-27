@@ -1,10 +1,12 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
 import Splash from "./screens/Splash";
 import Role from "./screens/Role";
-import UserSignIn from "./screens/user/UserSignIn";
-import ProviderSignIn from "./screens/provider/ProviderSignIn";
+import UserSignIn from "./screens/user/userSignIn";
+import ProviderSignIn from "./screens/provider/providerSignIn";
+
 import { useFonts } from "expo-font";
 
 const Stack = createNativeStackNavigator();
