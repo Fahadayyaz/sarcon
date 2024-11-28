@@ -37,10 +37,10 @@ const UserSignIn = () => {
       />
       <View style={styles.content__container}>
         <Image
-          source={require("./../../assets/phoneMan.png")}
+          source={require("./../../assets/doorMan.png")}
           style={{
-            width: 240.84,
-            height: 198.75,
+            width: 233.84,
+            height: 192.97,
             marginTop: "25%",
             alignSelf: "center",
           }}
