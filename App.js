@@ -6,9 +6,11 @@ import Splash from "./screens/Splash";
 import Role from "./screens/Role";
 import UserSignIn from "./screens/user/UserSignIn";
 import UserSignUp from "./screens/user/UserSignUp";
+import UserForgotPassword from "./screens/user/UserForgotPassword";
 import ProviderSignIn from "./screens/provider/ProviderSignIn";
 import ProviderSignUp from "./screens/provider/ProviderSignUp";
 import { useFonts } from "expo-font";
+import ProviderForgotPassword from "./screens/provider/ProviderForgotPassword";
 
 const Stack = createNativeStackNavigator();
 
@@ -35,8 +37,16 @@ export default function App() {
         <Stack.Screen name="Role" component={Role} />
         <Stack.Screen name="UserSignIn" component={UserSignIn} />
         <Stack.Screen name="UserSignUp" component={UserSignUp} />
+        <Stack.Screen
+          name="UserForgotPassword"
+          component={UserForgotPassword}
+        />
         <Stack.Screen name="ProviderSignIn" component={ProviderSignIn} />
         <Stack.Screen name="ProviderSignUp" component={ProviderSignUp} />
+        <Stack.Screen
+          name="ProviderForgotPassword"
+          component={ProviderForgotPassword}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
