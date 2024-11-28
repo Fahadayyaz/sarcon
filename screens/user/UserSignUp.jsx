@@ -16,9 +16,15 @@ import Feather from "@expo/vector-icons/Feather";
 import { useNavigation } from "@react-navigation/native";
 
 const UserSignUp = () => {
+  const [isNameFocused, setNameFocused] = useState(false);
   const [isEmailFocused, setEmailFocused] = useState(false);
+  const [isPhoneFocused, setPhoneFocused] = useState(false);
   const [isPasswordFocused, setPasswordFocused] = useState(false);
+  const [isConfirmPasswordFocused, setConfirmPasswordFocused] = useState(false);
   const [isPasswordVisible, setPasswordVisible] = useState(false); // State to toggle visibility
+  const [isConfirmPasswordVisible, setConfirmPasswordVisible] = useState(false); // State to toggle visibility
+  const [isAddressFocused, setAddressFocused] = useState(false);
+
   const navigation = useNavigation();
 
   return (
@@ -45,7 +51,10 @@ const UserSignUp = () => {
             alignSelf: "center",
           }}
         />
-        <ScrollView showsVerticalScrollIndicator={false}>
+        <ScrollView
+          style={{ height: "100%", width: "100%" }}
+          showsVerticalScrollIndicator={false}
+        >
           <Text style={{ fontWeight: "bold", fontSize: 28, marginTop: 15 }}>
             Sign Up
           </Text>
@@ -60,24 +69,24 @@ const UserSignUp = () => {
                 flexDirection: "row",
                 alignItems: "center",
                 borderWidth: 1,
-                borderColor: isEmailFocused ? "#0474ED" : "gray",
+                borderColor: isNameFocused ? "#0474ED" : "gray",
                 borderRadius: 44,
                 paddingLeft: 10,
                 marginTop: 15,
               }}
             >
               <Fontisto
-                name="name"
+                name="user"
                 size={24}
-                color={isEmailFocused ? "#0474ED" : "gray"}
+                color={isNameFocused ? "#0474ED" : "gray"}
                 style={{ paddingRight: 5 }}
               />
               <TextInput
                 placeholder="Name"
-                placeholderTextColor={isEmailFocused ? "#0474ED" : "gray"}
+                placeholderTextColor={isNameFocused ? "#0474ED" : "gray"}
                 style={{ width: "100%", height: 48 }}
-                onFocus={() => setEmailFocused(true)}
-                onBlur={() => setEmailFocused(false)}
+                onFocus={() => setNameFocused(true)}
+                onBlur={() => setNameFocused(false)}
               />
             </View>
             {/* email input container */}
@@ -104,6 +113,33 @@ const UserSignUp = () => {
                 style={{ width: "100%", height: 48 }}
                 onFocus={() => setEmailFocused(true)}
                 onBlur={() => setEmailFocused(false)}
+              />
+            </View>
+
+            {/* phone input container */}
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                borderWidth: 1,
+                borderColor: isPhoneFocused ? "#0474ED" : "gray",
+                borderRadius: 44,
+                paddingLeft: 10,
+                marginTop: 15,
+              }}
+            >
+              <Fontisto
+                name="phone"
+                size={24}
+                color={isPhoneFocused ? "#0474ED" : "gray"}
+                style={{ paddingRight: 5 }}
+              />
+              <TextInput
+                placeholder="Phone"
+                placeholderTextColor={isPhoneFocused ? "#0474ED" : "gray"}
+                style={{ width: "100%", height: 48 }}
+                onFocus={() => setPhoneFocused(true)}
+                onBlur={() => setPhoneFocused(false)}
               />
             </View>
 
@@ -147,15 +183,101 @@ const UserSignUp = () => {
                 />
               </TouchableOpacity>
             </View>
-          </View>
-
-          <Pressable style={{ alignSelf: "flex-end", marginTop: 10 }}>
-            <Text
-              style={{ color: "#0474ED", fontSize: 14, fontWeight: "bold" }}
+            {/* confirm password input container */}
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                borderWidth: 1,
+                borderColor: isConfirmPasswordFocused ? "#0474ED" : "gray",
+                borderRadius: 44,
+                paddingHorizontal: 10, // Adjust spacing
+                marginTop: 15,
+              }}
             >
-              Forgot password?
+              <Feather
+                name="lock"
+                size={24}
+                color={isConfirmPasswordFocused ? "#0474ED" : "gray"}
+                style={{ marginRight: 10 }}
+              />
+              <TextInput
+                placeholder="Confirm Password"
+                placeholderTextColor={
+                  isConfirmPasswordFocused ? "#0474ED" : "gray"
+                }
+                secureTextEntry={!isConfirmPasswordVisible} // Toggle secure entry
+                style={{
+                  flex: 1, // Take remaining space
+                  height: 48,
+                }}
+                onFocus={() => setConfirmPasswordFocused(true)}
+                onBlur={() => setConfirmPasswordFocused(false)}
+              />
+              <TouchableOpacity
+                onPress={() =>
+                  setConfirmPasswordVisible(!isConfirmPasswordVisible)
+                }
+              >
+                <Feather
+                  name={isConfirmPasswordVisible ? "eye-off" : "eye"} // Toggle icon
+                  size={24}
+                  color={isConfirmPasswordFocused ? "#0474ED" : "gray"}
+                  style={{ paddingRight: 10 }}
+                />
+              </TouchableOpacity>
+            </View>
+            {/* address input container */}
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                borderWidth: 1,
+                borderColor: isAddressFocused ? "#0474ED" : "gray",
+                borderRadius: 44,
+                paddingLeft: 10,
+                marginTop: 15,
+              }}
+            >
+              <Fontisto
+                name="address"
+                size={24}
+                color={isAddressFocused ? "#0474ED" : "gray"}
+                style={{ paddingRight: 5 }}
+              />
+              <TextInput
+                placeholder="Address"
+                placeholderTextColor={isAddressFocused ? "#0474ED" : "gray"}
+                style={{ width: "100%", height: 48 }}
+                onFocus={() => setAddressFocused(true)}
+                onBlur={() => setAddressFocused(false)}
+              />
+            </View>
+          </View>
+          {/* map here */}
+          <View
+            style={{
+              height: 150,
+              backgroundColor: "#c1c1c1",
+              marginTop: 20,
+              borderRadius: 24,
+              justifyContent: "center",
+            }}
+          >
+            <Text
+              style={{
+                color: "#fff",
+                fontSize: 18,
+                textAlign: "center",
+              }}
+            >
+              Map
             </Text>
-          </Pressable>
+          </View>
+          {/* terms and conditions text */}
+          <Text style={{ color: "gray", fontSize: 14, marginTop: "10%" }}>
+            I agree to terms and conditions and privacy.
+          </Text>
           <Pressable
             style={{
               width: "100%",
@@ -164,7 +286,7 @@ const UserSignUp = () => {
               justifyContent: "center",
               alignItems: "center",
               borderRadius: 54,
-              marginTop: "20%",
+              marginTop: "5%",
             }}
           >
             <Text style={{ color: "#fff", fontSize: 14, fontWeight: "bold" }}>
@@ -175,7 +297,8 @@ const UserSignUp = () => {
             style={{
               flexDirection: "row",
               alignSelf: "center",
-              marginTop: "10%",
+              marginTop: 20,
+              marginBottom: 40,
             }}
           >
             <Text style={{ color: "gray", fontSize: 14, fontWeight: "bold" }}>
