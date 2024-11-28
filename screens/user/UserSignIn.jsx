@@ -123,7 +123,10 @@ const UserSignIn = () => {
             </View>
           </View>
 
-          <Pressable style={{ alignSelf: "flex-end", marginTop: 10 }}>
+          <Pressable
+            onPress={() => navigation.navigate("UserForgotPassword")}
+            style={{ alignSelf: "flex-end", marginTop: 10 }}
+          >
             <Text
               style={{ color: "#0474ED", fontSize: 14, fontWeight: "bold" }}
             >
