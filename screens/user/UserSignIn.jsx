@@ -6,6 +6,7 @@ import {
   TextInput,
   ScrollView,
   TouchableOpacity,
+  Pressable,
 } from "react-native";
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
@@ -42,7 +43,7 @@ const UserSignIn = () => {
             alignSelf: "center",
           }}
         />
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
           <Text style={{ fontWeight: "bold", fontSize: 28, marginTop: 15 }}>
             Sign In
           </Text>
@@ -114,9 +115,52 @@ const UserSignIn = () => {
                   name={isPasswordVisible ? "eye-off" : "eye"} // Toggle icon
                   size={24}
                   color={isPasswordFocused ? "#0474ED" : "gray"}
+                  style={{ paddingRight: 10 }}
                 />
               </TouchableOpacity>
             </View>
+          </View>
+
+          <Pressable style={{ alignSelf: "flex-end", marginTop: 10 }}>
+            <Text
+              style={{ color: "#0474ED", fontSize: 14, fontWeight: "bold" }}
+            >
+              Forgot password?
+            </Text>
+          </Pressable>
+          <Pressable
+            style={{
+              width: "100%",
+              height: 48,
+              backgroundColor: "#0474ED",
+              justifyContent: "center",
+              alignItems: "center",
+              borderRadius: 54,
+              marginTop: "20%",
+            }}
+          >
+            <Text style={{ color: "#fff", fontSize: 14, fontWeight: "bold" }}>
+              Login
+            </Text>
+          </Pressable>
+          <View
+            style={{
+              flexDirection: "row",
+              alignSelf: "center",
+              marginTop: "10%",
+            }}
+          >
+            <Text style={{ color: "gray", fontSize: 14, fontWeight: "bold" }}>
+              Don't have an account?
+            </Text>
+            <Pressable style={{}}>
+              <Text
+                style={{ color: "#0474ED", fontSize: 14, fontWeight: "bold" }}
+              >
+                {" "}
+                Sign Up
+              </Text>
+            </Pressable>
           </View>
         </ScrollView>
       </View>
