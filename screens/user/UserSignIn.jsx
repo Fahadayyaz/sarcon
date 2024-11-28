@@ -13,11 +13,13 @@ import { StatusBar } from "expo-status-bar";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Fontisto from "@expo/vector-icons/Fontisto";
 import Feather from "@expo/vector-icons/Feather";
+import { useNavigation } from "@react-navigation/native";
 
 const UserSignIn = () => {
   const [isEmailFocused, setEmailFocused] = useState(false);
   const [isPasswordFocused, setPasswordFocused] = useState(false);
   const [isPasswordVisible, setPasswordVisible] = useState(false); // State to toggle visibility
+  const navigation = useNavigation();
 
   return (
     <SafeAreaView style={styles.container}>
@@ -153,7 +155,7 @@ const UserSignIn = () => {
             <Text style={{ color: "gray", fontSize: 14, fontWeight: "bold" }}>
               Don't have an account?
             </Text>
-            <Pressable style={{}}>
+            <Pressable onPress={() => navigation.navigate("UserSignUp")}>
               <Text
                 style={{ color: "#0474ED", fontSize: 14, fontWeight: "bold" }}
               >
