@@ -305,7 +305,7 @@ const ProviderSignUp = () => {
             <Text style={{ color: "gray", fontSize: 14, fontWeight: "bold" }}>
               Already have an account?
             </Text>
-            <Pressable onPress={() => navigation.navigate("UserSignUp")}>
+            <Pressable onPress={() => navigation.navigate("UserSignIn")}>
               <Text
                 style={{ color: "#0474ED", fontSize: 14, fontWeight: "bold" }}
               >
