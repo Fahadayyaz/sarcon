@@ -37,10 +37,10 @@ const ProviderSignIn = () => {
       />
       <View style={styles.content__container}>
         <Image
-          source={require("./../../assets/phoneMan.png")}
+          source={require("./../../assets/doorMan.png")}
           style={{
-            width: 240.84,
-            height: 198.75,
+            width: 233.84,
+            height: 192.97,
             marginTop: "25%",
             alignSelf: "center",
           }}
@@ -52,7 +52,7 @@ const ProviderSignIn = () => {
           <Text style={{ color: "gray", fontSize: 14 }}>
             Please login to continue.
           </Text>
-          {/* email and password container */}
+          {/* sign up form container */}
           <View>
             {/* email input container */}
             <View
@@ -155,7 +155,7 @@ const ProviderSignIn = () => {
             <Text style={{ color: "gray", fontSize: 14, fontWeight: "bold" }}>
               Don't have an account?
             </Text>
-            <Pressable onPress={() => navigation.navigate("UserSignUp")}>
+            <Pressable onPress={() => navigation.navigate("ProviderSignUp")}>
               <Text
                 style={{ color: "#0474ED", fontSize: 14, fontWeight: "bold" }}
               >
