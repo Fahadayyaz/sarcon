@@ -1,10 +1,23 @@
-import { StyleSheet, Text, View, Image, TextInput } from "react-native";
-import React from "react";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TextInput,
+  ScrollView,
+  TouchableOpacity,
+} from "react-native";
+import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Fontisto from "@expo/vector-icons/Fontisto";
+import Feather from "@expo/vector-icons/Feather";
 
 const UserSignIn = () => {
+  const [isEmailFocused, setEmailFocused] = useState(false);
+  const [isPasswordFocused, setPasswordFocused] = useState(false);
+  const [isPasswordVisible, setPasswordVisible] = useState(false); // State to toggle visibility
+
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style={"auto"} />
@@ -29,44 +42,83 @@ const UserSignIn = () => {
             alignSelf: "center",
           }}
         />
-        <Text style={{ fontWeight: "bold", fontSize: 28, marginTop: 15 }}>
-          Sign In
-        </Text>
-        <Text style={{ color: "gray", fontSize: 14 }}>
-          Please login to continue.
-        </Text>
-        {/* email and password container */}
-        <View>
-          {/* email container */}
-          <View
-            style={{
-              flexDirection: "row",
-              alignItems: "center",
-              borderWidth: 1,
-              borderRadius: 44,
-              paddingLeft: 10,
-              justifyContent: "space-between",
-            }}
-          >
-            <View style={{ flexDirection: "row", alignItems: "center" }}>
+        <ScrollView>
+          <Text style={{ fontWeight: "bold", fontSize: 28, marginTop: 15 }}>
+            Sign In
+          </Text>
+          <Text style={{ color: "gray", fontSize: 14 }}>
+            Please login to continue.
+          </Text>
+          {/* email and password container */}
+          <View>
+            {/* email input container */}
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                borderWidth: 1,
+                borderColor: isEmailFocused ? "#0474ED" : "gray",
+                borderRadius: 44,
+                paddingLeft: 10,
+                marginTop: 15,
+              }}
+            >
               <Fontisto
                 name="email"
                 size={24}
-                color="black"
+                color={isEmailFocused ? "#0474ED" : "gray"}
                 style={{ paddingRight: 5 }}
               />
-              <TextInput placeholder="Email Address" />
+              <TextInput
+                placeholder="Email Address"
+                placeholderTextColor={isEmailFocused ? "#0474ED" : "gray"}
+                style={{ width: "100%", height: 48 }}
+                onFocus={() => setEmailFocused(true)}
+                onBlur={() => setEmailFocused(false)}
+              />
             </View>
-            <Fontisto
-              name="email"
-              size={24}
-              color="black"
-              style={{ marginRight: 15 }}
-            />
+
+            {/* password input container */}
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                borderWidth: 1,
+                borderColor: isPasswordFocused ? "#0474ED" : "gray",
+                borderRadius: 44,
+                paddingHorizontal: 10, // Adjust spacing
+                marginTop: 15,
+              }}
+            >
+              <Feather
+                name="lock"
+                size={24}
+                color={isPasswordFocused ? "#0474ED" : "gray"}
+                style={{ marginRight: 10 }}
+              />
+              <TextInput
+                placeholder="Password"
+                placeholderTextColor={isPasswordFocused ? "#0474ED" : "gray"}
+                secureTextEntry={!isPasswordVisible} // Toggle secure entry
+                style={{
+                  flex: 1, // Take remaining space
+                  height: 48,
+                }}
+                onFocus={() => setPasswordFocused(true)}
+                onBlur={() => setPasswordFocused(false)}
+              />
+              <TouchableOpacity
+                onPress={() => setPasswordVisible(!isPasswordVisible)}
+              >
+                <Feather
+                  name={isPasswordVisible ? "eye-off" : "eye"} // Toggle icon
+                  size={24}
+                  color={isPasswordFocused ? "#0474ED" : "gray"}
+                />
+              </TouchableOpacity>
+            </View>
           </View>
-          {/* password container */}
-          <View></View>
-        </View>
+        </ScrollView>
       </View>
     </SafeAreaView>
   );
@@ -83,7 +135,6 @@ const styles = StyleSheet.create({
     width: "90%",
     height: "100%",
     alignSelf: "center",
-    // backgroundColor: "lightblue",
   },
   text: {
     fontSize: 30,
