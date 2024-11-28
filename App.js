@@ -5,7 +5,9 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Splash from "./screens/Splash";
 import Role from "./screens/Role";
 import UserSignIn from "./screens/user/UserSignIn";
+import UserSignUp from "./screens/user/UserSignUp";
 import ProviderSignIn from "./screens/provider/ProviderSignIn";
+import ProviderSignUp from "./screens/provider/ProviderSignUp";
 import { useFonts } from "expo-font";
 
 const Stack = createNativeStackNavigator();
@@ -26,13 +28,15 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="UserSignIn"
+        initialRouteName="Splash"
         screenOptions={{ headerShown: false }}
       >
         <Stack.Screen name="Splash" component={Splash} />
         <Stack.Screen name="Role" component={Role} />
         <Stack.Screen name="UserSignIn" component={UserSignIn} />
+        <Stack.Screen name="UserSignUp" component={UserSignUp} />
         <Stack.Screen name="ProviderSignIn" component={ProviderSignIn} />
+        <Stack.Screen name="ProviderSignUp" component={ProviderSignUp} />
       </Stack.Navigator>
     </NavigationContainer>
   );
