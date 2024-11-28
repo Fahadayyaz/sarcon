@@ -13,6 +13,7 @@ import { StatusBar } from "expo-status-bar";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Fontisto from "@expo/vector-icons/Fontisto";
 import Feather from "@expo/vector-icons/Feather";
+import EvilIcons from "@expo/vector-icons/EvilIcons";
 import { useNavigation } from "@react-navigation/native";
 
 const ProviderSignUp = () => {
@@ -75,11 +76,11 @@ const ProviderSignUp = () => {
                 marginTop: 15,
               }}
             >
-              <Fontisto
+              <EvilIcons
                 name="user"
-                size={24}
+                size={34}
                 color={isNameFocused ? "#0474ED" : "gray"}
-                style={{ paddingRight: 5 }}
+                style={{ marginLeft: -5, paddingRight: -10 }}
               />
               <TextInput
                 placeholder="Name"
@@ -128,7 +129,7 @@ const ProviderSignUp = () => {
                 marginTop: 15,
               }}
             >
-              <Fontisto
+              <Feather
                 name="phone"
                 size={24}
                 color={isPhoneFocused ? "#0474ED" : "gray"}
@@ -159,7 +160,7 @@ const ProviderSignUp = () => {
                 name="lock"
                 size={24}
                 color={isPasswordFocused ? "#0474ED" : "gray"}
-                style={{ marginRight: 10 }}
+                style={{ marginRight: 5 }}
               />
               <TextInput
                 placeholder="Password"
@@ -199,7 +200,7 @@ const ProviderSignUp = () => {
                 name="lock"
                 size={24}
                 color={isConfirmPasswordFocused ? "#0474ED" : "gray"}
-                style={{ marginRight: 10 }}
+                style={{ marginRight: 5 }}
               />
               <TextInput
                 placeholder="Confirm Password"
@@ -239,11 +240,11 @@ const ProviderSignUp = () => {
                 marginTop: 15,
               }}
             >
-              <Fontisto
-                name="address"
-                size={24}
+              <EvilIcons
+                name="location"
+                size={34}
                 color={isAddressFocused ? "#0474ED" : "gray"}
-                style={{ paddingRight: 5 }}
+                style={{ marginLeft: -5, paddingRight: -10 }}
               />
               <TextInput
                 placeholder="Address"
