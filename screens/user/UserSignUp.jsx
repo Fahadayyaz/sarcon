@@ -15,6 +15,7 @@ import Fontisto from "@expo/vector-icons/Fontisto";
 import Feather from "@expo/vector-icons/Feather";
 import EvilIcons from "@expo/vector-icons/EvilIcons";
 import { useNavigation } from "@react-navigation/native";
+import MapView, { Marker } from "react-native-maps";
 
 const UserSignUp = () => {
   const [isNameFocused, setNameFocused] = useState(false);
@@ -262,24 +263,22 @@ const UserSignUp = () => {
             </View>
           </View>
           {/* map here */}
-          <View
-            style={{
-              height: 150,
-              backgroundColor: "#D2D2D2",
-              marginTop: 20,
-              borderRadius: 24,
-              justifyContent: "center",
-            }}
-          >
-            <Text
-              style={{
-                color: "#fff",
-                fontSize: 18,
-                textAlign: "center",
+          <View style={styles.mapContainer}>
+            <MapView
+              style={styles.map}
+              initialRegion={{
+                latitude: 37.78825, // Default latitude
+                longitude: -122.4324, // Default longitude
+                latitudeDelta: 0.0922,
+                longitudeDelta: 0.0421,
               }}
             >
-              Map
-            </Text>
+              <Marker
+                coordinate={{ latitude: 37.78825, longitude: -122.4324 }}
+                title="Marker Title"
+                description="Marker Description"
+              />
+            </MapView>
           </View>
           {/* terms and conditions text */}
           <Text style={{ color: "#838383", fontSize: 14, marginTop: "10%" }}>
@@ -340,7 +339,17 @@ const styles = StyleSheet.create({
     height: "100%",
     alignSelf: "center",
   },
+
   text: {
     fontSize: 30,
+  },
+  mapContainer: {
+    height: 150,
+    marginTop: 20,
+    borderRadius: 24,
+    overflow: "hidden",
+  },
+  map: {
+    ...StyleSheet.absoluteFillObject,
   },
 });
