@@ -285,6 +285,7 @@ const UserSignUp = () => {
             I agree to terms and conditions and privacy.
           </Text>
           <Pressable
+            onPress={() => navigation.navigate("UserUploadPhoto")}
             style={{
               width: "100%",
               height: 48,
