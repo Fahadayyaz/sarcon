@@ -49,7 +49,7 @@ const UserSignIn = () => {
           <Text style={{ fontWeight: "bold", fontSize: 28, marginTop: 15 }}>
             Sign In
           </Text>
-          <Text style={{ color: "gray", fontSize: 14 }}>
+          <Text style={{ color: "#838383", fontSize: 14 }}>
             Please login to continue.
           </Text>
           {/* email and password container */}
@@ -60,21 +60,22 @@ const UserSignIn = () => {
                 flexDirection: "row",
                 alignItems: "center",
                 borderWidth: 1,
-                borderColor: isEmailFocused ? "#0474ED" : "gray",
+                borderColor: isEmailFocused ? "#0474ED" : "#fff",
                 borderRadius: 44,
                 paddingLeft: 10,
                 marginTop: 15,
+                backgroundColor: "#F2F2F2",
               }}
             >
               <Fontisto
                 name="email"
                 size={24}
-                color={isEmailFocused ? "#0474ED" : "gray"}
+                color={isEmailFocused ? "#0474ED" : "#838383"}
                 style={{ paddingRight: 5 }}
               />
               <TextInput
                 placeholder="Email Address"
-                placeholderTextColor={isEmailFocused ? "#0474ED" : "gray"}
+                placeholderTextColor={isEmailFocused ? "#0474ED" : "#838383"}
                 style={{ width: "100%", height: 48 }}
                 onFocus={() => setEmailFocused(true)}
                 onBlur={() => setEmailFocused(false)}
@@ -87,21 +88,22 @@ const UserSignIn = () => {
                 flexDirection: "row",
                 alignItems: "center",
                 borderWidth: 1,
-                borderColor: isPasswordFocused ? "#0474ED" : "gray",
+                borderColor: isPasswordFocused ? "#0474ED" : "#fff",
                 borderRadius: 44,
                 paddingHorizontal: 10, // Adjust spacing
                 marginTop: 15,
+                backgroundColor: "#F2F2F2",
               }}
             >
               <Feather
                 name="lock"
                 size={24}
-                color={isPasswordFocused ? "#0474ED" : "gray"}
+                color={isPasswordFocused ? "#0474ED" : "#838383"}
                 style={{ marginRight: 10 }}
               />
               <TextInput
                 placeholder="Password"
-                placeholderTextColor={isPasswordFocused ? "#0474ED" : "gray"}
+                placeholderTextColor={isPasswordFocused ? "#0474ED" : "#838383"}
                 secureTextEntry={!isPasswordVisible} // Toggle secure entry
                 style={{
                   flex: 1, // Take remaining space
@@ -116,7 +118,7 @@ const UserSignIn = () => {
                 <Feather
                   name={isPasswordVisible ? "eye-off" : "eye"} // Toggle icon
                   size={24}
-                  color={isPasswordFocused ? "#0474ED" : "gray"}
+                  color={isPasswordFocused ? "#0474ED" : "#838383"}
                   style={{ paddingRight: 10 }}
                 />
               </TouchableOpacity>
@@ -155,7 +157,9 @@ const UserSignIn = () => {
               marginTop: "10%",
             }}
           >
-            <Text style={{ color: "gray", fontSize: 14, fontWeight: "bold" }}>
+            <Text
+              style={{ color: "#838383", fontSize: 14, fontWeight: "bold" }}
+            >
               Don't have an account?
             </Text>
             <Pressable onPress={() => navigation.navigate("UserSignUp")}>
