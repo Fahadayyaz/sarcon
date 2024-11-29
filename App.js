@@ -7,6 +7,8 @@ import Role from "./screens/Role";
 import UserSignIn from "./screens/user/UserSignIn";
 import UserSignUp from "./screens/user/UserSignUp";
 import UserForgotPassword from "./screens/user/UserForgotPassword";
+import UserUploadPhoto from "./screens/user/UserUploadPhoto";
+
 import ProviderSignIn from "./screens/provider/ProviderSignIn";
 import ProviderSignUp from "./screens/provider/ProviderSignUp";
 import { useFonts } from "expo-font";
@@ -37,6 +39,8 @@ export default function App() {
         <Stack.Screen name="Role" component={Role} />
         <Stack.Screen name="UserSignIn" component={UserSignIn} />
         <Stack.Screen name="UserSignUp" component={UserSignUp} />
+        <Stack.Screen name="UserUploadPhoto" component={UserUploadPhoto} />
+
         <Stack.Screen
           name="UserForgotPassword"
           component={UserForgotPassword}
