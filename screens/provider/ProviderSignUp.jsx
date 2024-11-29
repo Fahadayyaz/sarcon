@@ -59,7 +59,7 @@ const ProviderSignUp = () => {
           <Text style={{ fontWeight: "bold", fontSize: 28, marginTop: 15 }}>
             Sign Up
           </Text>
-          <Text style={{ color: "gray", fontSize: 14 }}>
+          <Text style={{ color: "#838383", fontSize: 14 }}>
             Please SignUp to join us.
           </Text>
           {/* SignUp form container */}
@@ -70,21 +70,22 @@ const ProviderSignUp = () => {
                 flexDirection: "row",
                 alignItems: "center",
                 borderWidth: 1,
-                borderColor: isNameFocused ? "#0474ED" : "gray",
+                borderColor: isNameFocused ? "#0474ED" : "#fff",
                 borderRadius: 44,
                 paddingLeft: 10,
                 marginTop: 15,
+                backgroundColor: "#F2F2F2",
               }}
             >
               <EvilIcons
                 name="user"
                 size={34}
-                color={isNameFocused ? "#0474ED" : "gray"}
+                color={isNameFocused ? "#0474ED" : "#838383"}
                 style={{ marginLeft: -5, paddingRight: -10 }}
               />
               <TextInput
                 placeholder="Name"
-                placeholderTextColor={isNameFocused ? "#0474ED" : "gray"}
+                placeholderTextColor={isNameFocused ? "#0474ED" : "#838383"}
                 style={{ width: "100%", height: 48 }}
                 onFocus={() => setNameFocused(true)}
                 onBlur={() => setNameFocused(false)}
@@ -96,21 +97,22 @@ const ProviderSignUp = () => {
                 flexDirection: "row",
                 alignItems: "center",
                 borderWidth: 1,
-                borderColor: isEmailFocused ? "#0474ED" : "gray",
+                borderColor: isEmailFocused ? "#0474ED" : "#fff",
                 borderRadius: 44,
                 paddingLeft: 10,
                 marginTop: 15,
+                backgroundColor: "#F2F2F2",
               }}
             >
               <Fontisto
                 name="email"
                 size={24}
-                color={isEmailFocused ? "#0474ED" : "gray"}
+                color={isEmailFocused ? "#0474ED" : "#838383"}
                 style={{ paddingRight: 5 }}
               />
               <TextInput
                 placeholder="Email Address"
-                placeholderTextColor={isEmailFocused ? "#0474ED" : "gray"}
+                placeholderTextColor={isEmailFocused ? "#0474ED" : "#838383"}
                 style={{ width: "100%", height: 48 }}
                 onFocus={() => setEmailFocused(true)}
                 onBlur={() => setEmailFocused(false)}
@@ -123,21 +125,22 @@ const ProviderSignUp = () => {
                 flexDirection: "row",
                 alignItems: "center",
                 borderWidth: 1,
-                borderColor: isPhoneFocused ? "#0474ED" : "gray",
+                borderColor: isPhoneFocused ? "#0474ED" : "#fff",
                 borderRadius: 44,
                 paddingLeft: 10,
                 marginTop: 15,
+                backgroundColor: "#F2F2F2",
               }}
             >
               <Feather
                 name="phone"
                 size={24}
-                color={isPhoneFocused ? "#0474ED" : "gray"}
+                color={isPhoneFocused ? "#0474ED" : "#838383"}
                 style={{ paddingRight: 5 }}
               />
               <TextInput
                 placeholder="Phone"
-                placeholderTextColor={isPhoneFocused ? "#0474ED" : "gray"}
+                placeholderTextColor={isPhoneFocused ? "#0474ED" : "#838383"}
                 style={{ width: "100%", height: 48 }}
                 onFocus={() => setPhoneFocused(true)}
                 onBlur={() => setPhoneFocused(false)}
@@ -150,21 +153,22 @@ const ProviderSignUp = () => {
                 flexDirection: "row",
                 alignItems: "center",
                 borderWidth: 1,
-                borderColor: isPasswordFocused ? "#0474ED" : "gray",
+                borderColor: isPasswordFocused ? "#0474ED" : "#fff",
                 borderRadius: 44,
                 paddingHorizontal: 10, // Adjust spacing
                 marginTop: 15,
+                backgroundColor: "#F2F2F2",
               }}
             >
               <Feather
                 name="lock"
                 size={24}
-                color={isPasswordFocused ? "#0474ED" : "gray"}
+                color={isPasswordFocused ? "#0474ED" : "#838383"}
                 style={{ marginRight: 5 }}
               />
               <TextInput
                 placeholder="Password"
-                placeholderTextColor={isPasswordFocused ? "#0474ED" : "gray"}
+                placeholderTextColor={isPasswordFocused ? "#0474ED" : "#838383"}
                 secureTextEntry={!isPasswordVisible} // Toggle secure entry
                 style={{
                   flex: 1, // Take remaining space
@@ -179,7 +183,7 @@ const ProviderSignUp = () => {
                 <Feather
                   name={isPasswordVisible ? "eye-off" : "eye"} // Toggle icon
                   size={24}
-                  color={isPasswordFocused ? "#0474ED" : "gray"}
+                  color={isPasswordFocused ? "#0474ED" : "#838383"}
                   style={{ paddingRight: 10 }}
                 />
               </TouchableOpacity>
@@ -190,22 +194,23 @@ const ProviderSignUp = () => {
                 flexDirection: "row",
                 alignItems: "center",
                 borderWidth: 1,
-                borderColor: isConfirmPasswordFocused ? "#0474ED" : "gray",
+                borderColor: isConfirmPasswordFocused ? "#0474ED" : "#fff",
                 borderRadius: 44,
                 paddingHorizontal: 10, // Adjust spacing
                 marginTop: 15,
+                backgroundColor: "#F2F2F2",
               }}
             >
               <Feather
                 name="lock"
                 size={24}
-                color={isConfirmPasswordFocused ? "#0474ED" : "gray"}
+                color={isConfirmPasswordFocused ? "#0474ED" : "#838383"}
                 style={{ marginRight: 5 }}
               />
               <TextInput
                 placeholder="Confirm Password"
                 placeholderTextColor={
-                  isConfirmPasswordFocused ? "#0474ED" : "gray"
+                  isConfirmPasswordFocused ? "#0474ED" : "#838383"
                 }
                 secureTextEntry={!isConfirmPasswordVisible} // Toggle secure entry
                 style={{
@@ -223,7 +228,7 @@ const ProviderSignUp = () => {
                 <Feather
                   name={isConfirmPasswordVisible ? "eye-off" : "eye"} // Toggle icon
                   size={24}
-                  color={isConfirmPasswordFocused ? "#0474ED" : "gray"}
+                  color={isConfirmPasswordFocused ? "#0474ED" : "#838383"}
                   style={{ paddingRight: 10 }}
                 />
               </TouchableOpacity>
@@ -234,21 +239,22 @@ const ProviderSignUp = () => {
                 flexDirection: "row",
                 alignItems: "center",
                 borderWidth: 1,
-                borderColor: isAddressFocused ? "#0474ED" : "gray",
+                borderColor: isAddressFocused ? "#0474ED" : "#fff",
                 borderRadius: 44,
                 paddingLeft: 10,
                 marginTop: 15,
+                backgroundColor: "#F2F2F2",
               }}
             >
               <EvilIcons
                 name="location"
                 size={34}
-                color={isAddressFocused ? "#0474ED" : "gray"}
+                color={isAddressFocused ? "#0474ED" : "#838383"}
                 style={{ marginLeft: -5, paddingRight: -10 }}
               />
               <TextInput
                 placeholder="Address"
-                placeholderTextColor={isAddressFocused ? "#0474ED" : "gray"}
+                placeholderTextColor={isAddressFocused ? "#0474ED" : "#838383"}
                 style={{ width: "100%", height: 48 }}
                 onFocus={() => setAddressFocused(true)}
                 onBlur={() => setAddressFocused(false)}
@@ -259,7 +265,7 @@ const ProviderSignUp = () => {
           <View
             style={{
               height: 150,
-              backgroundColor: "#c1c1c1",
+              backgroundColor: "#D2D2D2",
               marginTop: 20,
               borderRadius: 24,
               justifyContent: "center",
@@ -276,7 +282,7 @@ const ProviderSignUp = () => {
             </Text>
           </View>
           {/* terms and conditions text */}
-          <Text style={{ color: "gray", fontSize: 14, marginTop: "10%" }}>
+          <Text style={{ color: "#838383", fontSize: 14, marginTop: "10%" }}>
             I agree to terms and conditions and privacy.
           </Text>
           <Pressable
@@ -302,7 +308,9 @@ const ProviderSignUp = () => {
               marginBottom: 40,
             }}
           >
-            <Text style={{ color: "gray", fontSize: 14, fontWeight: "bold" }}>
+            <Text
+              style={{ color: "#838383", fontSize: 14, fontWeight: "bold" }}
+            >
               Already have an account?
             </Text>
             <Pressable onPress={() => navigation.navigate("UserSignIn")}>
