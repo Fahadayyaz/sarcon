@@ -13,6 +13,7 @@ import ProviderSignIn from "./screens/provider/ProviderSignIn";
 import ProviderSignUp from "./screens/provider/ProviderSignUp";
 import { useFonts } from "expo-font";
 import ProviderForgotPassword from "./screens/provider/ProviderForgotPassword";
+import ProviderUploadPhoto from "./screens/provider/ProviderUploadPhoto";
 
 const Stack = createNativeStackNavigator();
 
@@ -32,7 +33,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="Role"
+        initialRouteName="Splash"
         screenOptions={{ headerShown: false }}
       >
         <Stack.Screen name="Splash" component={Splash} />
@@ -47,6 +48,10 @@ export default function App() {
         />
         <Stack.Screen name="ProviderSignIn" component={ProviderSignIn} />
         <Stack.Screen name="ProviderSignUp" component={ProviderSignUp} />
+        <Stack.Screen
+          name="ProviderUploadPhoto"
+          component={ProviderUploadPhoto}
+        />
         <Stack.Screen
           name="ProviderForgotPassword"
           component={ProviderForgotPassword}
