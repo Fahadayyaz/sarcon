@@ -126,7 +126,7 @@ const ProviderSignIn = () => {
           </View>
 
           <Pressable
-            onPress={() => navigation.navigate("UserForgotPassword")}
+            onPress={() => navigation.navigate("ProviderForgotPassword")}
             style={{ alignSelf: "flex-end", marginTop: 10 }}
           >
             <Text
@@ -162,7 +162,7 @@ const ProviderSignIn = () => {
             >
               Don't have an account?
             </Text>
-            <Pressable onPress={() => navigation.navigate("UserSignUp")}>
+            <Pressable onPress={() => navigation.navigate("ProviderSignUp")}>
               <Text
                 style={{ color: "#0474ED", fontSize: 14, fontWeight: "bold" }}
               >
