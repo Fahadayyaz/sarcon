@@ -18,11 +18,10 @@ const UserOTP = () => {
         />
         <ScrollView showsVerticalScrollIndicator={false}>
           <Text style={{ fontWeight: "bold", fontSize: 28, marginTop: "5%" }}>
-            Forgot Password?
+            Enter OTP
           </Text>
           <Text style={{ color: "#8A8A8A", fontSize: 14 }}>
-            Opps. It happens to the best of us. Input your email to fix the
-            issue.
+            Enter the otp which we send into your email for verfication
           </Text>
         </ScrollView>
       </View>
