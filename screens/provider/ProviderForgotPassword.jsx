@@ -81,7 +81,7 @@ const ProviderForgotPassword = () => {
           </View>
           {/* submit button */}
           <Pressable
-            onPress={() => navigation.navigate("UserForgotPassword")}
+            onPress={() => navigation.navigate("ProviderForgotPassword")}
             style={{
               width: "100%",
               height: 48,
