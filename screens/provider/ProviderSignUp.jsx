@@ -313,7 +313,7 @@ const ProviderSignUp = () => {
             >
               Already have an account?
             </Text>
-            <Pressable onPress={() => navigation.navigate("UserSignIn")}>
+            <Pressable onPress={() => navigation.navigate("ProviderSignIn")}>
               <Text
                 style={{ color: "#0474ED", fontSize: 14, fontWeight: "bold" }}
               >
