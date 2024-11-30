@@ -33,28 +33,30 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="Splash"
+        initialRouteName="UserForgotPassword"
         screenOptions={{ headerShown: false }}
       >
         <Stack.Screen name="Splash" component={Splash} />
         <Stack.Screen name="Role" component={Role} />
         <Stack.Screen name="UserSignIn" component={UserSignIn} />
         <Stack.Screen name="UserSignUp" component={UserSignUp} />
-        <Stack.Screen name="UserUploadPhoto" component={UserUploadPhoto} />
-
         <Stack.Screen
           name="UserForgotPassword"
           component={UserForgotPassword}
         />
+        <Stack.Screen name="UserUploadPhoto" component={UserUploadPhoto} />
+
+        {/* provider section here */}
+
         <Stack.Screen name="ProviderSignIn" component={ProviderSignIn} />
         <Stack.Screen name="ProviderSignUp" component={ProviderSignUp} />
         <Stack.Screen
-          name="ProviderUploadPhoto"
-          component={ProviderUploadPhoto}
-        />
-        <Stack.Screen
           name="ProviderForgotPassword"
           component={ProviderForgotPassword}
+        />
+        <Stack.Screen
+          name="ProviderUploadPhoto"
+          component={ProviderUploadPhoto}
         />
       </Stack.Navigator>
     </NavigationContainer>
