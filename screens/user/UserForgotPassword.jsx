@@ -1,9 +1,15 @@
 import { StyleSheet, Text, View, ScrollView, Image } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
+import Fontisto from "@expo/vector-icons/Fontisto";
+import Feather from "@expo/vector-icons/Feather";
+import { useNavigation } from "@react-navigation/native";
 
 const UserForgotPassword = () => {
+  const [isEmailFocused, setEmailFocused] = useState(false);
+  const navigation = useNavigation();
+
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="auto" />
@@ -28,13 +34,43 @@ const UserForgotPassword = () => {
             alignSelf: "center",
           }}
         />
-        <Text style={{ fontWeight: "bold", fontSize: 28, marginTop: "5%" }}>
-          Forgot Password?
-        </Text>
-        <Text style={{color:"#8A8A8A", fontSize:14,}}>
-        Opps. It happens to the best of us. Input your email to fix the issue.
-        </Text>
-        <ScrollView></ScrollView>
+
+        <ScrollView>
+          <Text style={{ fontWeight: "bold", fontSize: 28, marginTop: "5%" }}>
+            Forgot Password?
+          </Text>
+          <Text style={{ color: "#8A8A8A", fontSize: 14 }}>
+            Opps. It happens to the best of us. Input your email to fix the
+            issue.
+          </Text>
+          {/* email input container */}
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              borderWidth: 1,
+              borderColor: isEmailFocused ? "#0474ED" : "#fff",
+              borderRadius: 44,
+              paddingLeft: 10,
+              marginTop: 15,
+              backgroundColor: "#F2F2F2",
+            }}
+          >
+            <Fontisto
+              name="email"
+              size={24}
+              color={isEmailFocused ? "#0474ED" : "#838383"}
+              style={{ paddingRight: 5 }}
+            />
+            <TextInput
+              placeholder="Email Address"
+              placeholderTextColor={isEmailFocused ? "#0474ED" : "#838383"}
+              style={{ width: "100%", height: 48 }}
+              onFocus={() => setEmailFocused(true)}
+              onBlur={() => setEmailFocused(false)}
+            />
+          </View>
+        </ScrollView>
       </View>
     </SafeAreaView>
   );
