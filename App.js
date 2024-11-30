@@ -11,9 +11,11 @@ import UserUploadPhoto from "./screens/user/UserUploadPhoto";
 
 import ProviderSignIn from "./screens/provider/ProviderSignIn";
 import ProviderSignUp from "./screens/provider/ProviderSignUp";
-import { useFonts } from "expo-font";
 import ProviderForgotPassword from "./screens/provider/ProviderForgotPassword";
 import ProviderUploadPhoto from "./screens/provider/ProviderUploadPhoto";
+import ProviderOTP from "./screens/provider/ProviderOTP";
+
+import { useFonts } from "expo-font";
 
 const Stack = createNativeStackNavigator();
 
@@ -58,6 +60,7 @@ export default function App() {
           name="ProviderUploadPhoto"
           component={ProviderUploadPhoto}
         />
+        <Stack.Screen name="ProviderOTP" component={ProviderOTP} />
       </Stack.Navigator>
     </NavigationContainer>
   );
