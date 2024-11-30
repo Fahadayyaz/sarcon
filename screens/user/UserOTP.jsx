@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 
-const UserOTP = () => {
+const ProviderOTP = () => {
   return (
     <View>
       <Text>UserOTP</Text>
@@ -9,6 +9,6 @@ const UserOTP = () => {
   );
 };
 
-export default UserOTP;
+export default ProviderOTP;
 
 const styles = StyleSheet.create({});
