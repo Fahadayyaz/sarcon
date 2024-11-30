@@ -4,7 +4,7 @@ import React from "react";
 const ProviderChangePassword = () => {
   return (
     <View>
-      <Text>ChangePassword</Text>
+      <Text>ProviderChangePassword</Text>
     </View>
   );
 };
