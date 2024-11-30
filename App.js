@@ -8,6 +8,7 @@ import UserSignIn from "./screens/user/UserSignIn";
 import UserSignUp from "./screens/user/UserSignUp";
 import UserForgotPassword from "./screens/user/UserForgotPassword";
 import UserUploadPhoto from "./screens/user/UserUploadPhoto";
+import UserOTP from "./screens/user/UserOTP";
 
 import ProviderSignIn from "./screens/provider/ProviderSignIn";
 import ProviderSignUp from "./screens/provider/ProviderSignUp";
@@ -47,6 +48,7 @@ export default function App() {
           component={UserForgotPassword}
         />
         <Stack.Screen name="UserUploadPhoto" component={UserUploadPhoto} />
+        <Stack.Screen name="UserOTP" component={UserOTP} />
 
         {/* provider section here */}
 
