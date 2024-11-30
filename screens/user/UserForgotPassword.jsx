@@ -44,7 +44,7 @@ const UserForgotPassword = () => {
           }}
         />
 
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
           <Text style={{ fontWeight: "bold", fontSize: 28, marginTop: "5%" }}>
             Forgot Password?
           </Text>
@@ -79,6 +79,30 @@ const UserForgotPassword = () => {
               onBlur={() => setEmailFocused(false)}
             />
           </View>
+          {/* submit button */}
+          <Pressable
+            onPress={() => navigation.navigate("UserForgotPassword")}
+            style={{
+              width: "100%",
+              height: 48,
+              backgroundColor: "#0474ED",
+              justifyContent: "center",
+              alignItems: "center",
+              borderRadius: 54,
+              marginTop: "20%",
+              marginBottom: "10%",
+            }}
+          >
+            <Text
+              style={{
+                color: "#fff",
+                fontSize: 14,
+                fontWeight: "bold",
+              }}
+            >
+              Submit
+            </Text>
+          </Pressable>
         </ScrollView>
       </View>
     </SafeAreaView>
