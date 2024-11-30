@@ -23,7 +23,7 @@ const ProviderUploadPhoto = () => {
 
       // Navigate after 2 seconds
       setTimeout(() => {
-        navigation.navigate("ProviderSignIn");
+        navigation.navigate("ProviderOTP");
       }, 2000);
     }
   };
