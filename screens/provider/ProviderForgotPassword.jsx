@@ -5,7 +5,6 @@ import {
   Image,
   TextInput,
   ScrollView,
-  TouchableOpacity,
   Pressable,
 } from "react-native";
 import React, { useState } from "react";
