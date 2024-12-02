@@ -54,7 +54,7 @@ const ProviderEmailVerification = () => {
 
           {/* back to login button */}
           <Pressable
-            onPress={() => navigation.navigate("UserOTP")}
+            onPress={() => navigation.navigate("ProviderSignIn")}
             style={{
               width: "100%",
               height: 48,
