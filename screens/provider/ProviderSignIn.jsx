@@ -136,6 +136,7 @@ const ProviderSignIn = () => {
             </Text>
           </Pressable>
           <Pressable
+            onPress={() => navigation.navigate("ProviderSubscriptionPlan")}
             style={{
               width: "100%",
               height: 48,
