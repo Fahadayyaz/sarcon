@@ -119,8 +119,6 @@ const styles = StyleSheet.create({
   header__box: {
     flexDirection: "row",
     borderBottomLeftRadius: 24,
-    borderBottomRightRadius: 24,
-
     width: "100%",
     height: "8%",
     backgroundColor: "#000",
@@ -137,7 +135,7 @@ const styles = StyleSheet.create({
     width: "100%",
     padding: 20,
     backgroundColor: "#F3F4F9",
-    borderRadius: 10,
+    borderRadius: 11,
     marginVertical: 10,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
@@ -152,12 +150,12 @@ const styles = StyleSheet.create({
   },
   planText: {
     fontSize: 16,
-    fontWeight: "600",
+    fontWeight: "900",
     color: "#333",
   },
   priceText: {
     fontSize: 16,
-    fontWeight: "600",
+    fontWeight: "900",
     color: "#0474ED",
   },
   planDescription: {
