@@ -23,7 +23,7 @@ const UserUploadPhoto = () => {
 
       // Navigate after 2 seconds
       setTimeout(() => {
-        navigation.navigate("UserOTP");
+        navigation.navigate("UserSignIn");
       }, 2000);
     }
   };
