@@ -81,7 +81,7 @@ const ProviderForgotPassword = () => {
           </View>
           {/* submit button */}
           <Pressable
-            onPress={() => navigation.navigate("ProviderForgotPassword")}
+            onPress={() => navigation.navigate("ProviderOTP")}
             style={{
               width: "100%",
               height: 48,
@@ -89,7 +89,7 @@ const ProviderForgotPassword = () => {
               justifyContent: "center",
               alignItems: "center",
               borderRadius: 54,
-              marginTop: "20%",
+              marginTop: "40%",
               marginBottom: "10%",
             }}
           >
@@ -100,7 +100,7 @@ const ProviderForgotPassword = () => {
                 fontWeight: "bold",
               }}
             >
-              Login
+              Submit
             </Text>
           </Pressable>
         </ScrollView>
