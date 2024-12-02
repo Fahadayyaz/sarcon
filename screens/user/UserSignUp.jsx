@@ -322,7 +322,6 @@ const UserSignUp = () => {
               </Text>
             </Pressable>
           </View>
-          
         </ScrollView>
       </View>
     </SafeAreaView>
