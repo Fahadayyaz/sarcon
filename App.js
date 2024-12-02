@@ -11,6 +11,8 @@ import UserUploadPhoto from "./screens/user/UserUploadPhoto";
 import UserOTP from "./screens/user/UserOTP";
 import UserChangePassword from "./screens/user/UserChangePassword";
 import UserEmailVerification from "./screens/user/UserEmailVerification";
+import UserSubscriptionPlan from "./screens/user/UserSubscriptionPlan";
+import UserPayments from "./screens/user/UserPayments";
 
 import ProviderSignIn from "./screens/provider/ProviderSignIn";
 import ProviderSignUp from "./screens/provider/ProviderSignUp";
@@ -19,6 +21,8 @@ import ProviderUploadPhoto from "./screens/provider/ProviderUploadPhoto";
 import ProviderOTP from "./screens/provider/ProviderOTP";
 import ProviderChangePassword from "./screens/provider/ProviderChangePassword";
 import ProviderEmailVerification from "./screens/provider/ProviderEmailVerification";
+import ProviderSubscriptionPlan from "./screens/provider/ProviderSubscriptionPlan";
+import ProviderPayments from "./screens/provider/ProviderPayments";
 
 import { useFonts } from "expo-font";
 
@@ -61,6 +65,11 @@ export default function App() {
           name="UserEmailVerification"
           component={UserEmailVerification}
         />
+        <Stack.Screen
+          name="UserSubscriptionPlan"
+          component={UserSubscriptionPlan}
+        />
+        <Stack.Screen name="UserPayments" component={UserPayments} />
 
         {/* provider section here */}
         <Stack.Screen name="ProviderSignIn" component={ProviderSignIn} />
@@ -82,6 +91,11 @@ export default function App() {
           name="ProviderEmailVerification"
           component={ProviderEmailVerification}
         />
+        <Stack.Screen
+          name="ProviderSubscriptionPlan"
+          component={ProviderSubscriptionPlan}
+        />
+        <Stack.Screen name="ProviderPayments" component={ProviderPayments} />
       </Stack.Navigator>
     </NavigationContainer>
   );
