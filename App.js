@@ -10,6 +10,7 @@ import UserForgotPassword from "./screens/user/UserForgotPassword";
 import UserUploadPhoto from "./screens/user/UserUploadPhoto";
 import UserOTP from "./screens/user/UserOTP";
 import UserChangePassword from "./screens/user/UserChangePassword";
+import UserEmailVerification from "./screens/user/UserEmailVerification";
 
 import ProviderSignIn from "./screens/provider/ProviderSignIn";
 import ProviderSignUp from "./screens/provider/ProviderSignUp";
@@ -17,6 +18,7 @@ import ProviderForgotPassword from "./screens/provider/ProviderForgotPassword";
 import ProviderUploadPhoto from "./screens/provider/ProviderUploadPhoto";
 import ProviderOTP from "./screens/provider/ProviderOTP";
 import ProviderChangePassword from "./screens/provider/ProviderChangePassword";
+import ProviderEmailVerification from "./screens/provider/ProviderEmailVerification";
 
 import { useFonts } from "expo-font";
 
@@ -55,6 +57,10 @@ export default function App() {
           name="UserChangePassword"
           component={UserChangePassword}
         />
+        <Stack.Screen
+          name="UserEmailVerification"
+          component={UserEmailVerification}
+        />
 
         {/* provider section here */}
         <Stack.Screen name="ProviderSignIn" component={ProviderSignIn} />
@@ -71,6 +77,10 @@ export default function App() {
         <Stack.Screen
           name="ProviderChangePassword"
           component={ProviderChangePassword}
+        />
+        <Stack.Screen
+          name="ProviderEmailVerification"
+          component={ProviderEmailVerification}
         />
       </Stack.Navigator>
     </NavigationContainer>
