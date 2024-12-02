@@ -193,7 +193,7 @@ const UserChangePassword = () => {
           </View>
           {/* submit button */}
           <Pressable
-            onPress={() => navigation.navigate("ProviderOTP")}
+            onPress={() => navigation.navigate("UserEmailVerification")}
             style={{
               width: "100%",
               height: 48,
