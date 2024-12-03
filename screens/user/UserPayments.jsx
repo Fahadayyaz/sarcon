@@ -45,8 +45,8 @@ const UserPayments = ({ route, navigation }) => {
       <View style={styles.content__container}>
         <LinearGradient
           colors={["#fff", "#0474ED"]}
-          start={{ x: 0, y: 0 }} // Start from left
-          end={{ x: 4, y: 4 }} // End at right
+          start={{ x: 0.5, y: 0 }} // Start from left
+          end={{ x: 2, y: 0 }} // End at right
           style={styles.planBox}
         >
           <View
