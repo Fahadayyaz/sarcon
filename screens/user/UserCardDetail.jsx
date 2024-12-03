@@ -144,7 +144,7 @@ const UserCardDetail = () => {
             />
           </View>
           <Pressable
-            onPress={() => navigation.navigate("UserUploadPhoto")}
+            onPress={() => navigation.navigate("UserSubscribed")}
             style={{
               width: "100%",
               height: 48,
@@ -152,11 +152,12 @@ const UserCardDetail = () => {
               justifyContent: "center",
               alignItems: "center",
               borderRadius: 54,
-              marginTop: "5%",
+              marginTop: "50%",
+              marginBottom: "20%",
             }}
           >
             <Text style={{ color: "#fff", fontSize: 14, fontWeight: "bold" }}>
-              SignUp
+              Confirm Payment
             </Text>
           </Pressable>
         </ScrollView>
