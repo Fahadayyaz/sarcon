@@ -83,7 +83,10 @@ const UserPayments = ({ route, navigation }) => {
 
           {/* Radio Button */}
           <TouchableOpacity
-            onPress={handleRadioButtonPress}
+            onPress={() => {
+              handleRadioButtonPress();
+              navigation.navigate("UserCardDetail");
+            }}
             style={styles.radioButtonContainer}
           >
             <View
