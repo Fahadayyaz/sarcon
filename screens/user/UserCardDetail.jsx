@@ -19,6 +19,9 @@ import { useNavigation } from "@react-navigation/native";
 const UserCardDetail = () => {
   const [isNameFocused, setNameFocused] = useState(false);
   const [isCardNumberFocused, setCardNumberFocused] = useState(false);
+  const [isExpiryDateFocused, setExpiryDateFocused] = useState(false);
+  const [isCvvFocused, setCvvFocused] = useState(false);
+
   const navigation = useNavigation();
 
   return (
@@ -94,6 +97,50 @@ const UserCardDetail = () => {
               style={styles.input}
               onFocus={() => setCardNumberFocused(true)}
               onBlur={() => setCardNumberFocused(false)}
+            />
+          </View>
+          {/* Expiry date section */}
+          <Text style={styles.input__heading}>Expiry Date</Text>
+          {/* Expiry date input container */}
+          <View
+            style={{
+              alignItems: "center",
+              borderWidth: 1,
+              borderColor: isExpiryDateFocused ? "#0474ED" : "#fff",
+              borderRadius: 44,
+              paddingLeft: 10,
+              marginTop: 10,
+              backgroundColor: "#F2F2F2",
+            }}
+          >
+            <TextInput
+              placeholder="10/2025"
+              placeholderTextColor={isExpiryDateFocused ? "#0474ED" : "#838383"}
+              style={styles.input}
+              onFocus={() => setExpiryDateFocused(true)}
+              onBlur={() => setExpiryDateFocused(false)}
+            />
+          </View>
+          {/* Cvv section */}
+          <Text style={styles.input__heading}>Cvv</Text>
+          {/* Cvv input container */}
+          <View
+            style={{
+              alignItems: "center",
+              borderWidth: 1,
+              borderColor: isCvvFocused ? "#0474ED" : "#fff",
+              borderRadius: 44,
+              paddingLeft: 10,
+              marginTop: 10,
+              backgroundColor: "#F2F2F2",
+            }}
+          >
+            <TextInput
+              placeholder="045"
+              placeholderTextColor={isCvvFocused ? "#0474ED" : "#838383"}
+              style={styles.input}
+              onFocus={() => setCvvFocused(true)}
+              onBlur={() => setCvvFocused(false)}
             />
           </View>
         </ScrollView>
