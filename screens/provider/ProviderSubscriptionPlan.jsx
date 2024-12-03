@@ -69,7 +69,7 @@ const ProviderSubscriptionPlan = ({ navigation }) => {
             ]}
             onPress={() => {
               setSelectedPlanId(plan.id); // Set the touched plan's ID
-              navigation.navigate("UserPayments", { selectedPlan: plan });
+              navigation.navigate("ProviderPayments", { selectedPlan: plan });
             }}
           >
             <View style={styles.planRow}>
