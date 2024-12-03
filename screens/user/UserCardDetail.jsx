@@ -143,6 +143,22 @@ const UserCardDetail = () => {
               onBlur={() => setCvvFocused(false)}
             />
           </View>
+          <Pressable
+            onPress={() => navigation.navigate("UserUploadPhoto")}
+            style={{
+              width: "100%",
+              height: 48,
+              backgroundColor: "#0474ED",
+              justifyContent: "center",
+              alignItems: "center",
+              borderRadius: 54,
+              marginTop: "5%",
+            }}
+          >
+            <Text style={{ color: "#fff", fontSize: 14, fontWeight: "bold" }}>
+              SignUp
+            </Text>
+          </Pressable>
         </ScrollView>
       </View>
     </SafeAreaView>
