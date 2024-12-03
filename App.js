@@ -14,6 +14,7 @@ import UserEmailVerification from "./screens/user/UserEmailVerification";
 import UserSubscriptionPlan from "./screens/user/UserSubscriptionPlan";
 import UserPayments from "./screens/user/UserPayments";
 import UserCardDetail from "./screens/user/UserCardDetail";
+import UserSubscribed from "./screens/user/UserSubscribed";
 
 import ProviderSignIn from "./screens/provider/ProviderSignIn";
 import ProviderSignUp from "./screens/provider/ProviderSignUp";
@@ -25,6 +26,7 @@ import ProviderEmailVerification from "./screens/provider/ProviderEmailVerificat
 import ProviderSubscriptionPlan from "./screens/provider/ProviderSubscriptionPlan";
 import ProviderPayments from "./screens/provider/ProviderPayments";
 import ProviderCardDetail from "./screens/provider/ProviderCardDetail";
+import ProviderSubscribed from "./screens/provider/ProviderSubscribed";
 
 import { useFonts } from "expo-font";
 
@@ -73,6 +75,7 @@ export default function App() {
         />
         <Stack.Screen name="UserPayments" component={UserPayments} />
         <Stack.Screen name="UserCardDetail" component={UserCardDetail} />
+        <Stack.Screen name="UserSubscribed" component={UserSubscribed} />
 
         {/* provider section here */}
         <Stack.Screen name="ProviderSignIn" component={ProviderSignIn} />
@@ -102,6 +105,10 @@ export default function App() {
         <Stack.Screen
           name="ProviderCardDetail"
           component={ProviderCardDetail}
+        />
+        <Stack.Screen
+          name="ProviderSubscribed"
+          component={ProviderSubscribed}
         />
       </Stack.Navigator>
     </NavigationContainer>
