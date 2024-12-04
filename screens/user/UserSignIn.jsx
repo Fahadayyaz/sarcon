@@ -167,7 +167,6 @@ const UserSignIn = () => {
               <Text
                 style={{ color: "#0474ED", fontSize: 14, fontWeight: "bold" }}
               >
-                {" "}
                 Sign Up
               </Text>
             </Pressable>
