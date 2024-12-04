@@ -1,11 +1,12 @@
-import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import React, { useState } from "react";
+import { Image, Pressable, StyleSheet, Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const CustomPopup = ({ text, style, children, onPress, text2, source }) => {
   const [modalVisibal, setModalVisibal] = useState(false);
   const [closeModal, setCloseModal] = useState(false);
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Pressable style={styles.content__container} onPress={onPress}>
         <View style={styles.popup}>
           <Image
@@ -28,7 +29,7 @@ const CustomPopup = ({ text, style, children, onPress, text2, source }) => {
           </Text>
         </View>
       </Pressable>
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -37,22 +38,22 @@ export default CustomPopup;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "rgba(47, 128, 237, 0.7)",
-  },
-  content__container: {
     width: "100%",
     height: "100%",
-    padding: "5%",
+    backgroundColor: "rgba(47, 128, 237, 0.7)",
+    position: "absolute",
+  },
+  content__container: {
+    width: "90%",
+    height: "100%",
     justifyContent: "center",
-    alignItems: "center",
+    alignSelf: "center",
   },
   popup: {
     backgroundColor: "#fff",
     width: "100%",
     height: "30%",
-    alignItems: "center",
     borderRadius: 30,
-    padding: 20,
-    alignSelf: "center",
+    padding: "5%",
   },
 });
