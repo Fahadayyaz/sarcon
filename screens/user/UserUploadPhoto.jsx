@@ -1,9 +1,10 @@
-import { StyleSheet, Text, View, Image, Pressable } from "react-native";
+import { StyleSheet, Text, View, Image, Modal, Pressable } from "react-native";
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Feather from "@expo/vector-icons/Feather";
 import * as ImagePicker from "expo-image-picker";
+import CustomPopup from "../../components/CustomPopup";
 import { useNavigation } from "@react-navigation/native";
 
 const UserUploadPhoto = () => {
@@ -20,13 +21,21 @@ const UserUploadPhoto = () => {
 
     if (!result.canceled) {
       setImage(result.assets[0].uri);
-
-      // Navigate after 2 seconds
-      setTimeout(() => {
-        navigation.navigate("UserSignIn");
-      }, 2000);
     }
   };
+
+  // Modal code starts here
+
+  const [modalVisible, setModalVisible] = useState(false);
+
+  const handleButtonPress = () => {
+    setModalVisible(true);
+    setTimeout(() => {
+      navigation.navigate("UserSignIn");
+      setModalVisible(false);
+    }, 30000);
+  };
+  // Modal code ends here
 
   return (
     <SafeAreaView style={styles.container}>
@@ -55,6 +64,40 @@ const UserUploadPhoto = () => {
             <Image source={{ uri: image }} style={styles.image} />
           )}
         </View>
+        {/* Modal code starts here */}
+        <Modal
+          visible={modalVisible}
+          transparent={true}
+          animationType="fade"
+          onRequestClose={() => setModalVisible(false)}
+        >
+          <View style={styles.modalContainer}>
+            <CustomPopup
+              source={require("../../assets/submitted.png")}
+              text={"Submit Successfully"}
+              text2={
+                "Your document has been submitted successfully. It will take 24-48 hours for approval."
+              }
+            />
+          </View>
+        </Modal>
+        {/* Modal code ends here */}
+        <Pressable
+          onPress={handleButtonPress}
+          style={{
+            width: "100%",
+            height: 48,
+            backgroundColor: "#0474ED",
+            justifyContent: "center",
+            alignItems: "center",
+            borderRadius: 54,
+            marginTop: "20%",
+          }}
+        >
+          <Text style={{ color: "#fff", fontSize: 14, fontWeight: "bold" }}>
+            Submit
+          </Text>
+        </Pressable>
       </View>
     </SafeAreaView>
   );
@@ -65,6 +108,12 @@ export default UserUploadPhoto;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  modalContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
   },
   topCornerImage: {
     width: 100.45,
