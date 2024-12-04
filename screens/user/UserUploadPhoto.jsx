@@ -33,7 +33,7 @@ const UserUploadPhoto = () => {
     setTimeout(() => {
       navigation.navigate("UserSignIn");
       setModalVisible(false);
-    }, 30000);
+    }, 1500);
   };
   // Modal code ends here
 
