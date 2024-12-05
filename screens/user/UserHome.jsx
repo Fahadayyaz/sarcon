@@ -1,4 +1,11 @@
-import { StyleSheet, Text, View, Image, TextInput } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TextInput,
+  Pressable,
+} from "react-native";
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
@@ -50,14 +57,49 @@ const UserHome = () => {
             backgroundColor: "#F2F2F2",
           }}
         >
-          <Fontisto name="search" size={24} color="#C9C9C9" />
+          <Fontisto
+            name="search"
+            size={24}
+            color={isEmailFocused ? "#0474ED" : "#838383"}
+            style={{ paddingRight: 5 }}
+          />
           <TextInput
             placeholder="Search here"
-            placeholderTextColor={isEmailFocused ? "#0474ED" : "#838383"}
+            placeholderTextColor={isEmailFocused ? "#0474ED" : "#C9C9C9"}
             style={{ width: "100%", height: 48 }}
             onFocus={() => setEmailFocused(true)}
             onBlur={() => setEmailFocused(false)}
           />
+        </View>
+        <View
+          style={{
+            flexDirection: "row",
+            width: "100%",
+            justifyContent: "space-between",
+            marginTop: 10,
+          }}
+        >
+          <Text>Categories</Text>
+          <Pressable>
+            <Text style={{ color: "#0474ED", fontWeight: "bold" }}>
+              See all
+            </Text>
+          </Pressable>
+        </View>
+
+        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+          <View>
+            <Text>Power Tools</Text>
+          </View>
+          <View>
+            <Text>Power Tools</Text>
+          </View>
+          <View>
+            <Text>Lifting Tools</Text>
+          </View>
+          <View>
+            <Text>Cutting Tools</Text>
+          </View>
         </View>
       </View>
     </SafeAreaView>
