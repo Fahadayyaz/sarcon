@@ -28,6 +28,7 @@ import ProviderSubscriptionPlan from "./screens/provider/ProviderSubscriptionPla
 import ProviderPayments from "./screens/provider/ProviderPayments";
 import ProviderCardDetail from "./screens/provider/ProviderCardDetail";
 import ProviderSubscribed from "./screens/provider/ProviderSubscribed";
+import ProviderHome from "./screens/provider/ProviderHome";
 
 import { useFonts } from "expo-font";
 import Test from "./screens/Test";
@@ -109,6 +110,11 @@ export default function App() {
           name="ProviderCardDetail"
           component={ProviderCardDetail}
         />
+        <Stack.Screen
+          name="ProviderSubscribed"
+          component={ProviderSubscribed}
+        />
+
         <Stack.Screen name="ProviderHome" component={ProviderHome} />
       </Stack.Navigator>
     </NavigationContainer>
