@@ -15,6 +15,7 @@ import UserSubscriptionPlan from "./screens/user/UserSubscriptionPlan";
 import UserPayments from "./screens/user/UserPayments";
 import UserCardDetail from "./screens/user/UserCardDetail";
 import UserSubscribed from "./screens/user/UserSubscribed";
+import UserHome from "./screens/user/UserHome";
 
 import ProviderSignIn from "./screens/provider/ProviderSignIn";
 import ProviderSignUp from "./screens/provider/ProviderSignUp";
@@ -78,7 +79,7 @@ export default function App() {
         <Stack.Screen name="UserPayments" component={UserPayments} />
         <Stack.Screen name="UserCardDetail" component={UserCardDetail} />
         <Stack.Screen name="UserSubscribed" component={UserSubscribed} />
-
+        <Stack.Screen name="UserHome" component={UserHome} />
         {/* provider section here */}
         <Stack.Screen name="ProviderSignIn" component={ProviderSignIn} />
         <Stack.Screen name="ProviderSignUp" component={ProviderSignUp} />
@@ -108,10 +109,7 @@ export default function App() {
           name="ProviderCardDetail"
           component={ProviderCardDetail}
         />
-        <Stack.Screen
-          name="ProviderSubscribed"
-          component={ProviderSubscribed}
-        />
+        <Stack.Screen name="ProviderHome" component={ProviderHome} />
       </Stack.Navigator>
     </NavigationContainer>
   );
