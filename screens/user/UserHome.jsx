@@ -2,6 +2,7 @@ import {
   StyleSheet,
   Text,
   View,
+  ScrollView,
   Image,
   TextInput,
   Pressable,
@@ -79,7 +80,7 @@ const UserHome = () => {
             marginTop: 10,
           }}
         >
-          <Text>Categories</Text>
+          <Text style={{ fontSize: 16, fontWeight: "bold" }}>Categories</Text>
           <Pressable>
             <Text style={{ color: "#0474ED", fontWeight: "bold" }}>
               See all
@@ -87,20 +88,65 @@ const UserHome = () => {
           </Pressable>
         </View>
 
-        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-          <View>
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={{ flexDirection: "row", paddingVertical: 10 }}
+          style={{ width: "100%" }}
+        >
+          <View
+            style={{
+              width: 93,
+              height: 131,
+              justifyContent: "center",
+              alignItems: "center",
+              backgroundColor: "#FAFAFB",
+              borderRadius: 18,
+              marginRight: 10,
+            }}
+          >
             <Text>Power Tools</Text>
           </View>
-          <View>
-            <Text>Power Tools</Text>
+          <View
+            style={{
+              width: 93,
+              height: 131,
+              justifyContent: "center",
+              alignItems: "center",
+              backgroundColor: "#FAFAFB",
+              borderRadius: 18,
+              marginRight: 10,
+            }}
+          >
+            <Text>Hand Tools</Text>
           </View>
-          <View>
+          <View
+            style={{
+              width: 93,
+              height: 131,
+              justifyContent: "center",
+              alignItems: "center",
+              backgroundColor: "#FAFAFB",
+              borderRadius: 18,
+              marginRight: 10,
+            }}
+          >
             <Text>Lifting Tools</Text>
           </View>
-          <View>
+          <View
+            style={{
+              width: 93,
+              height: 131,
+              justifyContent: "center",
+              alignItems: "center",
+              backgroundColor: "#FAFAFB",
+              borderRadius: 18,
+              marginRight: 10,
+            }}
+          >
             <Text>Cutting Tools</Text>
           </View>
-        </View>
+        </ScrollView>
       </View>
     </SafeAreaView>
   );
