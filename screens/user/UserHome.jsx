@@ -83,24 +83,19 @@ const UserHome = () => {
         >
           {renderCategoryCard(
             require("./../../assets/powerTool.png"),
-            "Power Tools",
-            () => navigation.navigate("UserSignIn"),
-            { width: 72, height: 72 }
+            "Power Tools"
           )}
           {renderCategoryCard(
             require("./../../assets/handTool.png"),
-            "Hand Tools",
-            { width: 61, height: 55.02 }
+            "Hand Tools"
           )}
           {renderCategoryCard(
             require("./../../assets/cuttingTool.png"),
-            "Cutting Tools",
-            { width: 50, height: 50 }
+            "Cutting Tools"
           )}
           {renderCategoryCard(
             require("./../../assets/liftingTool.png"),
-            "Lifting Tools",
-            { width: 33.39, height: 50.32 }
+            "Lifting Tools"
           )}
         </ScrollView>
         {/* second scrollview here */}
@@ -111,23 +106,19 @@ const UserHome = () => {
         >
           {renderCategoryCard(
             require("./../../assets/hvacTools.png"),
-            "HVAC Tools Equipment",
-            { width: 48.87, height: 46.59 }
+            "HVAC Tools Equipment"
           )}
           {renderCategoryCard(
             require("./../../assets/gardeningTools.png"),
-            "Gardening Tools",
-            { width: 78.09, height: 50.53 }
+            "Gardening Tools"
           )}
           {renderCategoryCard(
             require("./../../assets/weldingHelmets.png"),
-            "Welding Helmets",
-            { width: 50, height: 58.92 }
+            "Welding Helmets"
           )}
           {renderCategoryCard(
             require("./../../assets/cleaningTools.png"),
-            "Cleaning Tools",
-            { width: 68, height: 68 }
+            "Cleaning Tools"
           )}
         </ScrollView>
       </View>
