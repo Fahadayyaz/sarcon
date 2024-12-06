@@ -4,29 +4,27 @@ import {
   ScrollView,
   StyleSheet,
   Text,
-  TextInput,
-  TouchableOpacity,
   View,
 } from "react-native";
-import React, { useState } from "react";
+import React from "react";
 
 import Feather from "@expo/vector-icons/Feather";
 import Fontisto from "@expo/vector-icons/Fontisto";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import { useNavigation } from "@react-navigation/native";
+import Input from "../../components/Input";
+
+const background = require("./../../assets/topCornerCircles.png");
 
 const UserSignIn = () => {
-  const [isEmailFocused, setEmailFocused] = useState(false);
-  const [isPasswordFocused, setPasswordFocused] = useState(false);
-  const [isPasswordVisible, setPasswordVisible] = useState(false); // State to toggle visibility
   const navigation = useNavigation();
 
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style={"auto"} />
       <Image
-        source={require("./../../assets/topCornerCircles.png")}
+        source={background}
         style={{
           width: 100.45,
           height: 114.34,
@@ -53,79 +51,13 @@ const UserSignIn = () => {
           <Text style={{ color: "#838383", fontSize: 14 }}>
             Please login to continue.
           </Text>
-          {/* email and password container */}
-          <View>
-            {/* email input container */}
-            <View
-              style={{
-                flexDirection: "row",
-                alignItems: "center",
-                borderWidth: 1,
-                borderColor: isEmailFocused ? "#0474ED" : "#fff",
-                borderRadius: 44,
-                paddingLeft: 10,
-                marginTop: 15,
-                backgroundColor: "#F2F2F2",
-              }}
-            >
-              <Fontisto
-                name="email"
-                size={24}
-                color={isEmailFocused ? "#0474ED" : "#838383"}
-                style={{ paddingRight: 5 }}
-              />
-              <TextInput
-                placeholder="Email Address"
-                placeholderTextColor={isEmailFocused ? "#0474ED" : "#838383"}
-                style={{ width: "100%", height: 48 }}
-                onFocus={() => setEmailFocused(true)}
-                onBlur={() => setEmailFocused(false)}
-              />
-            </View>
-
-            {/* password input container */}
-            <View
-              style={{
-                flexDirection: "row",
-                alignItems: "center",
-                borderWidth: 1,
-                borderColor: isPasswordFocused ? "#0474ED" : "#fff",
-                borderRadius: 44,
-                paddingHorizontal: 10, // Adjust spacing
-                marginTop: 15,
-                backgroundColor: "#F2F2F2",
-              }}
-            >
-              <Feather
-                name="lock"
-                size={24}
-                color={isPasswordFocused ? "#0474ED" : "#838383"}
-                style={{ marginRight: 10 }}
-              />
-              <TextInput
-                placeholder="Password"
-                placeholderTextColor={isPasswordFocused ? "#0474ED" : "#838383"}
-                secureTextEntry={!isPasswordVisible} // Toggle secure entry
-                style={{
-                  flex: 1, // Take remaining space
-                  height: 48,
-                }}
-                onFocus={() => setPasswordFocused(true)}
-                onBlur={() => setPasswordFocused(false)}
-              />
-              <TouchableOpacity
-                onPress={() => setPasswordVisible(!isPasswordVisible)}
-              >
-                <Feather
-                  name={isPasswordVisible ? "eye-off" : "eye"} // Toggle icon
-                  size={24}
-                  color={isPasswordFocused ? "#0474ED" : "#838383"}
-                  style={{ paddingRight: 10 }}
-                />
-              </TouchableOpacity>
-            </View>
-          </View>
-
+          <Input icon={Fontisto} iconName="email" placeholder="Email Address" />
+          <Input
+            icon={Feather}
+            iconName="lock"
+            secureTextEntry={true}
+            placeholder="Password"
+          />
           <Pressable
             onPress={() => navigation.navigate("UserForgotPassword")}
             style={{ alignSelf: "flex-end", marginTop: 10 }}
