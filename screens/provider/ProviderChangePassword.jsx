@@ -167,14 +167,13 @@ const ProviderChangePassword = () => {
               }
             >
               <Feather
-                name={isConfirmPasswordVisible ? "eye-off" : "eye"} // Toggle icon
+                name={isConfirmPasswordVisible ? "eye-off" : "eye"}
                 size={24}
                 color={isConfirmPasswordFocused ? "#0474ED" : "#838383"}
                 style={{ paddingRight: 10 }}
               />
             </TouchableOpacity>
           </View>
-          {/* submit button */}
           <Pressable
             onPress={() => navigation.navigate("ProviderEmailVerification")}
             style={{
