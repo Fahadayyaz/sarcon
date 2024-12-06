@@ -570,7 +570,7 @@ const styles = StyleSheet.create({
     height: 170,
     borderRadius: 12,
     marginTop: 17,
-    marginLeft: 10,
+    marginRight: 10,
     backgroundColor: "#F2F8FE",
   },
 });
