@@ -22,10 +22,10 @@ const UserHome = () => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="auto" />
-      <View style={styles.contentContainer}>
+      <View style={styles.content__container}>
         {/* Header */}
         <View style={styles.header}>
-          <View style={styles.locationContainer}>
+          <View style={styles.location__container}>
             <View style={styles.location__logo__box}>
               <FontAwesome6 name="location-dot" size={24} color="#0474ED" />
             </View>
@@ -105,7 +105,7 @@ const UserHome = () => {
           style={styles.scrollContainer}
         >
           {renderCategoryCard(
-            require("./../../assets/powerTool.png"),
+            require("./../../assets/hvacTools.png"),
             "HVAC Tools Equipment"
           )}
           {renderCategoryCard(
@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
   },
-  contentContainer: {
+  content__container: {
     paddingHorizontal: 16,
   },
   header: {
@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginBottom: 15,
   },
-  locationContainer: {
+  location__container: {
     flexDirection: "row",
     alignItems: "center",
   },
@@ -212,7 +212,6 @@ const styles = StyleSheet.create({
   },
   scrollContainer: {
     marginTop: 15,
-    backgroundColor: "red",
   },
   categoryCard: {
     width: 93,
