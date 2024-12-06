@@ -4,12 +4,10 @@ import {
   ScrollView,
   StyleSheet,
   Text,
-  TextInput,
-  TouchableOpacity,
   View,
 } from "react-native";
 import MapView, { Marker } from "react-native-maps";
-import React, { useState } from "react";
+import React from "react";
 
 import EvilIcons from "@expo/vector-icons/EvilIcons";
 import Feather from "@expo/vector-icons/Feather";
@@ -76,8 +74,8 @@ const ProviderSignUp = () => {
             <MapView
               style={styles.map}
               initialRegion={{
-                latitude: 37.78825, // Default latitude
-                longitude: -122.4324, // Default longitude
+                latitude: 37.78825,
+                longitude: -122.4324,
                 latitudeDelta: 0.0922,
                 longitudeDelta: 0.0421,
               }}
@@ -89,7 +87,6 @@ const ProviderSignUp = () => {
               />
             </MapView>
           </View>
-          {/* terms and conditions text */}
           <Text style={{ color: "#838383", fontSize: 14, marginTop: "10%" }}>
             I agree to terms and conditions and privacy.
           </Text>
