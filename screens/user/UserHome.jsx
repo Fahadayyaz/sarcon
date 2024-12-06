@@ -472,10 +472,8 @@ const UserHome = () => {
             </View>
           </ScrollView>
         </ScrollView>
-        <View style={styles.custom__tab__bar}>
-          <CustomTabBar />
-        </View>
       </View>
+      <CustomTabBar />
     </SafeAreaView>
   );
 };
@@ -593,9 +591,6 @@ const styles = StyleSheet.create({
     marginRight: 10,
     backgroundColor: "#F2F8FE",
   },
-  custom__tab__bar:{
-
-  }
 });
 
 export default UserHome;
