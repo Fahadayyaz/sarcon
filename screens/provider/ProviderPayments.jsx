@@ -26,8 +26,6 @@ const ProviderPayments = ({ route, navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="auto" />
-
-      {/* Header Section */}
       <View style={styles.header__box}>
         <Pressable
           onPress={() => navigation.goBack()}
@@ -64,7 +62,6 @@ const ProviderPayments = ({ route, navigation }) => {
             Description: {selectedPlan.description}
           </Text>
         </LinearGradient>
-        {/* Payment options */}
         <View
           style={{
             width: "100%",
@@ -81,8 +78,6 @@ const ProviderPayments = ({ route, navigation }) => {
         >
           <Ionicons name="logo-apple" size={24} color="#999999" />
           <Text style={{ fontSize: 18, marginLeft: "-40%" }}>Apple Pay</Text>
-
-          {/* Radio Button */}
           <TouchableOpacity
             onPress={() => {
               handleRadioButtonPress();
