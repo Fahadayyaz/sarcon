@@ -30,7 +30,7 @@ const ProviderOTP = () => {
 
   const handleKeyPress = (event, index) => {
     if (event.nativeEvent.key === "Backspace" && !otp[index] && index > 0) {
-      inputRefs.current[index - 1]?.focus(); // پچھلے باکس پر کرسر لے جائیں
+      inputRefs.current[index - 1]?.focus();
     }
   };
 
