@@ -83,7 +83,6 @@ export default function App() {
         <Stack.Screen name="UserCardDetail" component={UserCardDetail} />
         <Stack.Screen name="UserSubscribed" component={UserSubscribed} />
         <Stack.Screen name="UserHome" component={UserHome} />
-        {/* provider section here */}
         <Stack.Screen name="ProviderSignIn" component={ProviderSignIn} />
         <Stack.Screen name="ProviderSignUp" component={ProviderSignUp} />
         <Stack.Screen
