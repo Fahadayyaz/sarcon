@@ -11,38 +11,36 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 
+const plans = [
+  {
+    id: 1,
+    name: "Plan1",
+    price: "$12/month",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+  },
+  {
+    id: 2,
+    name: "Plan2",
+    price: "$14/month",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+  },
+  {
+    id: 3,
+    name: "Plan3",
+    price: "$16/month",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+  },
+];
+
 const UserSubscriptionPlan = ({ navigation }) => {
   const [selectedPlanId, setSelectedPlanId] = useState(null);
-
-  const plans = [
-    {
-      id: 1,
-      name: "Plan1",
-      price: "$12/month",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
-    },
-    {
-      id: 2,
-      name: "Plan2",
-      price: "$14/month",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
-    },
-    {
-      id: 3,
-      name: "Plan3",
-      price: "$16/month",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
-    },
-  ];
 
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="auto" />
-
-      {/* Header Section */}
       <View style={styles.header__box}>
         <Pressable
           onPress={() => navigation.goBack()}
@@ -58,18 +56,16 @@ const UserSubscriptionPlan = ({ navigation }) => {
         </Pressable>
         <Text style={styles.header__text}>Subscription Plan</Text>
       </View>
-
-      {/* Plans Section */}
       <View style={styles.content__container}>
         {plans.map((plan) => (
           <TouchableOpacity
             key={plan.id}
             style={[
               styles.planBox,
-              selectedPlanId === plan.id && { backgroundColor: "#0474ED" }, // Red background for the selected plan
+              selectedPlanId === plan.id && { backgroundColor: "#0474ED" },
             ]}
             onPress={() => {
-              setSelectedPlanId(plan.id); // Set the touched plan's ID
+              setSelectedPlanId(plan.id);
               navigation.navigate("UserPayments", { selectedPlan: plan });
             }}
           >
@@ -77,7 +73,7 @@ const UserSubscriptionPlan = ({ navigation }) => {
               <Text
                 style={[
                   styles.planText,
-                  selectedPlanId === plan.id && { color: "#fff" }, // Text color white for the selected plan
+                  selectedPlanId === plan.id && { color: "#fff" },
                 ]}
               >
                 {plan.name}
@@ -85,7 +81,7 @@ const UserSubscriptionPlan = ({ navigation }) => {
               <Text
                 style={[
                   styles.priceText,
-                  selectedPlanId === plan.id && { color: "#fff" }, // Text color white for the selected plan
+                  selectedPlanId === plan.id && { color: "#fff" },
                 ]}
               >
                 {plan.price}
@@ -94,7 +90,7 @@ const UserSubscriptionPlan = ({ navigation }) => {
             <Text
               style={[
                 styles.planDescription,
-                selectedPlanId === plan.id && { color: "#fff" }, // Text color white for the selected plan
+                selectedPlanId === plan.id && { color: "#fff" },
               ]}
             >
               {plan.description}

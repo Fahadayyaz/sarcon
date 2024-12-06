@@ -16,14 +16,12 @@ import { StatusBar } from "expo-status-bar";
 import { useNavigation } from "@react-navigation/native";
 
 const ProviderChangePassword = () => {
-  // focused
   const [isOldPasswordFocused, setOldPasswordFocused] = useState(false);
   const [isNewPasswordFocused, setNewPasswordFocused] = useState(false);
   const [isConfirmPasswordFocused, setConfirmPasswordFocused] = useState(false);
-  // visible
-  const [isOldPasswordVisible, setOldPasswordVisible] = useState(false); // State to toggle visibility
-  const [isNewPasswordVisible, setNewPasswordVisible] = useState(false); // State to toggle visibility
-  const [isConfirmPasswordVisible, setConfirmPasswordVisible] = useState(false); // State to toggle visibility
+  const [isOldPasswordVisible, setOldPasswordVisible] = useState(false);
+  const [isNewPasswordVisible, setNewPasswordVisible] = useState(false);
+  const [isConfirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
   const navigation = useNavigation();
 
   return (
@@ -50,7 +48,6 @@ const ProviderChangePassword = () => {
             alignSelf: "center",
           }}
         />
-
         <ScrollView showsVerticalScrollIndicator={false}>
           <Text style={{ fontWeight: "bold", fontSize: 28, marginTop: "5%" }}>
             Change Password
@@ -58,7 +55,6 @@ const ProviderChangePassword = () => {
           <Text style={{ color: "#8A8A8A", fontSize: 14 }}>
             Please enter new credentials
           </Text>
-          {/* old password section */}
           <View
             style={{
               flexDirection: "row",
@@ -66,7 +62,7 @@ const ProviderChangePassword = () => {
               borderWidth: 1,
               borderColor: isOldPasswordFocused ? "#0474ED" : "#fff",
               borderRadius: 44,
-              paddingHorizontal: 10, // Adjust spacing
+              paddingHorizontal: 10,
               marginTop: "10%",
               backgroundColor: "#F2F2F2",
             }}
@@ -82,11 +78,8 @@ const ProviderChangePassword = () => {
               placeholderTextColor={
                 isOldPasswordFocused ? "#0474ED" : "#838383"
               }
-              secureTextEntry={!isOldPasswordVisible} // Toggle secure entry
-              style={{
-                flex: 1, // Take remaining space
-                height: 48,
-              }}
+              secureTextEntry={!isOldPasswordVisible}
+              style={{ flex: 1, height: 48 }}
               onFocus={() => setOldPasswordFocused(true)}
               onBlur={() => setOldPasswordFocused(false)}
             />
@@ -94,14 +87,13 @@ const ProviderChangePassword = () => {
               onPress={() => setOldPasswordVisible(!isOldPasswordVisible)}
             >
               <Feather
-                name={isOldPasswordVisible ? "eye-off" : "eye"} // Toggle icon
+                name={isOldPasswordVisible ? "eye-off" : "eye"}
                 size={24}
                 color={isOldPasswordFocused ? "#0474ED" : "#838383"}
                 style={{ paddingRight: 10 }}
               />
             </TouchableOpacity>
           </View>
-          {/* new password input container */}
           <View
             style={{
               flexDirection: "row",
@@ -109,7 +101,7 @@ const ProviderChangePassword = () => {
               borderWidth: 1,
               borderColor: isNewPasswordFocused ? "#0474ED" : "#fff",
               borderRadius: 44,
-              paddingHorizontal: 10, // Adjust spacing
+              paddingHorizontal: 10,
               marginTop: 15,
               backgroundColor: "#F2F2F2",
             }}
@@ -125,11 +117,8 @@ const ProviderChangePassword = () => {
               placeholderTextColor={
                 isNewPasswordFocused ? "#0474ED" : "#838383"
               }
-              secureTextEntry={!isNewPasswordVisible} // Toggle secure entry
-              style={{
-                flex: 1, // Take remaining space
-                height: 48,
-              }}
+              secureTextEntry={!isNewPasswordVisible}
+              style={{ flex: 1, height: 48 }}
               onFocus={() => setNewPasswordFocused(true)}
               onBlur={() => setNewPasswordFocused(false)}
             />
@@ -137,14 +126,13 @@ const ProviderChangePassword = () => {
               onPress={() => setNewPasswordVisible(!isNewPasswordVisible)}
             >
               <Feather
-                name={isNewPasswordVisible ? "eye-off" : "eye"} // Toggle icon
+                name={isNewPasswordVisible ? "eye-off" : "eye"}
                 size={24}
                 color={isNewPasswordFocused ? "#0474ED" : "#838383"}
                 style={{ paddingRight: 10 }}
               />
             </TouchableOpacity>
           </View>
-          {/* confirm password input container */}
           <View
             style={{
               flexDirection: "row",
@@ -152,7 +140,7 @@ const ProviderChangePassword = () => {
               borderWidth: 1,
               borderColor: isConfirmPasswordFocused ? "#0474ED" : "#fff",
               borderRadius: 44,
-              paddingHorizontal: 10, // Adjust spacing
+              paddingHorizontal: 10,
               marginTop: 15,
               backgroundColor: "#F2F2F2",
             }}
@@ -168,11 +156,8 @@ const ProviderChangePassword = () => {
               placeholderTextColor={
                 isConfirmPasswordFocused ? "#0474ED" : "#838383"
               }
-              secureTextEntry={!isConfirmPasswordVisible} // Toggle secure entry
-              style={{
-                flex: 1, // Take remaining space
-                height: 48,
-              }}
+              secureTextEntry={!isConfirmPasswordVisible}
+              style={{ flex: 1, height: 48 }}
               onFocus={() => setConfirmPasswordFocused(true)}
               onBlur={() => setConfirmPasswordFocused(false)}
             />

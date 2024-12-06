@@ -24,8 +24,8 @@ const UserSignUp = () => {
   const [isPhoneFocused, setPhoneFocused] = useState(false);
   const [isPasswordFocused, setPasswordFocused] = useState(false);
   const [isConfirmPasswordFocused, setConfirmPasswordFocused] = useState(false);
-  const [isPasswordVisible, setPasswordVisible] = useState(false); // State to toggle visibility
-  const [isConfirmPasswordVisible, setConfirmPasswordVisible] = useState(false); // State to toggle visibility
+  const [isPasswordVisible, setPasswordVisible] = useState(false);
+  const [isConfirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
   const [isAddressFocused, setAddressFocused] = useState(false);
 
   const navigation = useNavigation();
@@ -64,9 +64,7 @@ const UserSignUp = () => {
           <Text style={{ color: "#838383", fontSize: 14 }}>
             Please SignUp to join us.
           </Text>
-          {/* SignUp form container */}
           <View>
-            {/* name input container */}
             <View
               style={{
                 flexDirection: "row",
@@ -93,7 +91,6 @@ const UserSignUp = () => {
                 onBlur={() => setNameFocused(false)}
               />
             </View>
-            {/* email input container */}
             <View
               style={{
                 flexDirection: "row",
@@ -120,8 +117,6 @@ const UserSignUp = () => {
                 onBlur={() => setEmailFocused(false)}
               />
             </View>
-
-            {/* phone input container */}
             <View
               style={{
                 flexDirection: "row",
@@ -148,8 +143,6 @@ const UserSignUp = () => {
                 onBlur={() => setPhoneFocused(false)}
               />
             </View>
-
-            {/* password input container */}
             <View
               style={{
                 flexDirection: "row",
@@ -157,7 +150,7 @@ const UserSignUp = () => {
                 borderWidth: 1,
                 borderColor: isPasswordFocused ? "#0474ED" : "#fff",
                 borderRadius: 44,
-                paddingHorizontal: 10, // Adjust spacing
+                paddingHorizontal: 10,
                 marginTop: 15,
                 backgroundColor: "#F2F2F2",
               }}
@@ -171,11 +164,8 @@ const UserSignUp = () => {
               <TextInput
                 placeholder="Password"
                 placeholderTextColor={isPasswordFocused ? "#0474ED" : "#838383"}
-                secureTextEntry={!isPasswordVisible} // Toggle secure entry
-                style={{
-                  flex: 1, // Take remaining space
-                  height: 48,
-                }}
+                secureTextEntry={!isPasswordVisible}
+                style={{ flex: 1, height: 48 }}
                 onFocus={() => setPasswordFocused(true)}
                 onBlur={() => setPasswordFocused(false)}
               />
@@ -183,14 +173,13 @@ const UserSignUp = () => {
                 onPress={() => setPasswordVisible(!isPasswordVisible)}
               >
                 <Feather
-                  name={isPasswordVisible ? "eye-off" : "eye"} // Toggle icon
+                  name={isPasswordVisible ? "eye-off" : "eye"}
                   size={24}
                   color={isPasswordFocused ? "#0474ED" : "#838383"}
                   style={{ paddingRight: 10 }}
                 />
               </TouchableOpacity>
             </View>
-            {/* confirm password input container */}
             <View
               style={{
                 flexDirection: "row",
@@ -198,7 +187,7 @@ const UserSignUp = () => {
                 borderWidth: 1,
                 borderColor: isConfirmPasswordFocused ? "#0474ED" : "#fff",
                 borderRadius: 44,
-                paddingHorizontal: 10, // Adjust spacing
+                paddingHorizontal: 10,
                 marginTop: 15,
                 backgroundColor: "#F2F2F2",
               }}
@@ -214,11 +203,8 @@ const UserSignUp = () => {
                 placeholderTextColor={
                   isConfirmPasswordFocused ? "#0474ED" : "#838383"
                 }
-                secureTextEntry={!isConfirmPasswordVisible} // Toggle secure entry
-                style={{
-                  flex: 1, // Take remaining space
-                  height: 48,
-                }}
+                secureTextEntry={!isConfirmPasswordVisible}
+                style={{ flex: 1, height: 48 }}
                 onFocus={() => setConfirmPasswordFocused(true)}
                 onBlur={() => setConfirmPasswordFocused(false)}
               />
@@ -235,7 +221,6 @@ const UserSignUp = () => {
                 />
               </TouchableOpacity>
             </View>
-            {/* address input container */}
             <View
               style={{
                 flexDirection: "row",
@@ -263,13 +248,12 @@ const UserSignUp = () => {
               />
             </View>
           </View>
-          {/* map here */}
           <View style={styles.mapContainer}>
             <MapView
               style={styles.map}
               initialRegion={{
-                latitude: 37.78825, // Default latitude
-                longitude: -122.4324, // Default longitude
+                latitude: 37.78825,
+                longitude: -122.4324,
                 latitudeDelta: 0.0922,
                 longitudeDelta: 0.0421,
               }}
