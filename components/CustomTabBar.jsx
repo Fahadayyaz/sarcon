@@ -1,16 +1,70 @@
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import React, { useState, useEffect } from "react";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  KeyboardAvoidingView,
+  Platform,
+  Keyboard,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import Ionicons from "react-native-vector-icons/Ionicons"; // Ensure this library is installed
 
 const CustomTabBar = () => {
+  const [isKeyboardVisible, setKeyboardVisible] = useState(false);
+
+  useEffect(() => {
+    const keyboardDidShowListener = Keyboard.addListener(
+      "keyboardDidShow",
+      () => {
+        setKeyboardVisible(true);
+      }
+    );
+    const keyboardDidHideListener = Keyboard.addListener(
+      "keyboardDidHide",
+      () => {
+        setKeyboardVisible(false);
+      }
+    );
+
+    return () => {
+      keyboardDidShowListener.remove();
+      keyboardDidHideListener.remove();
+    };
+  }, []);
+
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.content__container}>
-        <Text style={{ color: "#fff" }}>
-          this is a text in the tab bar text
-        </Text>
-      </View>
-    </SafeAreaView>
+    <KeyboardAvoidingView
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      style={{ flex: 1 }}
+    >
+      <SafeAreaView
+        style={[styles.container, isKeyboardVisible && styles.hidden]}
+      >
+        <View style={styles.contentContainer}>
+          <TouchableOpacity style={styles.tabButton}>
+            <Ionicons name="home-outline" size={24} color="#fff" />
+            <Text style={styles.tabText}>Home</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.tabButton}>
+            <Ionicons name="chatbubble-outline" size={24} color="#fff" />
+            <Text style={styles.tabText}>Chats</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.tabButton}>
+            <Ionicons name="briefcase-outline" size={24} color="#fff" />
+            <Text style={styles.tabText}>Services</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.tabButton}>
+            <Ionicons name="settings-outline" size={24} color="#fff" />
+            <Text style={styles.tabText}>Settings</Text>
+          </TouchableOpacity>
+        </View>
+      </SafeAreaView>
+    </KeyboardAvoidingView>
   );
 };
 
@@ -18,14 +72,27 @@ export default CustomTabBar;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: "#131417",
-    position: "absolute",
-  },
-  content__container: {
+    position: "fixed",
+    bottom: 0,
     width: "100%",
-    height: "30%",
-    alignSelf: "center",
-    marginBottom: 0,
+    paddingVertical: 10,
+  },
+  hidden: {
+    bottom: -100, // Hide TabBar when keyboard is visible
+  },
+  contentContainer: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
+    paddingBottom: Platform.OS === "ios" ? 20 : 10,
+  },
+  tabButton: {
+    alignItems: "center",
+  },
+  tabText: {
+    color: "#fff",
+    fontSize: 12,
+    marginTop: 4,
   },
 });
