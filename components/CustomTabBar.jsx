@@ -9,7 +9,7 @@ import {
   Keyboard,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import Ionicons from "react-native-vector-icons/Ionicons"; // Ensure this library is installed
+import Ionicons from "react-native-vector-icons/Ionicons";
 
 const CustomTabBar = () => {
   const [isKeyboardVisible, setKeyboardVisible] = useState(false);
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
   },
   hidden: {
-    bottom: -100, // Hide TabBar when keyboard is visible
+    bottom: -100,
   },
   contentContainer: {
     flexDirection: "row",
