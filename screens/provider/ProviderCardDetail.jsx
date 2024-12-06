@@ -24,7 +24,6 @@ const ProviderCardDetail = () => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="auto" />
-      {/* Header Section */}
       <View style={styles.header__box}>
         <Pressable
           onPress={() => navigation.goBack()}
