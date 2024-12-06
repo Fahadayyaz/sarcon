@@ -43,7 +43,16 @@ const UserHome = () => {
               </View>
             </View>
           </View>
-          <View style={styles.header__display__picture}></View>
+          <View style={styles.header__display__picture}>
+            <Image
+              source={require("./../../assets/cleaningTools.png")}
+              style={{
+                width: 40,
+                height: 40,
+                alignSelf: "center",
+              }}
+            />
+          </View>
         </View>
 
         {/* email input container */}
@@ -97,6 +106,14 @@ const UserHome = () => {
           style={{ width: "100%", marginTop: 10 }}
         >
           <Pressable style={styles.power__Tools__Card}>
+            <Image
+              source={require("./../../assets/powerTool.png")}
+              style={{
+                width: 72,
+                height: 72,
+                alignSelf: "center",
+              }}
+            />
             <Text
               style={{
                 fontSize: 11,
@@ -108,6 +125,14 @@ const UserHome = () => {
             </Text>
           </Pressable>
           <Pressable style={styles.hand__Tools__Card}>
+            <Image
+              source={require("./../../assets/handTool.png")}
+              style={{
+                width: 72,
+                height: 72,
+                alignSelf: "center",
+              }}
+            />
             <Text
               style={{
                 fontSize: 11,
@@ -119,6 +144,14 @@ const UserHome = () => {
             </Text>
           </Pressable>
           <Pressable style={styles.cutting__Tools__Card}>
+            <Image
+              source={require("./../../assets/cuttingTool.png")}
+              style={{
+                width: 72,
+                height: 72,
+                alignSelf: "center",
+              }}
+            />
             <Text
               style={{
                 fontSize: 11,
@@ -130,6 +163,14 @@ const UserHome = () => {
             </Text>
           </Pressable>
           <Pressable style={styles.lifting__Tools__Card}>
+            <Image
+              source={require("./../../assets/liftingTool.png")}
+              style={{
+                width: 72,
+                height: 72,
+                alignSelf: "center",
+              }}
+            />
             <Text
               style={{
                 fontSize: 11,
@@ -149,6 +190,14 @@ const UserHome = () => {
           style={{ width: "100%", marginTop: 10 }}
         >
           <Pressable style={styles.havac__Tools__Card}>
+            <Image
+              source={require("./../../assets/hvacTools.png")}
+              style={{
+                width: 72,
+                height: 72,
+                alignSelf: "center",
+              }}
+            />
             <Text
               style={{
                 fontSize: 11,
@@ -160,6 +209,14 @@ const UserHome = () => {
             </Text>
           </Pressable>
           <Pressable style={styles.gardening__Tools__Card}>
+            <Image
+              source={require("./../../assets/gardeningTools.png")}
+              style={{
+                width: 72,
+                height: 72,
+                alignSelf: "center",
+              }}
+            />
             <Text
               style={{
                 fontSize: 11,
@@ -171,6 +228,14 @@ const UserHome = () => {
             </Text>
           </Pressable>
           <Pressable style={styles.welding__Tools__Card}>
+            <Image
+              source={require("./../../assets/weldingHelmets.png")}
+              style={{
+                width: 72,
+                height: 72,
+                alignSelf: "center",
+              }}
+            />
             <Text
               style={{
                 fontSize: 11,
@@ -182,6 +247,14 @@ const UserHome = () => {
             </Text>
           </Pressable>
           <Pressable style={styles.cleaning__Tools__Card}>
+            <Image
+              source={require("./../../assets/cleaningTools.png")}
+              style={{
+                width: 72,
+                height: 72,
+                alignSelf: "center",
+              }}
+            />
             <Text
               style={{
                 fontSize: 11,
@@ -227,8 +300,10 @@ const styles = StyleSheet.create({
   header__display__picture: {
     width: 49,
     height: 49,
-    borderRadius: 50,
-    backgroundColor: "orange",
+    borderRadius: 30,
+    backgroundColor: "yellow",
+    justifyContent: "center",
+    alignItems: "center",
   },
   power__Tools__Card: {
     width: 93,
