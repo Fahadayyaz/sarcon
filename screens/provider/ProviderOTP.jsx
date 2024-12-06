@@ -62,7 +62,6 @@ const ProviderOTP = () => {
           <Text style={{ color: "#8A8A8A", fontSize: 14 }}>
             Enter the otp which we send into your email for verification
           </Text>
-
           <View style={styles.otpContainer}>
             {otp.map((digit, index) => (
               <TextInput
@@ -77,7 +76,6 @@ const ProviderOTP = () => {
               />
             ))}
           </View>
-
           <Pressable onPress={handleNextPress} style={styles.nextButton}>
             <Text style={styles.nextButtonText}>Next</Text>
           </Pressable>
