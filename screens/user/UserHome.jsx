@@ -273,7 +273,7 @@ const UserHome = () => {
             flexDirection: "row",
             width: "100%",
             justifyContent: "space-between",
-            marginTop: 10,
+            marginTop: "10%",
           }}
         >
           <Text style={{ fontSize: 16, fontWeight: "bold" }}>
@@ -285,40 +285,176 @@ const UserHome = () => {
             </Text>
           </Pressable>
         </View>
-        <View style={styles.recomended__first}>
-          <View
-            style={{
-              width: "90%",
-              height: "100%",
-              alignSelf: "center",
-              alignItems: "center",
-            }}
-          >
-            <Image
-              source={require("./../../assets/powerToolsThumbnail.png")}
-              style={{
-                width: 170,
-                height: 110,
-                alignSelf: "center",
-              }}
-            />
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          style={{
+            width: "100%",
+            marginTop: 10,
+          }}
+        >
+          <View style={styles.recomended__box}>
             <View
               style={{
                 width: "90%",
-                flexDirection: "row",
-                justifyContent: "space-between",
+                height: 155,
+                alignSelf: "center",
+                alignItems: "center",
               }}
             >
-              <Text style={{ fontWeight: "bold" }}>Power Tools</Text>
-              <View style={{ flexDirection: "row" }}>
-                <Text style={{ fontSize: 16, fontWeight: "bold" }}>$18/</Text>
-                <Text style={{ fontSize: 16 }}> hr</Text>
+              <Image
+                source={require("./../../assets/powerToolsThumbnail.png")}
+                style={{
+                  width: "100%",
+                  height: 115,
+                  borderRadius: 12,
+                  marginTop: 10,
+                }}
+              />
+              <View
+                style={{
+                  width: "100%",
+                  top: 5,
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                }}
+              >
+                <Text style={{ fontWeight: "bold" }}>Power Tools</Text>
+                <View style={{ flexDirection: "row" }}>
+                  <Text style={{ fontSize: 16, fontWeight: "bold" }}>$18/</Text>
+                  <Text style={{ fontSize: 16 }}> hr</Text>
+                </View>
+              </View>
+              {/* reviews box goes here */}
+              <View
+                style={{
+                  flexDirection: "row",
+                  width: "100%",
+                }}
+              >
+                <Image
+                  source={require("./../../assets/fiveStars.png")}
+                  style={{
+                    width: 89.46,
+                    height: 17.89,
+                    marginLeft: -2,
+                  }}
+                />
+                <Text style={{ fontSize: 11, color: "#777777" }}>
+                  {"(240 Reviews)"}
+                </Text>
               </View>
             </View>
           </View>
-          {/* reviews box goes here */}
-          <View style={{ flexDirection: "row" }}></View>
-        </View>
+          {/* second box goes here */}
+          <View style={styles.recomended__box}>
+            <View
+              style={{
+                width: "90%",
+                height: 155,
+                alignSelf: "center",
+                alignItems: "center",
+              }}
+            >
+              <Image
+                source={require("./../../assets/powerToolsThumbnail.png")}
+                style={{
+                  width: "100%",
+                  height: 115,
+                  borderRadius: 12,
+                  marginTop: 10,
+                }}
+              />
+              <View
+                style={{
+                  width: "100%",
+                  top: 5,
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                }}
+              >
+                <Text style={{ fontWeight: "bold" }}>Power Tools</Text>
+                <View style={{ flexDirection: "row" }}>
+                  <Text style={{ fontSize: 16, fontWeight: "bold" }}>$18/</Text>
+                  <Text style={{ fontSize: 16 }}> hr</Text>
+                </View>
+              </View>
+              {/* reviews box goes here */}
+              <View
+                style={{
+                  flexDirection: "row",
+                  width: "100%",
+                }}
+              >
+                <Image
+                  source={require("./../../assets/fiveStars.png")}
+                  style={{
+                    width: 89.46,
+                    height: 17.89,
+                    marginLeft: -2,
+                  }}
+                />
+                <Text style={{ fontSize: 11, color: "#777777" }}>
+                  {"(240 Reviews)"}
+                </Text>
+              </View>
+            </View>
+          </View>
+          {/* third box goes here */}
+          <View style={styles.recomended__box}>
+            <View
+              style={{
+                width: "90%",
+                height: 155,
+                alignSelf: "center",
+                alignItems: "center",
+              }}
+            >
+              <Image
+                source={require("./../../assets/powerToolsThumbnail.png")}
+                style={{
+                  width: "100%",
+                  height: 115,
+                  borderRadius: 12,
+                  marginTop: 10,
+                }}
+              />
+              <View
+                style={{
+                  width: "100%",
+                  top: 5,
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                }}
+              >
+                <Text style={{ fontWeight: "bold" }}>Power Tools</Text>
+                <View style={{ flexDirection: "row" }}>
+                  <Text style={{ fontSize: 16, fontWeight: "bold" }}>$18/</Text>
+                  <Text style={{ fontSize: 16 }}> hr</Text>
+                </View>
+              </View>
+              {/* reviews box goes here */}
+              <View
+                style={{
+                  flexDirection: "row",
+                  width: "100%",
+                }}
+              >
+                <Image
+                  source={require("./../../assets/fiveStars.png")}
+                  style={{
+                    width: 89.46,
+                    height: 17.89,
+                    marginLeft: -2,
+                  }}
+                />
+                <Text style={{ fontSize: 11, color: "#777777" }}>
+                  {"(240 Reviews)"}
+                </Text>
+              </View>
+            </View>
+          </View>
+        </ScrollView>
       </View>
     </SafeAreaView>
   );
@@ -428,12 +564,14 @@ const styles = StyleSheet.create({
     borderRadius: 11,
     marginRight: 10,
   },
-  recomended__first: {
+
+  recomended__box: {
     width: 210,
-    height: 159,
-    borderRadius: 11,
+    height: 170,
+    borderRadius: 12,
     marginTop: 17,
-    backgroundColor: "orange",
+    marginLeft: 10,
+    backgroundColor: "#F2F8FE",
   },
 });
 
