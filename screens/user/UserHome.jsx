@@ -83,377 +83,393 @@ const UserHome = () => {
           />
         </View>
 
-        <View
-          style={{
-            flexDirection: "row",
-            width: "100%",
-            justifyContent: "space-between",
-            marginTop: 10,
-          }}
-        >
-          <Text style={{ fontSize: 16, fontWeight: "bold" }}>
-            All Categories
-          </Text>
-          <Pressable>
-            <Text style={{ color: "#0474ED", fontWeight: "bold" }}>
-              See all
-            </Text>
-          </Pressable>
-        </View>
-
-        {/* First horizontal ScrollView */}
+        {/* main ScrollView here */}
         <ScrollView
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          style={{ width: "100%", marginTop: 10 }}
-        >
-          <Pressable style={styles.power__Tools__Card}>
-            <Image
-              source={require("./../../assets/powerTool.png")}
-              style={{
-                width: 72,
-                height: 72,
-                alignSelf: "center",
-              }}
-            />
-            <Text
-              style={{
-                fontSize: 11,
-                fontWeight: "medium",
-                textAlign: "center",
-              }}
-            >
-              Power Tools
-            </Text>
-          </Pressable>
-          <Pressable style={styles.hand__Tools__Card}>
-            <Image
-              source={require("./../../assets/handTool.png")}
-              style={{
-                width: 61,
-                height: 55.02,
-                alignSelf: "center",
-              }}
-            />
-            <Text
-              style={{
-                fontSize: 11,
-                fontWeight: "medium",
-                textAlign: "center",
-              }}
-            >
-              Hand Tools
-            </Text>
-          </Pressable>
-          <Pressable style={styles.cutting__Tools__Card}>
-            <Image
-              source={require("./../../assets/cuttingTool.png")}
-              style={{
-                width: 50,
-                height: 50,
-                alignSelf: "center",
-              }}
-            />
-            <Text
-              style={{
-                fontSize: 11,
-                fontWeight: "medium",
-                textAlign: "center",
-              }}
-            >
-              Cutting Tools
-            </Text>
-          </Pressable>
-          <Pressable style={styles.lifting__Tools__Card}>
-            <Image
-              source={require("./../../assets/liftingTool.png")}
-              style={{
-                width: 33.39,
-                height: 50.32,
-                alignSelf: "center",
-              }}
-            />
-            <Text
-              style={{
-                fontSize: 11,
-                fontWeight: "medium",
-                textAlign: "center",
-              }}
-            >
-              Lifting Tools
-            </Text>
-          </Pressable>
-        </ScrollView>
-
-        {/* Second horizontal ScrollView */}
-        <ScrollView
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          style={{ width: "100%", marginTop: 10 }}
-        >
-          <Pressable style={styles.havac__Tools__Card}>
-            <Image
-              source={require("./../../assets/hvacTools.png")}
-              style={{
-                width: 48.87,
-                height: 46.69,
-                alignSelf: "center",
-              }}
-            />
-            <Text
-              style={{
-                fontSize: 11,
-                fontWeight: "medium",
-                textAlign: "center",
-              }}
-            >
-              Havac Tools
-            </Text>
-          </Pressable>
-          <Pressable style={styles.gardening__Tools__Card}>
-            <Image
-              source={require("./../../assets/gardeningTools.png")}
-              style={{
-                width: 78.09,
-                height: 50.53,
-                alignSelf: "center",
-              }}
-            />
-            <Text
-              style={{
-                fontSize: 11,
-                fontWeight: "medium",
-                textAlign: "center",
-              }}
-            >
-              Gardening Tools
-            </Text>
-          </Pressable>
-          <Pressable style={styles.welding__Tools__Card}>
-            <Image
-              source={require("./../../assets/weldingHelmets.png")}
-              style={{
-                width: 50,
-                height: 58.92,
-                alignSelf: "center",
-              }}
-            />
-            <Text
-              style={{
-                fontSize: 11,
-                fontWeight: "medium",
-                textAlign: "center",
-              }}
-            >
-              Welding Tools
-            </Text>
-          </Pressable>
-          <Pressable style={styles.cleaning__Tools__Card}>
-            <Image
-              source={require("./../../assets/cleaningTools.png")}
-              style={{
-                width: 68,
-                height: 68,
-                alignSelf: "center",
-              }}
-            />
-            <Text
-              style={{
-                fontSize: 11,
-                fontWeight: "medium",
-                textAlign: "center",
-              }}
-            >
-              Cleaning Tools
-            </Text>
-          </Pressable>
-        </ScrollView>
-        <View
-          style={{
-            flexDirection: "row",
-            width: "100%",
-            justifyContent: "space-between",
-            marginTop: "10%",
-          }}
-        >
-          <Text style={{ fontSize: 16, fontWeight: "bold" }}>
-            Recomended for you
-          </Text>
-          <Pressable>
-            <Text style={{ color: "#0474ED", fontWeight: "bold" }}>
-              See all
-            </Text>
-          </Pressable>
-        </View>
-        <ScrollView
-          horizontal
-          showsHorizontalScrollIndicator={false}
+          vertical
+          showsVerticalScrollIndicator={false}
           style={{
             width: "100%",
             marginTop: 10,
           }}
         >
-          <View style={styles.recomended__box}>
-            <View
-              style={{
-                width: "90%",
-                height: 155,
-                alignSelf: "center",
-                alignItems: "center",
-              }}
-            >
+          <View
+            style={{
+              flexDirection: "row",
+              width: "100%",
+              justifyContent: "space-between",
+              marginTop: 10,
+            }}
+          >
+            <Text style={{ fontSize: 16, fontWeight: "bold" }}>
+              All Categories
+            </Text>
+            <Pressable>
+              <Text style={{ color: "#0474ED", fontWeight: "bold" }}>
+                See all
+              </Text>
+            </Pressable>
+          </View>
+
+          {/* First horizontal ScrollView */}
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            style={{ width: "100%", marginTop: 10 }}
+          >
+            <Pressable style={styles.power__Tools__Card}>
               <Image
-                source={require("./../../assets/powerToolsThumbnail.png")}
+                source={require("./../../assets/powerTool.png")}
                 style={{
-                  width: "100%",
-                  height: 115,
-                  borderRadius: 12,
-                  marginTop: 10,
+                  width: 72,
+                  height: 72,
+                  alignSelf: "center",
                 }}
               />
-              <View
+              <Text
                 style={{
-                  width: "100%",
-                  top: 5,
-                  flexDirection: "row",
-                  justifyContent: "space-between",
+                  fontSize: 11,
+                  fontWeight: "medium",
+                  textAlign: "center",
                 }}
               >
-                <Text style={{ fontWeight: "bold" }}>Power Tools</Text>
-                <View style={{ flexDirection: "row" }}>
-                  <Text style={{ fontSize: 16, fontWeight: "bold" }}>$18/</Text>
-                  <Text style={{ fontSize: 16 }}> hr</Text>
-                </View>
-              </View>
-              {/* reviews box goes here */}
+                Power Tools
+              </Text>
+            </Pressable>
+            <Pressable style={styles.hand__Tools__Card}>
+              <Image
+                source={require("./../../assets/handTool.png")}
+                style={{
+                  width: 61,
+                  height: 55.02,
+                  alignSelf: "center",
+                }}
+              />
+              <Text
+                style={{
+                  fontSize: 11,
+                  fontWeight: "medium",
+                  textAlign: "center",
+                }}
+              >
+                Hand Tools
+              </Text>
+            </Pressable>
+            <Pressable style={styles.cutting__Tools__Card}>
+              <Image
+                source={require("./../../assets/cuttingTool.png")}
+                style={{
+                  width: 50,
+                  height: 50,
+                  alignSelf: "center",
+                }}
+              />
+              <Text
+                style={{
+                  fontSize: 11,
+                  fontWeight: "medium",
+                  textAlign: "center",
+                }}
+              >
+                Cutting Tools
+              </Text>
+            </Pressable>
+            <Pressable style={styles.lifting__Tools__Card}>
+              <Image
+                source={require("./../../assets/liftingTool.png")}
+                style={{
+                  width: 33.39,
+                  height: 50.32,
+                  alignSelf: "center",
+                }}
+              />
+              <Text
+                style={{
+                  fontSize: 11,
+                  fontWeight: "medium",
+                  textAlign: "center",
+                }}
+              >
+                Lifting Tools
+              </Text>
+            </Pressable>
+          </ScrollView>
+
+          {/* Second horizontal ScrollView */}
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            style={{ width: "100%", marginTop: 10 }}
+          >
+            <Pressable style={styles.havac__Tools__Card}>
+              <Image
+                source={require("./../../assets/hvacTools.png")}
+                style={{
+                  width: 48.87,
+                  height: 46.69,
+                  alignSelf: "center",
+                }}
+              />
+              <Text
+                style={{
+                  fontSize: 11,
+                  fontWeight: "medium",
+                  textAlign: "center",
+                }}
+              >
+                Havac Tools
+              </Text>
+            </Pressable>
+            <Pressable style={styles.gardening__Tools__Card}>
+              <Image
+                source={require("./../../assets/gardeningTools.png")}
+                style={{
+                  width: 78.09,
+                  height: 50.53,
+                  alignSelf: "center",
+                }}
+              />
+              <Text
+                style={{
+                  fontSize: 11,
+                  fontWeight: "medium",
+                  textAlign: "center",
+                }}
+              >
+                Gardening Tools
+              </Text>
+            </Pressable>
+            <Pressable style={styles.welding__Tools__Card}>
+              <Image
+                source={require("./../../assets/weldingHelmets.png")}
+                style={{
+                  width: 50,
+                  height: 58.92,
+                  alignSelf: "center",
+                }}
+              />
+              <Text
+                style={{
+                  fontSize: 11,
+                  fontWeight: "medium",
+                  textAlign: "center",
+                }}
+              >
+                Welding Tools
+              </Text>
+            </Pressable>
+            <Pressable style={styles.cleaning__Tools__Card}>
+              <Image
+                source={require("./../../assets/cleaningTools.png")}
+                style={{
+                  width: 68,
+                  height: 68,
+                  alignSelf: "center",
+                }}
+              />
+              <Text
+                style={{
+                  fontSize: 11,
+                  fontWeight: "medium",
+                  textAlign: "center",
+                }}
+              >
+                Cleaning Tools
+              </Text>
+            </Pressable>
+          </ScrollView>
+          <View
+            style={{
+              flexDirection: "row",
+              width: "100%",
+              justifyContent: "space-between",
+              marginTop: "10%",
+            }}
+          >
+            <Text style={{ fontSize: 16, fontWeight: "bold" }}>
+              Recomended for you
+            </Text>
+            <Pressable>
+              <Text style={{ color: "#0474ED", fontWeight: "bold" }}>
+                See all
+              </Text>
+            </Pressable>
+          </View>
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            style={{
+              width: "100%",
+              marginTop: 10,
+            }}
+          >
+            <View style={styles.recomended__box}>
               <View
                 style={{
-                  flexDirection: "row",
-                  width: "100%",
+                  width: "90%",
+                  height: 155,
+                  alignSelf: "center",
+                  alignItems: "center",
                 }}
               >
                 <Image
-                  source={require("./../../assets/fiveStars.png")}
+                  source={require("./../../assets/powerToolsThumbnail.png")}
                   style={{
-                    width: 89.46,
-                    height: 17.89,
-                    marginLeft: -2,
+                    width: "100%",
+                    height: 115,
+                    borderRadius: 12,
+                    marginTop: 10,
                   }}
                 />
-                <Text style={{ fontSize: 11, color: "#777777" }}>
-                  {"(240 Reviews)"}
-                </Text>
-              </View>
-            </View>
-          </View>
-          {/* second box goes here */}
-          <View style={styles.recomended__box}>
-            <View
-              style={{
-                width: "90%",
-                height: 155,
-                alignSelf: "center",
-                alignItems: "center",
-              }}
-            >
-              <Image
-                source={require("./../../assets/powerToolsThumbnail.png")}
-                style={{
-                  width: "100%",
-                  height: 115,
-                  borderRadius: 12,
-                  marginTop: 10,
-                }}
-              />
-              <View
-                style={{
-                  width: "100%",
-                  top: 5,
-                  flexDirection: "row",
-                  justifyContent: "space-between",
-                }}
-              >
-                <Text style={{ fontWeight: "bold" }}>Power Tools</Text>
-                <View style={{ flexDirection: "row" }}>
-                  <Text style={{ fontSize: 16, fontWeight: "bold" }}>$18/</Text>
-                  <Text style={{ fontSize: 16 }}> hr</Text>
+                <View
+                  style={{
+                    width: "100%",
+                    top: 5,
+                    flexDirection: "row",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <Text style={{ fontWeight: "bold" }}>Power Tools</Text>
+                  <View style={{ flexDirection: "row" }}>
+                    <Text style={{ fontSize: 16, fontWeight: "bold" }}>
+                      $18/
+                    </Text>
+                    <Text style={{ fontSize: 16 }}> hr</Text>
+                  </View>
+                </View>
+                {/* reviews box goes here */}
+                <View
+                  style={{
+                    flexDirection: "row",
+                    width: "100%",
+                  }}
+                >
+                  <Image
+                    source={require("./../../assets/fiveStars.png")}
+                    style={{
+                      width: 89.46,
+                      height: 17.89,
+                      marginLeft: -2,
+                    }}
+                  />
+                  <Text style={{ fontSize: 11, color: "#777777" }}>
+                    {"(240 Reviews)"}
+                  </Text>
                 </View>
               </View>
-              {/* reviews box goes here */}
+            </View>
+            {/* second box goes here */}
+            <View style={styles.recomended__box}>
               <View
                 style={{
-                  flexDirection: "row",
-                  width: "100%",
+                  width: "90%",
+                  height: 155,
+                  alignSelf: "center",
+                  alignItems: "center",
                 }}
               >
                 <Image
-                  source={require("./../../assets/fiveStars.png")}
+                  source={require("./../../assets/powerToolsThumbnail.png")}
                   style={{
-                    width: 89.46,
-                    height: 17.89,
-                    marginLeft: -2,
+                    width: "100%",
+                    height: 115,
+                    borderRadius: 12,
+                    marginTop: 10,
                   }}
                 />
-                <Text style={{ fontSize: 11, color: "#777777" }}>
-                  {"(240 Reviews)"}
-                </Text>
-              </View>
-            </View>
-          </View>
-          {/* third box goes here */}
-          <View style={styles.recomended__box}>
-            <View
-              style={{
-                width: "90%",
-                height: 155,
-                alignSelf: "center",
-                alignItems: "center",
-              }}
-            >
-              <Image
-                source={require("./../../assets/powerToolsThumbnail.png")}
-                style={{
-                  width: "100%",
-                  height: 115,
-                  borderRadius: 12,
-                  marginTop: 10,
-                }}
-              />
-              <View
-                style={{
-                  width: "100%",
-                  top: 5,
-                  flexDirection: "row",
-                  justifyContent: "space-between",
-                }}
-              >
-                <Text style={{ fontWeight: "bold" }}>Power Tools</Text>
-                <View style={{ flexDirection: "row" }}>
-                  <Text style={{ fontSize: 16, fontWeight: "bold" }}>$18/</Text>
-                  <Text style={{ fontSize: 16 }}> hr</Text>
+                <View
+                  style={{
+                    width: "100%",
+                    top: 5,
+                    flexDirection: "row",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <Text style={{ fontWeight: "bold" }}>Power Tools</Text>
+                  <View style={{ flexDirection: "row" }}>
+                    <Text style={{ fontSize: 16, fontWeight: "bold" }}>
+                      $18/
+                    </Text>
+                    <Text style={{ fontSize: 16 }}> hr</Text>
+                  </View>
+                </View>
+                {/* reviews box goes here */}
+                <View
+                  style={{
+                    flexDirection: "row",
+                    width: "100%",
+                  }}
+                >
+                  <Image
+                    source={require("./../../assets/fiveStars.png")}
+                    style={{
+                      width: 89.46,
+                      height: 17.89,
+                      marginLeft: -2,
+                    }}
+                  />
+                  <Text style={{ fontSize: 11, color: "#777777" }}>
+                    {"(240 Reviews)"}
+                  </Text>
                 </View>
               </View>
-              {/* reviews box goes here */}
+            </View>
+            {/* third box goes here */}
+            <View style={styles.recomended__box}>
               <View
                 style={{
-                  flexDirection: "row",
-                  width: "100%",
+                  width: "90%",
+                  height: 155,
+                  alignSelf: "center",
+                  alignItems: "center",
                 }}
               >
                 <Image
-                  source={require("./../../assets/fiveStars.png")}
+                  source={require("./../../assets/powerToolsThumbnail.png")}
                   style={{
-                    width: 89.46,
-                    height: 17.89,
-                    marginLeft: -2,
+                    width: "100%",
+                    height: 115,
+                    borderRadius: 12,
+                    marginTop: 10,
                   }}
                 />
-                <Text style={{ fontSize: 11, color: "#777777" }}>
-                  {"(240 Reviews)"}
-                </Text>
+                <View
+                  style={{
+                    width: "100%",
+                    top: 5,
+                    flexDirection: "row",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <Text style={{ fontWeight: "bold" }}>Power Tools</Text>
+                  <View style={{ flexDirection: "row" }}>
+                    <Text style={{ fontSize: 16, fontWeight: "bold" }}>
+                      $18/
+                    </Text>
+                    <Text style={{ fontSize: 16 }}> hr</Text>
+                  </View>
+                </View>
+                {/* reviews box goes here */}
+                <View
+                  style={{
+                    flexDirection: "row",
+                    width: "100%",
+                  }}
+                >
+                  <Image
+                    source={require("./../../assets/fiveStars.png")}
+                    style={{
+                      width: 89.46,
+                      height: 17.89,
+                      marginLeft: -2,
+                    }}
+                  />
+                  <Text style={{ fontSize: 11, color: "#777777" }}>
+                    {"(240 Reviews)"}
+                  </Text>
+                </View>
               </View>
             </View>
-          </View>
+          </ScrollView>
         </ScrollView>
       </View>
     </SafeAreaView>
