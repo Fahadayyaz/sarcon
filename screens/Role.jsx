@@ -13,11 +13,18 @@ import { RadioButton } from "react-native-paper";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 
+const roles = {
+  user: "user",
+  provider: "provider",
+};
+
 const Login = ({ navigation }) => {
-  const [selected, setSelected] = useState("user");
+  const [selected, setSelected] = useState(roles.user);
 
   const handleNavigation = () => {
-    navigation.navigate(checked === "user" ? "UserSignIn" : "ProviderSignIn");
+    navigation.navigate(
+      selected === roles.user ? "UserSignIn" : "ProviderSignIn"
+    );
   };
 
   return (
@@ -39,14 +46,14 @@ const Login = ({ navigation }) => {
             Please Select your role for this app.
           </Text>
           <RoleButton
-            checked={selected}
-            setChecked={setSelected}
+            isSelected={selected === roles.user}
+            onPress={() => setSelected(roles.user)}
             image={require("./../assets/userSide.png")}
-            label="user"
+            label={roles.user}
           />
           <RoleButton
-            checked={selected}
-            setChecked={setSelected}
+            isSelected={selected === roles.provider}
+            onPress={() => setSelected(roles.provider)}
             image={require("./../assets/providerSide.png")}
             label="provider"
           />
@@ -71,22 +78,22 @@ const Login = ({ navigation }) => {
   );
 };
 
-function RoleButton({ checked, setChecked, image, label }) {
+function RoleButton({ isSelected, onPress, image, label }) {
   return (
     <>
       <View style={styles.radioContainer}>
         <RadioButton
           value={label}
-          onPress={() => setChecked(label)}
-          status={checked === label ? "checked" : "unchecked"}
+          onPress={onPress}
+          status={isSelected ? "checked" : "unchecked"}
         />
         <Text style={styles.radio__Text}>{label}</Text>
       </View>
       <Pressable
-        onPress={() => setChecked(label)}
+        onPress={onPress}
         style={{
           ...styles.card,
-          borderColor: checked === label ? "#0474ED" : "#cccccc",
+          borderColor: isSelected ? "#0474ED" : "#cccccc",
         }}
       >
         <Image
