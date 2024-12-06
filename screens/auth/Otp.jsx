@@ -13,7 +13,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import { useNavigation } from "@react-navigation/native";
 
-const ProviderOTP = () => {
+export default function Otp() {
   const [otp, setOtp] = useState(["", "", "", ""]);
   const inputRefs = useRef([]);
   const navigation = useNavigation();
@@ -37,7 +37,7 @@ const ProviderOTP = () => {
   const handleNextPress = () => {
     const otpCode = otp.join("");
     if (otpCode.length === 4) {
-      navigation.navigate("ProviderChangePassword");
+      navigation.navigate("ChangePassword");
     } else {
       alert("Please enter a valid 4-digit OTP.");
     }
@@ -83,9 +83,7 @@ const ProviderOTP = () => {
       </View>
     </SafeAreaView>
   );
-};
-
-export default ProviderOTP;
+}
 
 const styles = StyleSheet.create({
   container: {

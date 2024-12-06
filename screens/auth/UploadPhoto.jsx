@@ -9,7 +9,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import { useNavigation } from "@react-navigation/native";
 
-const ProviderUploadPhoto = () => {
+export default function UploadPhoto() {
   const [image, setImage] = useState(null);
   const navigation = useNavigation();
 
@@ -31,7 +31,7 @@ const ProviderUploadPhoto = () => {
   const handleButtonPress = () => {
     setModalVisible(true);
     setTimeout(() => {
-      navigation.navigate("ProviderSignIn");
+      navigation.navigate("SignIn");
       setModalVisible(false);
     }, 1500);
   };
@@ -96,9 +96,7 @@ const ProviderUploadPhoto = () => {
       </View>
     </SafeAreaView>
   );
-};
-
-export default ProviderUploadPhoto;
+}
 
 const styles = StyleSheet.create({
   container: {

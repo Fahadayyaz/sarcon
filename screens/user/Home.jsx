@@ -10,13 +10,12 @@ import {
 import React, { useState } from "react";
 
 import AntDesign from "@expo/vector-icons/AntDesign";
-import CustomTabBar from "../../components/CustomTabBar";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import Fontisto from "@expo/vector-icons/Fontisto";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 
-const UserHome = () => {
+const Home = () => {
   const [isEmailFocused, setEmailFocused] = useState(false);
 
   return (
@@ -472,10 +471,11 @@ const UserHome = () => {
           </ScrollView>
         </ScrollView>
       </View>
-      <CustomTabBar />
     </SafeAreaView>
   );
 };
+
+export default Home;
 
 const styles = StyleSheet.create({
   container: {
@@ -591,5 +591,3 @@ const styles = StyleSheet.create({
     backgroundColor: "#F2F8FE",
   },
 });
-
-export default UserHome;

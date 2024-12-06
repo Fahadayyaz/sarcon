@@ -12,7 +12,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 
-const UserPayments = ({ route, navigation }) => {
+const PaymentMethods = ({ route, navigation }) => {
   const { selectedPlan } = route.params;
 
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState(null);
@@ -81,7 +81,7 @@ const UserPayments = ({ route, navigation }) => {
           <TouchableOpacity
             onPress={() => {
               handleRadioButtonPress();
-              navigation.navigate("UserCardDetail");
+              navigation.navigate("CardDetails");
             }}
             style={styles.radioButtonContainer}
           >
@@ -167,4 +167,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default UserPayments;
+export default PaymentMethods;

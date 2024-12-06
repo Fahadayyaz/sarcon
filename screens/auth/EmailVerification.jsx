@@ -12,7 +12,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import { useNavigation } from "@react-navigation/native";
 
-const UserSubscribed = () => {
+export default function EmailVerification() {
   const navigation = useNavigation();
 
   return (
@@ -31,38 +31,24 @@ const UserSubscribed = () => {
       />
       <View style={styles.content__Container}>
         <Image
-          source={require("./../../assets/subscribedSuccessfullyLogo.png")}
+          source={require("./../../assets/emailVerificationLogo.png")}
           style={{
-            width: 332.62,
-            height: 330.22,
-            marginTop: "40%",
+            width: 163.48,
+            height: 163.48,
+            marginTop: "25%",
             alignSelf: "center",
           }}
         />
+
         <ScrollView showsVerticalScrollIndicator={false}>
-          <Text
-            style={{
-              fontWeight: "bold",
-              fontSize: 20,
-              marginTop: "5%",
-              alignSelf: "center",
-              textAlign: "center",
-            }}
-          >
-            Subsucribed Successfully
+          <Text style={{ fontWeight: "bold", fontSize: 28, marginTop: "5%" }}>
+            Email Verification
           </Text>
-          <Text
-            style={{
-              textAlign: "center",
-              color: "#8A8A8A",
-              fontSize: 14,
-              alignSelf: "center",
-            }}
-          >
-            Your Subscription has been Successfuly
+          <Text style={{ color: "#8A8A8A", fontSize: 14 }}>
+            We have sent a link at your email abc123@gmail.com verifiy it
           </Text>
           <Pressable
-            onPress={() => navigation.navigate("UserSignIn")}
+            onPress={() => navigation.navigate("SignIn")}
             style={{
               width: "100%",
               height: 48,
@@ -70,8 +56,8 @@ const UserSubscribed = () => {
               justifyContent: "center",
               alignItems: "center",
               borderRadius: 54,
-              marginTop: "50%",
-              marginBottom: "20%",
+              marginTop: "40%",
+              marginBottom: "10%",
             }}
           >
             <Text
@@ -81,16 +67,14 @@ const UserSubscribed = () => {
                 fontWeight: "bold",
               }}
             >
-              Submit
+              Back to Login
             </Text>
           </Pressable>
         </ScrollView>
       </View>
     </SafeAreaView>
   );
-};
-
-export default UserSubscribed;
+}
 
 const styles = StyleSheet.create({
   container: {

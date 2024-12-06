@@ -1,9 +1,9 @@
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
-import React, { useState } from "react";
+import React from "react";
 
 import { SafeAreaView } from "react-native-safe-area-context";
 
-const CustomPopup = ({ text, style, children, onPress, text2, source }) => {
+const CustomPopup = ({ text, children, onPress, text2, source }) => {
   return (
     <SafeAreaView style={styles.container}>
       <Pressable style={styles.content__container} onPress={onPress}>

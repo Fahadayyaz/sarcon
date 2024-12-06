@@ -6,25 +6,27 @@ import {
   Text,
   View,
 } from "react-native";
-import React, { useState } from "react";
+import React from "react";
 
 import AntDesign from "@expo/vector-icons/AntDesign";
 import { RadioButton } from "react-native-paper";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
+import { useAtom } from "jotai";
+import { roleAtom } from "../../state";
 
 const roles = {
   user: "user",
   provider: "provider",
 };
 
-const Login = ({ navigation }) => {
-  const [selected, setSelected] = useState(roles.user);
+export default function Role({ navigation }) {
+  const [selected, setSelected] = useAtom(roleAtom);
 
   const handleNavigation = () => {
-    navigation.navigate(
-      selected === roles.user ? "UserSignIn" : "ProviderSignIn"
-    );
+    if (!selected) return alert("Please select a role to continue.");
+
+    navigation.navigate("SignIn");
   };
 
   return (
@@ -32,7 +34,7 @@ const Login = ({ navigation }) => {
       <StatusBar style="auto" backgroundColor="#ffffff" />
       <View style={styles.contentContainer}>
         <Image
-          source={require("./../assets/sarconIcon.png")}
+          source={require("../../assets/sarconIcon.png")}
           style={{
             width: 184,
             height: 62,
@@ -48,13 +50,13 @@ const Login = ({ navigation }) => {
           <RoleButton
             isSelected={selected === roles.user}
             onPress={() => setSelected(roles.user)}
-            image={require("./../assets/userSide.png")}
+            image={require("../../assets/userSide.png")}
             label={roles.user}
           />
           <RoleButton
             isSelected={selected === roles.provider}
             onPress={() => setSelected(roles.provider)}
-            image={require("./../assets/providerSide.png")}
+            image={require("../../assets/providerSide.png")}
             label="provider"
           />
           <Pressable
@@ -76,7 +78,7 @@ const Login = ({ navigation }) => {
       </View>
     </SafeAreaView>
   );
-};
+}
 
 function RoleButton({ isSelected, onPress, image, label }) {
   return (
@@ -104,8 +106,6 @@ function RoleButton({ isSelected, onPress, image, label }) {
     </>
   );
 }
-
-export default Login;
 
 const styles = StyleSheet.create({
   mainContainer: {

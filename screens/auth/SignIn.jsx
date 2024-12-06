@@ -6,19 +6,20 @@ import {
   Text,
   View,
 } from "react-native";
-import MapView, { Marker } from "react-native-maps";
 import React from "react";
 
-import EvilIcons from "@expo/vector-icons/EvilIcons";
 import Feather from "@expo/vector-icons/Feather";
 import Fontisto from "@expo/vector-icons/Fontisto";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import { useNavigation } from "@react-navigation/native";
 import Input from "../../components/Input";
+import { useAtom } from "jotai";
+import { roleAtom } from "../../state";
 
-const ProviderSignUp = () => {
+export default function SignIn() {
   const navigation = useNavigation();
+  const [userRole] = useAtom(roleAtom);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -36,62 +37,44 @@ const ProviderSignUp = () => {
       />
       <View style={styles.content__container}>
         <Image
-          source={require("./../../assets/phoneMan.png")}
+          source={require("./../../assets/doorMan.png")}
           style={{
-            width: 147,
-            height: 147.67,
+            width: 233.84,
+            height: 192.97,
             marginTop: "25%",
             alignSelf: "center",
           }}
         />
-        <ScrollView
-          style={{ height: "100%", width: "100%" }}
-          showsVerticalScrollIndicator={false}
-        >
+        <ScrollView showsVerticalScrollIndicator={false}>
           <Text style={{ fontWeight: "bold", fontSize: 28, marginTop: 15 }}>
-            Sign Up
+            Sign In
           </Text>
           <Text style={{ color: "#838383", fontSize: 14 }}>
-            Please SignUp to join us.
+            Please login to continue.
           </Text>
-          <Input icon={EvilIcons} iconName="user" placeholder="Name" />
           <Input icon={Fontisto} iconName="email" placeholder="Email Address" />
-          <Input icon={Feather} iconName="phone" placeholder="Phone" />
           <Input
             icon={Feather}
             iconName="lock"
             secureTextEntry={true}
             placeholder="Password"
           />
-          <Input
-            icon={Feather}
-            iconName="lock"
-            secureTextEntry={true}
-            placeholder="Confirm Password"
-          />
-          <Input icon={EvilIcons} iconName="location" placeholder="Address" />
-          <View style={styles.mapContainer}>
-            <MapView
-              style={styles.map}
-              initialRegion={{
-                latitude: 37.78825,
-                longitude: -122.4324,
-                latitudeDelta: 0.0922,
-                longitudeDelta: 0.0421,
-              }}
-            >
-              <Marker
-                coordinate={{ latitude: 37.78825, longitude: -122.4324 }}
-                title="Marker Title"
-                description="Marker Description"
-              />
-            </MapView>
-          </View>
-          <Text style={{ color: "#838383", fontSize: 14, marginTop: "10%" }}>
-            I agree to terms and conditions and privacy.
-          </Text>
           <Pressable
-            onPress={() => navigation.navigate("ProviderUploadPhoto")}
+            onPress={() => navigation.navigate("ForgotPassword")}
+            style={{ alignSelf: "flex-end", marginTop: 10 }}
+          >
+            <Text
+              style={{ color: "#0474ED", fontSize: 14, fontWeight: "bold" }}
+            >
+              Forgot password?
+            </Text>
+          </Pressable>
+          <Pressable
+            onPress={() =>
+              navigation.navigate(
+                userRole === "user" ? "UserRoutes" : "ProviderRoutes"
+              )
+            }
             style={{
               width: "100%",
               height: 48,
@@ -99,32 +82,31 @@ const ProviderSignUp = () => {
               justifyContent: "center",
               alignItems: "center",
               borderRadius: 54,
-              marginTop: "5%",
+              marginTop: "20%",
             }}
           >
             <Text style={{ color: "#fff", fontSize: 14, fontWeight: "bold" }}>
-              SignUp
+              Login
             </Text>
           </Pressable>
           <View
             style={{
               flexDirection: "row",
               alignSelf: "center",
-              marginTop: 20,
-              marginBottom: 40,
+              marginTop: "10%",
             }}
           >
             <Text
               style={{ color: "#838383", fontSize: 14, fontWeight: "bold" }}
             >
-              Already have an account?
+              Don't have an account?
             </Text>
-            <Pressable onPress={() => navigation.navigate("ProviderSignIn")}>
+            <Pressable onPress={() => navigation.navigate("SignUp")}>
               <Text
                 style={{ color: "#0474ED", fontSize: 14, fontWeight: "bold" }}
               >
                 {" "}
-                Login
+                Sign Up
               </Text>
             </Pressable>
           </View>
@@ -132,9 +114,7 @@ const ProviderSignUp = () => {
       </View>
     </SafeAreaView>
   );
-};
-
-export default ProviderSignUp;
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -146,17 +126,7 @@ const styles = StyleSheet.create({
     height: "100%",
     alignSelf: "center",
   },
-
   text: {
     fontSize: 30,
-  },
-  mapContainer: {
-    height: 150,
-    marginTop: 20,
-    borderRadius: 24,
-    overflow: "hidden",
-  },
-  map: {
-    ...StyleSheet.absoluteFillObject,
   },
 });

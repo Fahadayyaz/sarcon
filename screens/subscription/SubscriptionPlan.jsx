@@ -35,7 +35,7 @@ const plans = [
   },
 ];
 
-const UserSubscriptionPlan = ({ navigation }) => {
+const SubscriptionPlan = ({ navigation }) => {
   const [selectedPlanId, setSelectedPlanId] = useState(null);
 
   return (
@@ -66,7 +66,7 @@ const UserSubscriptionPlan = ({ navigation }) => {
             ]}
             onPress={() => {
               setSelectedPlanId(plan.id);
-              navigation.navigate("UserPayments", { selectedPlan: plan });
+              navigation.navigate("PaymentMethods", { selectedPlan: plan });
             }}
           >
             <View style={styles.planRow}>
@@ -107,6 +107,12 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
   },
+  content__container: {
+    width: "90%",
+    alignSelf: "center",
+    alignItems: "center",
+    marginTop: 140,
+  },
   header__box: {
     flexDirection: "row",
     borderBottomLeftRadius: 24,
@@ -116,13 +122,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingHorizontal: 10,
   },
-  content__container: {
-    width: "90%",
-    alignSelf: "center",
-    alignItems: "center",
-    marginTop: 140,
-  },
-
   header__text: {
     fontSize: 20,
     fontWeight: "bold",
@@ -162,4 +161,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default UserSubscriptionPlan;
+export default SubscriptionPlan;

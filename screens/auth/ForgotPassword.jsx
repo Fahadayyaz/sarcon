@@ -8,11 +8,13 @@ import {
 } from "react-native";
 import React from "react";
 
+import Fontisto from "@expo/vector-icons/Fontisto";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import { useNavigation } from "@react-navigation/native";
+import Input from "../../components/Input";
 
-const UserForgotPassword = () => {
+export default function ForgotPassword() {
   const navigation = useNavigation();
 
   return (
@@ -31,7 +33,7 @@ const UserForgotPassword = () => {
       />
       <View style={styles.content__Container}>
         <Image
-          source={require("./../../assets/emailVerificationLogo.png")}
+          source={require("./../../assets/forgotPasswordLogo.png")}
           style={{
             width: 163.48,
             height: 163.48,
@@ -39,15 +41,18 @@ const UserForgotPassword = () => {
             alignSelf: "center",
           }}
         />
+
         <ScrollView showsVerticalScrollIndicator={false}>
           <Text style={{ fontWeight: "bold", fontSize: 28, marginTop: "5%" }}>
-            Email Verification
+            Forgot Password?
           </Text>
           <Text style={{ color: "#8A8A8A", fontSize: 14 }}>
-            We have sent a link at your email abc123@gmail.com verifiy it
+            Opps. It happens to the best of us. Input your email to fix the
+            issue.
           </Text>
+          <Input icon={Fontisto} iconName="email" placeholder="Email Address" />
           <Pressable
-            onPress={() => navigation.navigate("UserSignIn")}
+            onPress={() => navigation.navigate("Otp")}
             style={{
               width: "100%",
               height: 48,
@@ -66,16 +71,14 @@ const UserForgotPassword = () => {
                 fontWeight: "bold",
               }}
             >
-              Back to Login
+              Submit
             </Text>
           </Pressable>
         </ScrollView>
       </View>
     </SafeAreaView>
   );
-};
-
-export default UserForgotPassword;
+}
 
 const styles = StyleSheet.create({
   container: {

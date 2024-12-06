@@ -6,13 +6,15 @@ import {
   Text,
   View,
 } from "react-native";
-
 import React from "react";
+
+import Feather from "@expo/vector-icons/Feather";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import { useNavigation } from "@react-navigation/native";
+import Input from "../../components/Input";
 
-const ProviderSubscribed = () => {
+export default function ChangePassword() {
   const navigation = useNavigation();
 
   return (
@@ -31,38 +33,42 @@ const ProviderSubscribed = () => {
       />
       <View style={styles.content__Container}>
         <Image
-          source={require("./../../assets/subscribedSuccessfullyLogo.png")}
+          source={require("./../../assets/changePasswordLogo.png")}
           style={{
-            width: 332.62,
-            height: 330.22,
-            marginTop: "40%",
+            width: 163.48,
+            height: 163.48,
+            marginTop: "25%",
             alignSelf: "center",
           }}
         />
+
         <ScrollView showsVerticalScrollIndicator={false}>
-          <Text
-            style={{
-              fontWeight: "bold",
-              fontSize: 20,
-              marginTop: "5%",
-              alignSelf: "center",
-              textAlign: "center",
-            }}
-          >
-            Subsucribed Successfully
+          <Text style={{ fontWeight: "bold", fontSize: 28, marginTop: "5%" }}>
+            Change Password
           </Text>
-          <Text
-            style={{
-              textAlign: "center",
-              color: "#8A8A8A",
-              fontSize: 14,
-              alignSelf: "center",
-            }}
-          >
-            Your Subscription has been Successfuly
+          <Text style={{ color: "#8A8A8A", fontSize: 14 }}>
+            Please enter new credentials
           </Text>
+          <Input
+            icon={Feather}
+            iconName="lock"
+            placeholder="Old Password"
+            secureTextEntry={true}
+          />
+          <Input
+            icon={Feather}
+            iconName="lock"
+            placeholder="New Password"
+            secureTextEntry={true}
+          />
+          <Input
+            icon={Feather}
+            iconName="lock"
+            placeholder="Confirm Password"
+            secureTextEntry={true}
+          />
           <Pressable
-            onPress={() => navigation.navigate("ProviderSignIn")}
+            onPress={() => navigation.navigate("EmailVerification")}
             style={{
               width: "100%",
               height: 48,
@@ -70,8 +76,8 @@ const ProviderSubscribed = () => {
               justifyContent: "center",
               alignItems: "center",
               borderRadius: 54,
-              marginTop: "50%",
-              marginBottom: "20%",
+              marginTop: "30%",
+              marginBottom: "10%",
             }}
           >
             <Text
@@ -88,9 +94,7 @@ const ProviderSubscribed = () => {
       </View>
     </SafeAreaView>
   );
-};
-
-export default ProviderSubscribed;
+}
 
 const styles = StyleSheet.create({
   container: {

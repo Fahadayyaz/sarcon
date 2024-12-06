@@ -12,7 +12,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import { useNavigation } from "@react-navigation/native";
 
-const ProviderEmailVerification = () => {
+const Subscribed = () => {
   const navigation = useNavigation();
 
   return (
@@ -31,26 +31,38 @@ const ProviderEmailVerification = () => {
       />
       <View style={styles.content__Container}>
         <Image
-          source={require("./../../assets/emailVerificationLogo.png")}
+          source={require("./../../assets/subscribedSuccessfullyLogo.png")}
           style={{
-            width: 163.48,
-            height: 163.48,
-            marginTop: "25%",
+            width: 332.62,
+            height: 330.22,
+            marginTop: "40%",
             alignSelf: "center",
           }}
         />
-
         <ScrollView showsVerticalScrollIndicator={false}>
-          <Text style={{ fontWeight: "bold", fontSize: 28, marginTop: "5%" }}>
-            Email Verification
+          <Text
+            style={{
+              fontWeight: "bold",
+              fontSize: 20,
+              marginTop: "5%",
+              alignSelf: "center",
+              textAlign: "center",
+            }}
+          >
+            Subscribed Successfully
           </Text>
-          <Text style={{ color: "#8A8A8A", fontSize: 14 }}>
-            We have sent a link at your email abc123@gmail.com verifiy it
+          <Text
+            style={{
+              textAlign: "center",
+              color: "#8A8A8A",
+              fontSize: 14,
+              alignSelf: "center",
+            }}
+          >
+            Your Subscription has been Successfully
           </Text>
-
-          {/* back to login button */}
           <Pressable
-            onPress={() => navigation.navigate("ProviderSignIn")}
+            onPress={() => navigation.navigate("SignIn")}
             style={{
               width: "100%",
               height: 48,
@@ -58,8 +70,8 @@ const ProviderEmailVerification = () => {
               justifyContent: "center",
               alignItems: "center",
               borderRadius: 54,
-              marginTop: "40%",
-              marginBottom: "10%",
+              marginTop: "50%",
+              marginBottom: "20%",
             }}
           >
             <Text
@@ -69,7 +81,7 @@ const ProviderEmailVerification = () => {
                 fontWeight: "bold",
               }}
             >
-              Back to Login
+              Submit
             </Text>
           </Pressable>
         </ScrollView>
@@ -78,7 +90,7 @@ const ProviderEmailVerification = () => {
   );
 };
 
-export default ProviderEmailVerification;
+export default Subscribed;
 
 const styles = StyleSheet.create({
   container: {

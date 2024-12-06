@@ -6,8 +6,10 @@ import {
   Text,
   View,
 } from "react-native";
+import MapView, { Marker } from "react-native-maps";
 import React from "react";
 
+import EvilIcons from "@expo/vector-icons/EvilIcons";
 import Feather from "@expo/vector-icons/Feather";
 import Fontisto from "@expo/vector-icons/Fontisto";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -15,16 +17,14 @@ import { StatusBar } from "expo-status-bar";
 import { useNavigation } from "@react-navigation/native";
 import Input from "../../components/Input";
 
-const background = require("./../../assets/topCornerCircles.png");
-
-const UserSignIn = () => {
+export default function SignUp() {
   const navigation = useNavigation();
 
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style={"auto"} />
       <Image
-        source={background}
+        source={require("./../../assets/topCornerCircles.png")}
         style={{
           width: 100.45,
           height: 114.34,
@@ -36,40 +36,62 @@ const UserSignIn = () => {
       />
       <View style={styles.content__container}>
         <Image
-          source={require("./../../assets/doorMan.png")}
+          source={require("./../../assets/phoneMan.png")}
           style={{
-            width: 233.84,
-            height: 192.97,
+            width: 147,
+            height: 147.67,
             marginTop: "25%",
             alignSelf: "center",
           }}
         />
-        <ScrollView showsVerticalScrollIndicator={false}>
+        <ScrollView
+          style={{ height: "100%", width: "100%" }}
+          showsVerticalScrollIndicator={false}
+        >
           <Text style={{ fontWeight: "bold", fontSize: 28, marginTop: 15 }}>
-            Sign In
+            Sign Up
           </Text>
           <Text style={{ color: "#838383", fontSize: 14 }}>
-            Please login to continue.
+            Please SignUp to join us.
           </Text>
+          <Input icon={EvilIcons} iconName="user" placeholder="Name" />
           <Input icon={Fontisto} iconName="email" placeholder="Email Address" />
+          <Input icon={Feather} iconName="phone" placeholder="Phone" />
           <Input
             icon={Feather}
             iconName="lock"
             secureTextEntry={true}
             placeholder="Password"
           />
-          <Pressable
-            onPress={() => navigation.navigate("UserForgotPassword")}
-            style={{ alignSelf: "flex-end", marginTop: 10 }}
-          >
-            <Text
-              style={{ color: "#0474ED", fontSize: 14, fontWeight: "bold" }}
+          <Input
+            icon={Feather}
+            iconName="lock"
+            secureTextEntry={true}
+            placeholder="Confirm Password"
+          />
+          <Input icon={EvilIcons} iconName="location" placeholder="Address" />
+          <View style={styles.mapContainer}>
+            <MapView
+              style={styles.map}
+              initialRegion={{
+                latitude: 37.78825,
+                longitude: -122.4324,
+                latitudeDelta: 0.0922,
+                longitudeDelta: 0.0421,
+              }}
             >
-              Forgot password?
-            </Text>
-          </Pressable>
+              <Marker
+                coordinate={{ latitude: 37.78825, longitude: -122.4324 }}
+                title="Marker Title"
+                description="Marker Description"
+              />
+            </MapView>
+          </View>
+          <Text style={{ color: "#838383", fontSize: 14, marginTop: "10%" }}>
+            I agree to terms and conditions and privacy.
+          </Text>
           <Pressable
-            onPress={() => navigation.navigate("UserHome")}
+            onPress={() => navigation.navigate("UploadPhoto")}
             style={{
               width: "100%",
               height: 48,
@@ -77,30 +99,32 @@ const UserSignIn = () => {
               justifyContent: "center",
               alignItems: "center",
               borderRadius: 54,
-              marginTop: "20%",
+              marginTop: "5%",
             }}
           >
             <Text style={{ color: "#fff", fontSize: 14, fontWeight: "bold" }}>
-              Login
+              SignUp
             </Text>
           </Pressable>
           <View
             style={{
               flexDirection: "row",
               alignSelf: "center",
-              marginTop: "10%",
+              marginTop: 20,
+              marginBottom: 40,
             }}
           >
             <Text
               style={{ color: "#838383", fontSize: 14, fontWeight: "bold" }}
             >
-              Don't have an account?
+              Already have an account?
             </Text>
-            <Pressable onPress={() => navigation.navigate("UserSignUp")}>
+            <Pressable onPress={() => navigation.navigate("SignIn")}>
               <Text
                 style={{ color: "#0474ED", fontSize: 14, fontWeight: "bold" }}
               >
-                Sign Up
+                {" "}
+                Login
               </Text>
             </Pressable>
           </View>
@@ -108,9 +132,7 @@ const UserSignIn = () => {
       </View>
     </SafeAreaView>
   );
-};
-
-export default UserSignIn;
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -122,7 +144,17 @@ const styles = StyleSheet.create({
     height: "100%",
     alignSelf: "center",
   },
+
   text: {
     fontSize: 30,
+  },
+  mapContainer: {
+    height: 150,
+    marginTop: 20,
+    borderRadius: 24,
+    overflow: "hidden",
+  },
+  map: {
+    ...StyleSheet.absoluteFillObject,
   },
 });

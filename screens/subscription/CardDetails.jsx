@@ -13,7 +13,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import { useNavigation } from "@react-navigation/native";
 
-const UserCardDetail = () => {
+const CardDetails = () => {
   const [isNameFocused, setNameFocused] = useState(false);
   const [isCardNumberFocused, setCardNumberFocused] = useState(false);
   const [isExpiryDateFocused, setExpiryDateFocused] = useState(false);
@@ -24,7 +24,6 @@ const UserCardDetail = () => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="auto" />
-      {/* Header Section */}
       <View style={styles.header__box}>
         <Pressable
           onPress={() => navigation.goBack()}
@@ -51,9 +50,7 @@ const UserCardDetail = () => {
           }}
           showsVerticalScrollIndicator={false}
         >
-          {/* name section */}
           <Text style={styles.input__heading}>Name</Text>
-          {/* name input container */}
           <View
             style={{
               alignItems: "center",
@@ -73,10 +70,7 @@ const UserCardDetail = () => {
               onBlur={() => setNameFocused(false)}
             />
           </View>
-
-          {/* card number section */}
           <Text style={styles.input__heading}>Card Number</Text>
-          {/* card number input container */}
           <View
             style={{
               alignItems: "center",
@@ -96,9 +90,7 @@ const UserCardDetail = () => {
               onBlur={() => setCardNumberFocused(false)}
             />
           </View>
-          {/* Expiry date section */}
           <Text style={styles.input__heading}>Expiry Date</Text>
-          {/* Expiry date input container */}
           <View
             style={{
               alignItems: "center",
@@ -118,9 +110,7 @@ const UserCardDetail = () => {
               onBlur={() => setExpiryDateFocused(false)}
             />
           </View>
-          {/* Cvv section */}
           <Text style={styles.input__heading}>Cvv</Text>
-          {/* Cvv input container */}
           <View
             style={{
               alignItems: "center",
@@ -141,7 +131,7 @@ const UserCardDetail = () => {
             />
           </View>
           <Pressable
-            onPress={() => navigation.navigate("UserSubscribed")}
+            onPress={() => navigation.navigate("Subscribed")}
             style={{
               width: "100%",
               height: 48,
@@ -163,7 +153,7 @@ const UserCardDetail = () => {
   );
 };
 
-export default UserCardDetail;
+export default CardDetails;
 
 const styles = StyleSheet.create({
   container: {

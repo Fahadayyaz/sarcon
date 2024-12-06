@@ -4,7 +4,7 @@ import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 
-const ProviderHome = () => {
+const Home = () => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="auto" />
@@ -14,7 +14,7 @@ const ProviderHome = () => {
   );
 };
 
-export default ProviderHome;
+export default Home;
 
 const styles = StyleSheet.create({
   container: {
