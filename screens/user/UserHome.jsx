@@ -22,7 +22,7 @@ const UserHome = () => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="auto" />
-      <ScrollView contentContainerStyle={styles.content__Container}>
+      <View style={styles.content__Container}>
         <View style={styles.header}>
           <View style={{ flexDirection: "row" }}>
             <View style={styles.location__logo}>
@@ -45,10 +45,10 @@ const UserHome = () => {
           </View>
           <View style={styles.header__display__picture}>
             <Image
-              source={require("./../../assets/cleaningTools.png")}
+              source={require("./../../assets/userDp.png")}
               style={{
-                width: 40,
-                height: 40,
+                width: 49,
+                height: 49,
                 alignSelf: "center",
               }}
             />
@@ -91,7 +91,9 @@ const UserHome = () => {
             marginTop: 10,
           }}
         >
-          <Text style={{ fontSize: 16, fontWeight: "bold" }}>Categories</Text>
+          <Text style={{ fontSize: 16, fontWeight: "bold" }}>
+            All Categories
+          </Text>
           <Pressable>
             <Text style={{ color: "#0474ED", fontWeight: "bold" }}>
               See all
@@ -128,8 +130,8 @@ const UserHome = () => {
             <Image
               source={require("./../../assets/handTool.png")}
               style={{
-                width: 72,
-                height: 72,
+                width: 61,
+                height: 55.02,
                 alignSelf: "center",
               }}
             />
@@ -147,8 +149,8 @@ const UserHome = () => {
             <Image
               source={require("./../../assets/cuttingTool.png")}
               style={{
-                width: 72,
-                height: 72,
+                width: 50,
+                height: 50,
                 alignSelf: "center",
               }}
             />
@@ -166,8 +168,8 @@ const UserHome = () => {
             <Image
               source={require("./../../assets/liftingTool.png")}
               style={{
-                width: 72,
-                height: 72,
+                width: 33.39,
+                height: 50.32,
                 alignSelf: "center",
               }}
             />
@@ -193,8 +195,8 @@ const UserHome = () => {
             <Image
               source={require("./../../assets/hvacTools.png")}
               style={{
-                width: 72,
-                height: 72,
+                width: 48.87,
+                height: 46.69,
                 alignSelf: "center",
               }}
             />
@@ -212,8 +214,8 @@ const UserHome = () => {
             <Image
               source={require("./../../assets/gardeningTools.png")}
               style={{
-                width: 72,
-                height: 72,
+                width: 78.09,
+                height: 50.53,
                 alignSelf: "center",
               }}
             />
@@ -231,8 +233,8 @@ const UserHome = () => {
             <Image
               source={require("./../../assets/weldingHelmets.png")}
               style={{
-                width: 72,
-                height: 72,
+                width: 50,
+                height: 58.92,
                 alignSelf: "center",
               }}
             />
@@ -250,8 +252,8 @@ const UserHome = () => {
             <Image
               source={require("./../../assets/cleaningTools.png")}
               style={{
-                width: 72,
-                height: 72,
+                width: 68,
+                height: 68,
                 alignSelf: "center",
               }}
             />
@@ -266,7 +268,27 @@ const UserHome = () => {
             </Text>
           </Pressable>
         </ScrollView>
-      </ScrollView>
+        <View
+          style={{
+            flexDirection: "row",
+            width: "100%",
+            justifyContent: "space-between",
+            marginTop: 10,
+          }}
+        >
+          <Text style={{ fontSize: 16, fontWeight: "bold" }}>
+            Recomended for you
+          </Text>
+          <Pressable>
+            <Text style={{ color: "#0474ED", fontWeight: "bold" }}>
+              See all
+            </Text>
+          </Pressable>
+        </View>
+        <View style={styles.recomended__first}>
+            
+        </View>
+      </View>
     </SafeAreaView>
   );
 };
@@ -279,7 +301,6 @@ const styles = StyleSheet.create({
   content__Container: {
     width: "90%",
     alignSelf: "center",
-    paddingBottom: 20, // Add bottom padding to avoid scroll issues
   },
   header: {
     flexDirection: "row",
@@ -301,7 +322,6 @@ const styles = StyleSheet.create({
     width: 49,
     height: 49,
     borderRadius: 30,
-    backgroundColor: "yellow",
     justifyContent: "center",
     alignItems: "center",
   },
