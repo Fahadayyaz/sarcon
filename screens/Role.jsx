@@ -14,14 +14,10 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 
 const Login = ({ navigation }) => {
-  const [checked, setChecked] = useState("user");
+  const [selected, setSelected] = useState("user");
 
   const handleNavigation = () => {
-    if (checked === "user") {
-      navigation.navigate("UserSignIn");
-    } else if (checked === "provider") {
-      navigation.navigate("ProviderSignIn");
-    }
+    navigation.navigate(checked === "user" ? "UserSignIn" : "ProviderSignIn");
   };
 
   return (
@@ -42,56 +38,18 @@ const Login = ({ navigation }) => {
           <Text style={{ color: "gray", fontSize: 14 }}>
             Please Select your role for this app.
           </Text>
-
-          {/* User Radio Button */}
-          <View style={styles.radioContainer}>
-            <RadioButton
-              value="user"
-              status={checked === "user" ? "checked" : "unchecked"}
-              onPress={() => setChecked("user")}
-            />
-            <Text style={styles.radio__Text}>User</Text>
-          </View>
-          <View
-            style={[
-              styles.card,
-              { borderColor: checked === "user" ? "#0474ED" : "#cccccc" }, // Change border color based on selection
-            ]}
-          >
-            <Image
-              source={require("./../assets/userSide.png")}
-              style={{
-                width: "100%",
-                height: 201,
-                borderRadius: 22,
-              }}
-            />
-          </View>
-
-          {/* Provider Radio Button */}
-          <View style={styles.radioContainer}>
-            <RadioButton
-              value="provider"
-              status={checked === "provider" ? "checked" : "unchecked"}
-              onPress={() => setChecked("provider")}
-            />
-            <Text style={styles.radio__Text}>Provider</Text>
-          </View>
-          <View
-            style={[
-              styles.card,
-              { borderColor: checked === "provider" ? "#0474ED" : "#cccccc" }, // Change border color based on selection
-            ]}
-          >
-            <Image
-              source={require("./../assets/providerSide.png")}
-              style={{
-                width: "100%",
-                height: 201,
-                borderRadius: 22,
-              }}
-            />
-          </View>
+          <RoleButton
+            checked={selected}
+            setChecked={setSelected}
+            image={require("./../assets/userSide.png")}
+            label="user"
+          />
+          <RoleButton
+            checked={selected}
+            setChecked={setSelected}
+            image={require("./../assets/providerSide.png")}
+            label="provider"
+          />
           <Pressable
             style={{
               width: 135,
@@ -103,7 +61,7 @@ const Login = ({ navigation }) => {
               alignItems: "center",
               alignSelf: "flex-end",
             }}
-            onPress={handleNavigation} // Call navigation function onPress
+            onPress={handleNavigation}
           >
             <AntDesign name="arrowright" size={24} color="white" />
           </Pressable>
@@ -112,6 +70,33 @@ const Login = ({ navigation }) => {
     </SafeAreaView>
   );
 };
+
+function RoleButton({ checked, setChecked, image, label }) {
+  return (
+    <>
+      <View style={styles.radioContainer}>
+        <RadioButton
+          value={label}
+          onPress={() => setChecked(label)}
+          status={checked === label ? "checked" : "unchecked"}
+        />
+        <Text style={styles.radio__Text}>{label}</Text>
+      </View>
+      <Pressable
+        onPress={() => setChecked(label)}
+        style={{
+          ...styles.card,
+          borderColor: checked === label ? "#0474ED" : "#cccccc",
+        }}
+      >
+        <Image
+          source={image}
+          style={{ width: "100%", height: 201, borderRadius: 22 }}
+        />
+      </Pressable>
+    </>
+  );
+}
 
 export default Login;
 
@@ -132,10 +117,11 @@ const styles = StyleSheet.create({
   radio__Text: {
     fontSize: 16,
     color: "black",
+    textTransform: "capitalize",
   },
   card: {
     borderRadius: 24,
     borderWidth: 3,
-    marginTop: 10, // Add spacing between cards
+    marginTop: 10,
   },
 });
