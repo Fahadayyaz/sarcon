@@ -1,17 +1,17 @@
 import {
+  Image,
+  Pressable,
+  ScrollView,
   StyleSheet,
   Text,
-  View,
-  Image,
   TextInput,
-  ScrollView,
-  Pressable,
+  View,
 } from "react-native";
 import React, { useState } from "react";
+
+import Fontisto from "@expo/vector-icons/Fontisto";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
-import Fontisto from "@expo/vector-icons/Fontisto";
-import Feather from "@expo/vector-icons/Feather";
 import { useNavigation } from "@react-navigation/native";
 
 const ProviderForgotPassword = () => {

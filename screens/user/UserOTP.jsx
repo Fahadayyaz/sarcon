@@ -1,13 +1,14 @@
-import React, { useRef, useState } from "react";
 import {
+  Image,
+  Pressable,
+  ScrollView,
   StyleSheet,
   Text,
   TextInput,
   View,
-  Image,
-  ScrollView,
-  Pressable,
 } from "react-native";
+import React, { useRef, useState } from "react";
+
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import { useNavigation } from "@react-navigation/native";

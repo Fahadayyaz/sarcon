@@ -1,15 +1,16 @@
-import React, { useState } from "react";
 import {
-  View,
-  Text,
-  StyleSheet,
   Pressable,
+  StyleSheet,
+  Text,
   TouchableOpacity,
+  View,
 } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { StatusBar } from "expo-status-bar";
+import React, { useState } from "react";
+
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { LinearGradient } from "expo-linear-gradient";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { StatusBar } from "expo-status-bar";
 
 const ProviderPayments = ({ route, navigation }) => {
   const { selectedPlan } = route.params;

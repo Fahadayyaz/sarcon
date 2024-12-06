@@ -1,17 +1,18 @@
-import React, { useState } from "react";
 import {
+  Pressable,
   StyleSheet,
   Text,
-  View,
   TouchableOpacity,
-  Pressable,
+  View,
 } from "react-native";
+import React, { useState } from "react";
+
+import Ionicons from "@expo/vector-icons/Ionicons";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
-import Ionicons from "@expo/vector-icons/Ionicons";
 
 const UserSubscriptionPlan = ({ navigation }) => {
-  const [selectedPlanId, setSelectedPlanId] = useState(null); // State to track the selected card
+  const [selectedPlanId, setSelectedPlanId] = useState(null);
 
   const plans = [
     {

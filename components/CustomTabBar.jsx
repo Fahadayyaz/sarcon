@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from "react";
 import {
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity,
+  Keyboard,
   KeyboardAvoidingView,
   Platform,
-  Keyboard,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import React, { useEffect, useState } from "react";
+
 import Ionicons from "react-native-vector-icons/Ionicons";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const CustomTabBar = () => {
   const [isKeyboardVisible, setKeyboardVisible] = useState(false);

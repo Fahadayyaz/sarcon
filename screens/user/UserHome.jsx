@@ -1,24 +1,23 @@
 import {
+  Image,
+  Pressable,
+  ScrollView,
   StyleSheet,
   Text,
-  View,
-  ScrollView,
-  Image,
   TextInput,
-  Pressable,
+  View,
 } from "react-native";
 import React, { useState } from "react";
+
+import AntDesign from "@expo/vector-icons/AntDesign";
+import CustomTabBar from "../../components/CustomTabBar";
+import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
+import Fontisto from "@expo/vector-icons/Fontisto";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
-import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
-import AntDesign from "@expo/vector-icons/AntDesign";
-import Fontisto from "@expo/vector-icons/Fontisto";
-import { useNavigation } from "@react-navigation/native";
-import CustomTabBar from "../../components/CustomTabBar";
 
 const UserHome = () => {
   const [isEmailFocused, setEmailFocused] = useState(false);
-  const navigation = useNavigation();
 
   return (
     <SafeAreaView style={styles.container}>

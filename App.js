@@ -1,42 +1,40 @@
-import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
-import Splash from "./screens/Splash";
-import Role from "./screens/Role";
-import UserSignIn from "./screens/user/UserSignIn";
-import UserSignUp from "./screens/user/UserSignUp";
-import UserForgotPassword from "./screens/user/UserForgotPassword";
-import UserUploadPhoto from "./screens/user/UserUploadPhoto";
-import UserOTP from "./screens/user/UserOTP";
-import UserChangePassword from "./screens/user/UserChangePassword";
-import UserEmailVerification from "./screens/user/UserEmailVerification";
-import UserSubscriptionPlan from "./screens/user/UserSubscriptionPlan";
-import UserPayments from "./screens/user/UserPayments";
-import UserCardDetail from "./screens/user/UserCardDetail";
-import UserSubscribed from "./screens/user/UserSubscribed";
-import UserHome from "./screens/user/UserHome";
-
-import ProviderSignIn from "./screens/provider/ProviderSignIn";
-import ProviderSignUp from "./screens/provider/ProviderSignUp";
-import ProviderForgotPassword from "./screens/provider/ProviderForgotPassword";
-import ProviderUploadPhoto from "./screens/provider/ProviderUploadPhoto";
-import ProviderOTP from "./screens/provider/ProviderOTP";
+import ProviderCardDetail from "./screens/provider/ProviderCardDetail";
 import ProviderChangePassword from "./screens/provider/ProviderChangePassword";
 import ProviderEmailVerification from "./screens/provider/ProviderEmailVerification";
-import ProviderSubscriptionPlan from "./screens/provider/ProviderSubscriptionPlan";
-import ProviderPayments from "./screens/provider/ProviderPayments";
-import ProviderCardDetail from "./screens/provider/ProviderCardDetail";
-import ProviderSubscribed from "./screens/provider/ProviderSubscribed";
+import ProviderForgotPassword from "./screens/provider/ProviderForgotPassword";
 import ProviderHome from "./screens/provider/ProviderHome";
-
+import ProviderOTP from "./screens/provider/ProviderOTP";
+import ProviderPayments from "./screens/provider/ProviderPayments";
+import ProviderSignIn from "./screens/provider/ProviderSignIn";
+import ProviderSignUp from "./screens/provider/ProviderSignUp";
+import ProviderSubscribed from "./screens/provider/ProviderSubscribed";
+import ProviderSubscriptionPlan from "./screens/provider/ProviderSubscriptionPlan";
+import ProviderUploadPhoto from "./screens/provider/ProviderUploadPhoto";
+import React, { useEffect } from "react";
+import Role from "./screens/Role";
+import * as SplashScreen from "expo-splash-screen";
+import UserCardDetail from "./screens/user/UserCardDetail";
+import UserChangePassword from "./screens/user/UserChangePassword";
+import UserEmailVerification from "./screens/user/UserEmailVerification";
+import UserForgotPassword from "./screens/user/UserForgotPassword";
+import UserHome from "./screens/user/UserHome";
+import UserOTP from "./screens/user/UserOTP";
+import UserPayments from "./screens/user/UserPayments";
+import UserSignIn from "./screens/user/UserSignIn";
+import UserSignUp from "./screens/user/UserSignUp";
+import UserSubscribed from "./screens/user/UserSubscribed";
+import UserSubscriptionPlan from "./screens/user/UserSubscriptionPlan";
+import UserUploadPhoto from "./screens/user/UserUploadPhoto";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useFonts } from "expo-font";
-import Test from "./screens/Test";
+
+SplashScreen.preventAutoHideAsync();
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-  const [loaded] = useFonts({
+  const [loaded, error] = useFonts({
     Poppins_SemiBold: require("../sarcon/assets/fonts/Poppins-SemiBold.ttf"),
     Poppins_Medium: require("../sarcon/assets/fonts/Poppins-Medium.ttf"),
     PlusJakartaSans_Regular: require("../sarcon/assets/fonts/PlusJakartaSans-Regular.ttf"),
@@ -44,21 +42,25 @@ export default function App() {
     PlusJakartaSans_Bold: require("../sarcon/assets/fonts/PlusJakartaSans-Bold.ttf"),
   });
 
-  if (!loaded) {
-    return null; // Or show a loading screen
+  useEffect(() => {
+    if (loaded) {
+      SplashScreen.hideAsync();
+    }
+  }, [loaded]);
+
+  if (error) {
+    console.log(error);
   }
 
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="ProviderHome"
+        initialRouteName="Role"
         screenOptions={{ headerShown: false }}
       >
-        <Stack.Screen name="Splash" component={Splash} />
         <Stack.Screen name="Role" component={Role} />
         <Stack.Screen name="UserSignIn" component={UserSignIn} />
         <Stack.Screen name="UserSignUp" component={UserSignUp} />
-        <Stack.Screen name="Test" component={Test} />
         <Stack.Screen
           name="UserForgotPassword"
           component={UserForgotPassword}
@@ -114,7 +116,6 @@ export default function App() {
           name="ProviderSubscribed"
           component={ProviderSubscribed}
         />
-
         <Stack.Screen name="ProviderHome" component={ProviderHome} />
       </Stack.Navigator>
     </NavigationContainer>

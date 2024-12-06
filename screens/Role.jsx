@@ -1,19 +1,20 @@
-import React, { useState } from "react";
 import {
+  Image,
+  Pressable,
+  ScrollView,
   StyleSheet,
   Text,
   View,
-  Image,
-  ScrollView,
-  Pressable,
 } from "react-native";
-import { RadioButton } from "react-native-paper";
-import { StatusBar } from "expo-status-bar";
-import { SafeAreaView } from "react-native-safe-area-context";
+import React, { useState } from "react";
+
 import AntDesign from "@expo/vector-icons/AntDesign";
+import { RadioButton } from "react-native-paper";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { StatusBar } from "expo-status-bar";
 
 const Login = ({ navigation }) => {
-  const [checked, setChecked] = useState("user"); // State to manage selected option
+  const [checked, setChecked] = useState("user");
 
   const handleNavigation = () => {
     if (checked === "user") {

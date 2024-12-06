@@ -1,10 +1,12 @@
-import { StyleSheet, Text, View, Image, Modal, Pressable } from "react-native";
-import React, { useState } from "react";
-import { StatusBar } from "expo-status-bar";
-import { SafeAreaView } from "react-native-safe-area-context";
-import Feather from "@expo/vector-icons/Feather";
 import * as ImagePicker from "expo-image-picker";
+
+import { Image, Modal, Pressable, StyleSheet, Text, View } from "react-native";
+import React, { useState } from "react";
+
 import CustomPopup from "../../components/CustomPopup";
+import Feather from "@expo/vector-icons/Feather";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { StatusBar } from "expo-status-bar";
 import { useNavigation } from "@react-navigation/native";
 
 const ProviderUploadPhoto = () => {
