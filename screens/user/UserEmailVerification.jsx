@@ -6,8 +6,8 @@ import {
   Text,
   View,
 } from "react-native";
-
 import React from "react";
+
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import { useNavigation } from "@react-navigation/native";
@@ -39,7 +39,6 @@ const UserForgotPassword = () => {
             alignSelf: "center",
           }}
         />
-
         <ScrollView showsVerticalScrollIndicator={false}>
           <Text style={{ fontWeight: "bold", fontSize: 28, marginTop: "5%" }}>
             Email Verification
@@ -47,8 +46,6 @@ const UserForgotPassword = () => {
           <Text style={{ color: "#8A8A8A", fontSize: 14 }}>
             We have sent a link at your email abc123@gmail.com verifiy it
           </Text>
-
-          {/* back to login button */}
           <Pressable
             onPress={() => navigation.navigate("UserSignIn")}
             style={{
