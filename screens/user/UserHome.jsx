@@ -22,7 +22,7 @@ const UserHome = () => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="auto" />
-      <View style={styles.content__Container}>
+      <ScrollView contentContainerStyle={styles.content__Container}>
         <View style={styles.header}>
           <View style={{ flexDirection: "row" }}>
             <View style={styles.location__logo}>
@@ -45,6 +45,7 @@ const UserHome = () => {
           </View>
           <View style={styles.header__display__picture}></View>
         </View>
+
         {/* email input container */}
         <View
           style={{
@@ -72,6 +73,7 @@ const UserHome = () => {
             onBlur={() => setEmailFocused(false)}
           />
         </View>
+
         <View
           style={{
             flexDirection: "row",
@@ -88,71 +90,113 @@ const UserHome = () => {
           </Pressable>
         </View>
 
+        {/* First horizontal ScrollView */}
         <ScrollView
           horizontal
           showsHorizontalScrollIndicator={false}
-          contentContainerStyle={{ flexDirection: "row", paddingVertical: 10 }}
-          style={{ width: "100%" }}
+          style={{ width: "100%", marginTop: 10 }}
         >
-          <View
-            style={{
-              width: 93,
-              height: 131,
-              justifyContent: "center",
-              alignItems: "center",
-              backgroundColor: "gray",
-              borderRadius: 11,
-              marginRight: 10,
-            }}
-          >
-            <Text>Power Tools</Text>
-          </View>
-          <View
-            style={{
-              width: 93,
-              height: 131,
-              justifyContent: "center",
-              alignItems: "center",
-              backgroundColor: "gray",
-              borderRadius: 11,
-              marginRight: 10,
-            }}
-          >
-            <Text>Power Tools</Text>
-          </View>
-          <View
-            style={{
-              width: 93,
-              height: 131,
-              justifyContent: "center",
-              alignItems: "center",
-              backgroundColor: "gray",
-              borderRadius: 11,
-              marginRight: 10,
-            }}
-          >
-            <Text>Lifting Tools</Text>
-          </View>
-          <View
-            style={{
-              width: 93,
-              height: 131,
-              justifyContent: "center",
-              alignItems: "center",
-              backgroundColor: "gray",
-              borderRadius: 11,
-              marginRight: 10,
-            }}
-          >
-            <Text>Cutting Tools</Text>
-          </View>
+          <Pressable style={styles.power__Tools__Card}>
+            <Text
+              style={{
+                fontSize: 11,
+                fontWeight: "medium",
+                textAlign: "center",
+              }}
+            >
+              Power Tools
+            </Text>
+          </Pressable>
+          <Pressable style={styles.hand__Tools__Card}>
+            <Text
+              style={{
+                fontSize: 11,
+                fontWeight: "medium",
+                textAlign: "center",
+              }}
+            >
+              Hand Tools
+            </Text>
+          </Pressable>
+          <Pressable style={styles.cutting__Tools__Card}>
+            <Text
+              style={{
+                fontSize: 11,
+                fontWeight: "medium",
+                textAlign: "center",
+              }}
+            >
+              Cutting Tools
+            </Text>
+          </Pressable>
+          <Pressable style={styles.lifting__Tools__Card}>
+            <Text
+              style={{
+                fontSize: 11,
+                fontWeight: "medium",
+                textAlign: "center",
+              }}
+            >
+              Lifting Tools
+            </Text>
+          </Pressable>
         </ScrollView>
-      </View>
+
+        {/* Second horizontal ScrollView */}
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          style={{ width: "100%", marginTop: 10 }}
+        >
+          <Pressable style={styles.havac__Tools__Card}>
+            <Text
+              style={{
+                fontSize: 11,
+                fontWeight: "medium",
+                textAlign: "center",
+              }}
+            >
+              Havac Tools
+            </Text>
+          </Pressable>
+          <Pressable style={styles.gardening__Tools__Card}>
+            <Text
+              style={{
+                fontSize: 11,
+                fontWeight: "medium",
+                textAlign: "center",
+              }}
+            >
+              Gardening Tools
+            </Text>
+          </Pressable>
+          <Pressable style={styles.welding__Tools__Card}>
+            <Text
+              style={{
+                fontSize: 11,
+                fontWeight: "medium",
+                textAlign: "center",
+              }}
+            >
+              Welding Tools
+            </Text>
+          </Pressable>
+          <Pressable style={styles.cleaning__Tools__Card}>
+            <Text
+              style={{
+                fontSize: 11,
+                fontWeight: "medium",
+                textAlign: "center",
+              }}
+            >
+              Cleaning Tools
+            </Text>
+          </Pressable>
+        </ScrollView>
+      </ScrollView>
     </SafeAreaView>
   );
 };
-
-export default UserHome;
 
 const styles = StyleSheet.create({
   container: {
@@ -161,8 +205,8 @@ const styles = StyleSheet.create({
   },
   content__Container: {
     width: "90%",
-    height: "100%",
     alignSelf: "center",
+    paddingBottom: 20, // Add bottom padding to avoid scroll issues
   },
   header: {
     flexDirection: "row",
@@ -186,4 +230,78 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     backgroundColor: "orange",
   },
+  power__Tools__Card: {
+    width: 93,
+    height: 131,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#F2F8FE",
+    borderRadius: 11,
+    marginRight: 10,
+  },
+  hand__Tools__Card: {
+    width: 93,
+    height: 131,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#F2F8FE",
+    borderRadius: 11,
+    marginRight: 10,
+  },
+  cutting__Tools__Card: {
+    width: 93,
+    height: 131,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#F2F8FE",
+    borderRadius: 11,
+    marginRight: 10,
+  },
+  lifting__Tools__Card: {
+    width: 93,
+    height: 131,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#F2F8FE",
+    borderRadius: 11,
+    marginRight: 10,
+  },
+  havac__Tools__Card: {
+    width: 93,
+    height: 131,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#F2F8FE",
+    borderRadius: 11,
+    marginRight: 10,
+  },
+  gardening__Tools__Card: {
+    width: 93,
+    height: 131,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#F2F8FE",
+    borderRadius: 11,
+    marginRight: 10,
+  },
+  welding__Tools__Card: {
+    width: 93,
+    height: 131,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#F2F8FE",
+    borderRadius: 11,
+    marginRight: 10,
+  },
+  cleaning__Tools__Card: {
+    width: 93,
+    height: 131,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#F2F8FE",
+    borderRadius: 11,
+    marginRight: 10,
+  },
 });
+
+export default UserHome;
