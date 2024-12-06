@@ -286,7 +286,38 @@ const UserHome = () => {
           </Pressable>
         </View>
         <View style={styles.recomended__first}>
-            
+          <View
+            style={{
+              width: "90%",
+              height: "100%",
+              alignSelf: "center",
+              alignItems: "center",
+            }}
+          >
+            <Image
+              source={require("./../../assets/powerToolsThumbnail.png")}
+              style={{
+                width: 170,
+                height: 110,
+                alignSelf: "center",
+              }}
+            />
+            <View
+              style={{
+                width: "90%",
+                flexDirection: "row",
+                justifyContent: "space-between",
+              }}
+            >
+              <Text style={{ fontWeight: "bold" }}>Power Tools</Text>
+              <View style={{ flexDirection: "row" }}>
+                <Text style={{ fontSize: 16, fontWeight: "bold" }}>$18/</Text>
+                <Text style={{ fontSize: 16 }}> hr</Text>
+              </View>
+            </View>
+          </View>
+          {/* reviews box goes here */}
+          <View style={{ flexDirection: "row" }}></View>
         </View>
       </View>
     </SafeAreaView>
@@ -396,6 +427,13 @@ const styles = StyleSheet.create({
     backgroundColor: "#F2F8FE",
     borderRadius: 11,
     marginRight: 10,
+  },
+  recomended__first: {
+    width: 210,
+    height: 159,
+    borderRadius: 11,
+    marginTop: 17,
+    backgroundColor: "orange",
   },
 });
 
