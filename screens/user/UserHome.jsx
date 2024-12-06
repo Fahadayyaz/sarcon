@@ -14,6 +14,7 @@ import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import Fontisto from "@expo/vector-icons/Fontisto";
 import { useNavigation } from "@react-navigation/native";
+import CustomTabBar from "../../components/CustomTabBar";
 
 const UserHome = () => {
   const [isEmailFocused, setEmailFocused] = useState(false);
@@ -471,6 +472,9 @@ const UserHome = () => {
             </View>
           </ScrollView>
         </ScrollView>
+        <View style={styles.custom__tab__bar}>
+          <CustomTabBar />
+        </View>
       </View>
     </SafeAreaView>
   );
@@ -589,6 +593,9 @@ const styles = StyleSheet.create({
     marginRight: 10,
     backgroundColor: "#F2F8FE",
   },
+  custom__tab__bar:{
+
+  }
 });
 
 export default UserHome;
