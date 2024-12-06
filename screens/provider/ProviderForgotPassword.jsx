@@ -4,18 +4,17 @@ import {
   ScrollView,
   StyleSheet,
   Text,
-  TextInput,
   View,
 } from "react-native";
-import React, { useState } from "react";
+import React from "react";
 
 import Fontisto from "@expo/vector-icons/Fontisto";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import { useNavigation } from "@react-navigation/native";
+import Input from "../../components/Input";
 
 const ProviderForgotPassword = () => {
-  const [isEmailFocused, setEmailFocused] = useState(false);
   const navigation = useNavigation();
 
   return (
@@ -51,34 +50,7 @@ const ProviderForgotPassword = () => {
             Opps. It happens to the best of us. Input your email to fix the
             issue.
           </Text>
-          {/* email input container */}
-          <View
-            style={{
-              flexDirection: "row",
-              alignItems: "center",
-              borderWidth: 1,
-              borderColor: isEmailFocused ? "#0474ED" : "#fff",
-              borderRadius: 44,
-              paddingLeft: 10,
-              marginTop: 15,
-              backgroundColor: "#F2F2F2",
-            }}
-          >
-            <Fontisto
-              name="email"
-              size={24}
-              color={isEmailFocused ? "#0474ED" : "#838383"}
-              style={{ paddingRight: 5 }}
-            />
-            <TextInput
-              placeholder="Email Address"
-              placeholderTextColor={isEmailFocused ? "#0474ED" : "#838383"}
-              style={{ width: "100%", height: 48 }}
-              onFocus={() => setEmailFocused(true)}
-              onBlur={() => setEmailFocused(false)}
-            />
-          </View>
-          {/* submit button */}
+          <Input icon={Fontisto} iconName="email" placeholder="Email Address" />
           <Pressable
             onPress={() => navigation.navigate("ProviderOTP")}
             style={{
