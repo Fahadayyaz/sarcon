@@ -24,13 +24,13 @@ const UserOTP = () => {
     setOtp(newOtp);
 
     if (value && index < 3) {
-      inputRefs.current[index + 1]?.focus(); // اگلے باکس پر کرسر لے جائیں
+      inputRefs.current[index + 1]?.focus();
     }
   };
 
   const handleKeyPress = (event, index) => {
     if (event.nativeEvent.key === "Backspace" && !otp[index] && index > 0) {
-      inputRefs.current[index - 1]?.focus(); // پچھلے باکس پر کرسر لے جائیں
+      inputRefs.current[index - 1]?.focus();
     }
   };
 
