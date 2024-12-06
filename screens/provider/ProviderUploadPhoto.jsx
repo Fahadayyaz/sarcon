@@ -26,8 +26,6 @@ const ProviderUploadPhoto = () => {
     }
   };
 
-  // Modal code starts here
-
   const [modalVisible, setModalVisible] = useState(false);
 
   const handleButtonPress = () => {
@@ -37,7 +35,6 @@ const ProviderUploadPhoto = () => {
       setModalVisible(false);
     }, 1500);
   };
-  // Modal code ends here
 
   return (
     <SafeAreaView style={styles.container}>
@@ -56,17 +53,14 @@ const ProviderUploadPhoto = () => {
           Opps. It happens to the best of us. Input your email to fix the issue.
         </Text>
         <View style={styles.uploadContainer}>
-          {!image && ( // Show Pressable only if no image is uploaded
+          {!image && (
             <Pressable onPress={pickImage} style={styles.uploadButton}>
               <Feather name="upload" size={42} color="black" />
               <Text style={styles.uploadText}>Upload Image</Text>
             </Pressable>
           )}
-          {image && ( // Show uploaded image
-            <Image source={{ uri: image }} style={styles.image} />
-          )}
+          {image && <Image source={{ uri: image }} style={styles.image} />}
         </View>
-        {/* Modal code starts here */}
         <Modal
           visible={modalVisible}
           transparent={true}
@@ -83,7 +77,6 @@ const ProviderUploadPhoto = () => {
             />
           </View>
         </Modal>
-        {/* Modal code ends here */}
         <Pressable
           onPress={handleButtonPress}
           style={{
@@ -156,7 +149,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     justifyContent: "center",
     alignItems: "center",
-    overflow: "hidden", // Prevent content from overflowing
+    overflow: "hidden",
   },
   uploadButton: {
     justifyContent: "center",
@@ -169,6 +162,6 @@ const styles = StyleSheet.create({
   image: {
     width: "100%",
     height: "100%",
-    resizeMode: "cover", // Adjust image scaling
+    resizeMode: "cover",
   },
 });
