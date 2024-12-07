@@ -14,6 +14,7 @@ import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import Fontisto from "@expo/vector-icons/Fontisto";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
+import { categories } from "../../constants";
 
 const Home = () => {
   const [isEmailFocused, setEmailFocused] = useState(false);
@@ -53,8 +54,6 @@ const Home = () => {
             />
           </View>
         </View>
-
-        {/* email input container */}
         <View
           style={{
             flexDirection: "row",
@@ -81,8 +80,6 @@ const Home = () => {
             onBlur={() => setEmailFocused(false)}
           />
         </View>
-
-        {/* main ScrollView here */}
         <ScrollView
           vertical
           showsVerticalScrollIndicator={false}
@@ -108,174 +105,39 @@ const Home = () => {
               </Text>
             </Pressable>
           </View>
-
-          {/* First horizontal ScrollView */}
-          <ScrollView
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            style={{ width: "100%", marginTop: 10 }}
+          <View
+            style={{
+              flexDirection: "row",
+              width: "100%",
+              marginTop: 10,
+              flexWrap: "wrap",
+              gap: 10,
+              justifyContent: "center",
+            }}
           >
-            <Pressable style={styles.power__Tools__Card}>
-              <Image
-                source={require("./../../assets/powerTool.png")}
-                style={{
-                  width: 72,
-                  height: 72,
-                  alignSelf: "center",
-                }}
-              />
-              <Text
-                style={{
-                  fontSize: 11,
-                  fontWeight: "medium",
-                  textAlign: "center",
-                }}
-              >
-                Power Tools
-              </Text>
-            </Pressable>
-            <Pressable style={styles.hand__Tools__Card}>
-              <Image
-                source={require("./../../assets/handTool.png")}
-                style={{
-                  width: 61,
-                  height: 55.02,
-                  alignSelf: "center",
-                }}
-              />
-              <Text
-                style={{
-                  fontSize: 11,
-                  fontWeight: "medium",
-                  textAlign: "center",
-                }}
-              >
-                Hand Tools
-              </Text>
-            </Pressable>
-            <Pressable style={styles.cutting__Tools__Card}>
-              <Image
-                source={require("./../../assets/cuttingTool.png")}
-                style={{
-                  width: 50,
-                  height: 50,
-                  alignSelf: "center",
-                }}
-              />
-              <Text
-                style={{
-                  fontSize: 11,
-                  fontWeight: "medium",
-                  textAlign: "center",
-                }}
-              >
-                Cutting Tools
-              </Text>
-            </Pressable>
-            <Pressable style={styles.lifting__Tools__Card}>
-              <Image
-                source={require("./../../assets/liftingTool.png")}
-                style={{
-                  width: 33.39,
-                  height: 50.32,
-                  alignSelf: "center",
-                }}
-              />
-              <Text
-                style={{
-                  fontSize: 11,
-                  fontWeight: "medium",
-                  textAlign: "center",
-                }}
-              >
-                Lifting Tools
-              </Text>
-            </Pressable>
-          </ScrollView>
-
-          {/* Second horizontal ScrollView */}
-          <ScrollView
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            style={{ width: "100%", marginTop: 10 }}
-          >
-            <Pressable style={styles.havac__Tools__Card}>
-              <Image
-                source={require("./../../assets/hvacTools.png")}
-                style={{
-                  width: 48.87,
-                  height: 46.69,
-                  alignSelf: "center",
-                }}
-              />
-              <Text
-                style={{
-                  fontSize: 11,
-                  fontWeight: "medium",
-                  textAlign: "center",
-                }}
-              >
-                Havac Tools
-              </Text>
-            </Pressable>
-            <Pressable style={styles.gardening__Tools__Card}>
-              <Image
-                source={require("./../../assets/gardeningTools.png")}
-                style={{
-                  width: 78.09,
-                  height: 50.53,
-                  alignSelf: "center",
-                }}
-              />
-              <Text
-                style={{
-                  fontSize: 11,
-                  fontWeight: "medium",
-                  textAlign: "center",
-                }}
-              >
-                Gardening Tools
-              </Text>
-            </Pressable>
-            <Pressable style={styles.welding__Tools__Card}>
-              <Image
-                source={require("./../../assets/weldingHelmets.png")}
-                style={{
-                  width: 50,
-                  height: 58.92,
-                  alignSelf: "center",
-                }}
-              />
-              <Text
-                style={{
-                  fontSize: 11,
-                  fontWeight: "medium",
-                  textAlign: "center",
-                }}
-              >
-                Welding Tools
-              </Text>
-            </Pressable>
-            <Pressable style={styles.cleaning__Tools__Card}>
-              <Image
-                source={require("./../../assets/cleaningTools.png")}
-                style={{
-                  width: 68,
-                  height: 68,
-                  alignSelf: "center",
-                }}
-              />
-              <Text
-                style={{
-                  fontSize: 11,
-                  fontWeight: "medium",
-                  textAlign: "center",
-                }}
-              >
-                Cleaning Tools
-              </Text>
-            </Pressable>
-          </ScrollView>
+            {categories.slice(0, 6).map((category) => (
+              <Pressable key={category.id} style={styles.power__Tools__Card}>
+                <Image
+                  source={{ uri: category.image }}
+                  style={{
+                    width: 72,
+                    height: 72,
+                    alignSelf: "center",
+                    borderRadius: 12,
+                  }}
+                />
+                <Text
+                  style={{
+                    fontSize: 11,
+                    fontWeight: "medium",
+                    textAlign: "center",
+                  }}
+                >
+                  {category.name}
+                </Text>
+              </Pressable>
+            ))}
+          </View>
           <View
             style={{
               flexDirection: "row",
@@ -335,7 +197,6 @@ const Home = () => {
                     <Text style={{ fontSize: 16 }}> hr</Text>
                   </View>
                 </View>
-                {/* reviews box goes here */}
                 <View
                   style={{
                     flexDirection: "row",
@@ -356,7 +217,6 @@ const Home = () => {
                 </View>
               </View>
             </View>
-            {/* second box goes here */}
             <View style={styles.recomended__box}>
               <View
                 style={{
@@ -391,7 +251,6 @@ const Home = () => {
                     <Text style={{ fontSize: 16 }}> hr</Text>
                   </View>
                 </View>
-                {/* reviews box goes here */}
                 <View
                   style={{
                     flexDirection: "row",
@@ -412,7 +271,6 @@ const Home = () => {
                 </View>
               </View>
             </View>
-            {/* third box goes here */}
             <View style={styles.recomended__box}>
               <View
                 style={{
@@ -447,7 +305,6 @@ const Home = () => {
                     <Text style={{ fontSize: 16 }}> hr</Text>
                   </View>
                 </View>
-                {/* reviews box goes here */}
                 <View
                   style={{
                     flexDirection: "row",
@@ -510,13 +367,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   power__Tools__Card: {
-    width: 93,
-    height: 131,
+    width: "30%",
+    height: 130,
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#F2F8FE",
     borderRadius: 11,
-    marginRight: 10,
   },
   hand__Tools__Card: {
     width: 93,
