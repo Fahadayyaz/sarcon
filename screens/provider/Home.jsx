@@ -1,8 +1,16 @@
 import React from "react";
-import { TouchableOpacity, StyleSheet, Text, View } from "react-native";
+import {
+  TouchableOpacity,
+  StyleSheet,
+  Text,
+  View,
+  ScrollView,
+  Pressable,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import Fontisto from "@expo/vector-icons/Fontisto";
+import Feather from "@expo/vector-icons/Feather";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 
@@ -38,34 +46,143 @@ const Home = () => {
           </TouchableOpacity>
         </View>
       </View>
-      <View style={styles.content__container}>
+      <ScrollView style={styles.content__container}>
         <View style={styles.inner__container}>
           <View style={styles.upper__two__boxes__container}>
             <TouchableOpacity
               style={{
-                width: "40%",
+                width: "48%",
                 height: 161.02,
+                justifyContent: "center",
                 backgroundColor: "#F3F4F9",
                 borderRadius: 20.31,
               }}
             >
-              <Text>jskfjsdlkfjdlksj</Text>
+              <View
+                style={{
+                  width: "90%",
+                  height: "80%",
+                  // backgroundColor: "red",
+                  alignSelf: "center",
+                }}
+              >
+                <Pressable
+                  style={{
+                    width: 26.11,
+                    height: 26.11,
+                    borderRadius: 24,
+                    backgroundColor: "#3474FF",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    alignSelf: "flex-end",
+                  }}
+                >
+                  <Feather name="arrow-up-right" size={18} color="#FEFEFE" />
+                </Pressable>
+              </View>
             </TouchableOpacity>
             <TouchableOpacity
               style={{
-                width: "40%",
+                width: "48%",
                 height: 161.02,
+                justifyContent: "center",
                 backgroundColor: "#F3F4F9",
                 borderRadius: 20.31,
               }}
             >
-              <Text>jskfjsdlkfjdlksj</Text>
+              <View
+                style={{
+                  width: "90%",
+                  height: "80%",
+                  // backgroundColor: "green",
+                  alignSelf: "center",
+                }}
+              >
+                <Pressable
+                  style={{
+                    width: 26.11,
+                    height: 26.11,
+                    borderRadius: 24,
+                    backgroundColor: "#3474FF",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    alignSelf: "flex-end",
+                  }}
+                >
+                  <Feather name="arrow-up-right" size={18} color="#FEFEFE" />
+                </Pressable>
+              </View>
             </TouchableOpacity>
           </View>
 
-          <View style={styles.lower__two__boxes__container}></View>
+          <View style={styles.lower__two__boxes__container}>
+            <TouchableOpacity
+              style={{
+                width: "48%",
+                height: 161.02,
+                justifyContent: "center",
+                backgroundColor: "#F3F4F9",
+                borderRadius: 20.31,
+              }}
+            >
+              <View
+                style={{
+                  width: "90%",
+                  height: "80%",
+                  // backgroundColor: "blue",
+                  alignSelf: "center",
+                }}
+              >
+                <Pressable
+                  style={{
+                    width: 26.11,
+                    height: 26.11,
+                    borderRadius: 24,
+                    backgroundColor: "#3474FF",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    alignSelf: "flex-end",
+                  }}
+                >
+                  <Feather name="arrow-up-right" size={18} color="#FEFEFE" />
+                </Pressable>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={{
+                width: "48%",
+                height: 161.02,
+                justifyContent: "center",
+                backgroundColor: "#F3F4F9",
+                borderRadius: 20.31,
+              }}
+            >
+              <View
+                style={{
+                  width: "90%",
+                  height: "80%",
+                  // backgroundColor: "yellow",
+                  alignSelf: "center",
+                }}
+              >
+                <Pressable
+                  style={{
+                    width: 26.11,
+                    height: 26.11,
+                    borderRadius: 24,
+                    backgroundColor: "#3474FF",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    alignSelf: "flex-end",
+                  }}
+                >
+                  <Feather name="arrow-up-right" size={18} color="#FEFEFE" />
+                </Pressable>
+              </View>
+            </TouchableOpacity>
+          </View>
         </View>
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
@@ -82,7 +199,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-
     width: "90%",
     height: "8%",
     bottom: "1%",
@@ -90,27 +206,29 @@ const styles = StyleSheet.create({
   content__container: {
     width: "100%",
     height: "100%",
-    backgroundColor: "red",
-    alignItems: "center",
+    backgroundColor: "#fff",
     borderTopLeftRadius: 42,
     borderTopRightRadius: 42,
   },
   inner__container: {
     width: "90%",
     height: "100%",
+    alignSelf: "center",
+    justifyContent: "center",
     marginTop: 10,
-    backgroundColor: "pink",
-
-    justifyContent: "space-between",
+    // backgroundColor: "pink",
   },
   upper__two__boxes__container: {
+    flexDirection: "row",
     width: "100%",
     height: 161.02,
-    flexDirection: "row",
+    justifyContent: "space-between",
   },
   lower__two__boxes__container: {
     width: "100%",
     height: 161.02,
+    marginTop: 10,
+    justifyContent: "space-between",
     flexDirection: "row",
   },
 });
