@@ -4,6 +4,7 @@ import {
   StyleSheet,
   Text,
   View,
+  Image,
   ScrollView,
   Pressable,
 } from "react-native";
@@ -60,7 +61,7 @@ const Home = () => {
             >
               <View
                 style={{
-                  width: "90%",
+                  width: "80%",
                   height: "80%",
                   // backgroundColor: "red",
                   alignSelf: "center",
@@ -79,6 +80,32 @@ const Home = () => {
                 >
                   <Feather name="arrow-up-right" size={18} color="#FEFEFE" />
                 </Pressable>
+                <Image
+                  source={require("./../../assets/createService.png")}
+                  style={{
+                    width: 42,
+                    height: 42.99,
+                    marginTop: 10,
+                  }}
+                />
+                <Text
+                  style={{
+                    fontSize: 14.51,
+                    marginTop: 10,
+                    color: "#1E1E1E",
+                    fontWeight: "bold",
+                  }}
+                >
+                  Create Service
+                </Text>
+                <Text
+                  style={{
+                    fontSize: 13.06,
+                    color: "#1E1E1E",
+                  }}
+                >
+                  Add New
+                </Text>
               </View>
             </TouchableOpacity>
             <TouchableOpacity
@@ -92,9 +119,9 @@ const Home = () => {
             >
               <View
                 style={{
-                  width: "90%",
+                  width: "80%",
                   height: "80%",
-                  // backgroundColor: "green",
+                  // backgroundColor: "red",
                   alignSelf: "center",
                 }}
               >
@@ -111,6 +138,32 @@ const Home = () => {
                 >
                   <Feather name="arrow-up-right" size={18} color="#FEFEFE" />
                 </Pressable>
+                <Image
+                  source={require("./../../assets/createService.png")}
+                  style={{
+                    width: 42,
+                    height: 42.99,
+                    marginTop: 10,
+                  }}
+                />
+                <Text
+                  style={{
+                    fontSize: 14.51,
+                    marginTop: 10,
+                    color: "#1E1E1E",
+                    fontWeight: "bold",
+                  }}
+                >
+                  Create Service
+                </Text>
+                <Text
+                  style={{
+                    fontSize: 13.06,
+                    color: "#1E1E1E",
+                  }}
+                >
+                  Add New
+                </Text>
               </View>
             </TouchableOpacity>
           </View>
@@ -127,9 +180,9 @@ const Home = () => {
             >
               <View
                 style={{
-                  width: "90%",
+                  width: "80%",
                   height: "80%",
-                  // backgroundColor: "blue",
+                  // backgroundColor: "red",
                   alignSelf: "center",
                 }}
               >
@@ -146,6 +199,32 @@ const Home = () => {
                 >
                   <Feather name="arrow-up-right" size={18} color="#FEFEFE" />
                 </Pressable>
+                <Image
+                  source={require("./../../assets/createService.png")}
+                  style={{
+                    width: 42,
+                    height: 42.99,
+                    marginTop: 10,
+                  }}
+                />
+                <Text
+                  style={{
+                    fontSize: 14.51,
+                    marginTop: 10,
+                    color: "#1E1E1E",
+                    fontWeight: "bold",
+                  }}
+                >
+                  Create Service
+                </Text>
+                <Text
+                  style={{
+                    fontSize: 13.06,
+                    color: "#1E1E1E",
+                  }}
+                >
+                  Add New
+                </Text>
               </View>
             </TouchableOpacity>
             <TouchableOpacity
@@ -159,9 +238,9 @@ const Home = () => {
             >
               <View
                 style={{
-                  width: "90%",
+                  width: "80%",
                   height: "80%",
-                  // backgroundColor: "yellow",
+                  // backgroundColor: "red",
                   alignSelf: "center",
                 }}
               >
@@ -178,6 +257,32 @@ const Home = () => {
                 >
                   <Feather name="arrow-up-right" size={18} color="#FEFEFE" />
                 </Pressable>
+                <Image
+                  source={require("./../../assets/createService.png")}
+                  style={{
+                    width: 42,
+                    height: 42.99,
+                    marginTop: 10,
+                  }}
+                />
+                <Text
+                  style={{
+                    fontSize: 14.51,
+                    marginTop: 10,
+                    color: "#1E1E1E",
+                    fontWeight: "bold",
+                  }}
+                >
+                  Create Service
+                </Text>
+                <Text
+                  style={{
+                    fontSize: 13.06,
+                    color: "#1E1E1E",
+                  }}
+                >
+                  Add New
+                </Text>
               </View>
             </TouchableOpacity>
           </View>
