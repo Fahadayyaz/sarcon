@@ -40,16 +40,29 @@ const Home = () => {
       </View>
       <View style={styles.content__container}>
         <View style={styles.inner__container}>
-          <View style={styles.upper__two__boxes__container}></View>
-          <TouchableOpacity
-            style={{
-              width: "40%",
-              height: "20%",
-              backgroundColor: "#F3F4F9",
-              borderRadius: 20.31,
-            }}
-          ></TouchableOpacity>
-          <TouchableOpacity></TouchableOpacity>
+          <View style={styles.upper__two__boxes__container}>
+            <TouchableOpacity
+              style={{
+                width: "40%",
+                height: 161.02,
+                backgroundColor: "#F3F4F9",
+                borderRadius: 20.31,
+              }}
+            >
+              <Text>jskfjsdlkfjdlksj</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={{
+                width: "40%",
+                height: 161.02,
+                backgroundColor: "#F3F4F9",
+                borderRadius: 20.31,
+              }}
+            >
+              <Text>jskfjsdlkfjdlksj</Text>
+            </TouchableOpacity>
+          </View>
+
           <View style={styles.lower__two__boxes__container}></View>
         </View>
       </View>
@@ -77,17 +90,27 @@ const styles = StyleSheet.create({
   content__container: {
     width: "100%",
     height: "100%",
-    backgroundColor: "#fff",
+    backgroundColor: "red",
+    alignItems: "center",
     borderTopLeftRadius: 42,
     borderTopRightRadius: 42,
   },
   inner__container: {
     width: "90%",
+    height: "100%",
+    marginTop: 10,
+    backgroundColor: "pink",
+
+    justifyContent: "space-between",
   },
   upper__two__boxes__container: {
+    width: "100%",
+    height: 161.02,
     flexDirection: "row",
   },
   lower__two__boxes__container: {
+    width: "100%",
+    height: 161.02,
     flexDirection: "row",
   },
 });
